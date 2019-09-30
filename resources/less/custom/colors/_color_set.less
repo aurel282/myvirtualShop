@@ -1,0 +1,121 @@
+/* less/colors/_color_set.less */
+/* less/ui_style_guide/_admin_color_set.less */
+body {
+  background:/*#DBECF8*/ #f7f7f7;
+}
+
+.color-bg{
+  &--primary{
+	background: @brand-primary!important;
+	color: #fff!important;
+	&:hover{
+	  background-color: #1f2c43!important;
+	}
+	&--light{
+	  background: @brand-primary-light!important;
+	  color: #fff!important;
+	}
+	&--very-light{
+	  background: @brand-primary-very-light!important;
+	  color: #fff!important;
+	}
+	&--hard {
+	  background: @brand-primary-hard!important;
+	}
+  }
+  &--success{
+	background: @brand-success-admin!important;
+	color: #fff;
+	&--light{
+	  background: @brand-success-admin-light!important;
+	  color: #fff;
+	}
+	&--very-light{
+	  background: @brand-success-admin-very-light!important;
+	  color: #fff;
+	}
+	&--hard {
+	  background: @brand-success-admin-hard!important;
+	}
+  }
+  &--white{
+	position: relative;
+	background: #FFF;
+	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+	margin: 1rem 0;
+	padding: 1em;
+	border-radius: .28571429rem;
+	border: 1px solid rgba(34,36,38,.15);
+  }
+  &--warning{
+	background: @brand-warning!important;
+	color: #fff;
+	&--light {
+	  background: @brand-warning-light !important;
+	  color: #fff;
+	}
+  }
+  &--danger{
+	background: @brand-danger!important;
+	color: #fff;
+  }
+  &--info{
+	background: @brand-info!important;
+	color: #fff;
+  }
+}
+
+.color-text{
+  &--primary{
+	color: @brand-primary!important;
+	&--light{
+	  color: @brand-primary-light!important;
+	}
+	&--very-light{
+	  color: @brand-primary-very-light!important;
+	}
+  }
+  &--success{
+	color: @brand-success-admin!important;
+	&--light{
+	  color: @brand-success-admin-light!important;
+	}
+	&--very-light{
+	  color: @brand-success-admin-very-light!important;
+	}
+  }
+  &--warning{
+	color: @brand-warning!important;
+  }
+  &--danger{
+	color: @brand-danger!important;
+  }
+  &--info{
+	color: @brand-info!important;
+  }
+}
+
+.color-border{
+  &--primary{
+	border-color: @brand-primary!important;
+	&--light{
+	  border-color: @brand-primary-light!important;
+	}
+	&--very-light{
+	  border-color: @brand-primary-very-light!important;
+	}
+  }
+  &--success{
+	border-color: @brand-success-admin!important;
+	&--light{
+	  border-color: @brand-success-admin-light!important;
+	}
+	&--very-light{
+	  border-color: @brand-success-admin-very-light!important;
+	}
+  }
+}
+
+.ui.header>.icon {
+  color: @brand-success-admin-light;
+}

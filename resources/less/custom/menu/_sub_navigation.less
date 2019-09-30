@@ -1,0 +1,51 @@
+#menu {
+  top: 0;
+  bottom: 0;
+  left: 70px;
+  width: 170px;
+  height: 100%;
+  z-index: 101;
+  margin-top: 0;
+  position: fixed;
+  overflow-x: scroll;
+  background: @brand-primary-hard;
+  padding-bottom: 70px;
+  box-shadow: 2px 0 0 rgba(66, 66, 66, 0.1);
+  border-top: 1px solid rgba(255,255,255,0.25);
+  & > ul {
+	padding: 0;
+	margin-bottom: 70px;
+	& > li {
+	  width: 100%;
+	  .active a {
+		color: #eee;
+	  }
+	  & > a, #menu > ul > li span {
+		text-align: center;
+		display: block;
+		height: 69px;
+		border-top: 1px solid rgba(255,255,255,0.05);
+		border-bottom: 1px solid #4c4c4c;
+		line-height: 66px;
+		color: rgba(255, 255, 255, 0.63);
+		transition: color .3s;
+		&:hover{
+			text-decoration: none;
+			background-color: rgba(255,255,255,0.05);
+			color: @brand-success-admin;
+		}
+		&.selected{
+		  text-decoration: none;
+		  background-color: rgba(255,255,255,0.05);
+		  color: @brand-success-admin;
+		}
+	  }
+	}
+  }
+}
+.ps-container {
+  -ms-touch-action: auto;
+  touch-action: auto;
+  overflow: hidden !important;
+  -ms-overflow-style: none;
+}

@@ -1,0 +1,15 @@
+/* less/form/_different_width_form.less */
+
+.ui.form .field>label {
+  color: @brand-primary-hard;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+.ui.form input:not([type]):focus, .ui.form input[type=number]:focus, .ui.form input[type=text]:focus, .ui.form input[type=email]:focus, .ui.form input[type=search]:focus, .ui.form input[type=password]:focus, .ui.form input[type=date]:focus, .ui.form input[type=datetime-local]:focus, .ui.form input[type=tel]:focus, .ui.form input[type=time]:focus, .ui.form input[type=url]:focus {
+  color: @brand-primary;
+  border-color: @brand-primary;
+  border-radius: 0 .2857rem .2857rem 0;
+  background: #fff;
+  box-shadow: 2px 0 0 0 @brand-primary inset;
+}

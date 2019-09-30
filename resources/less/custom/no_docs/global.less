@@ -1,0 +1,252 @@
+::selection{
+  color:white;
+  background:@brand-success-admin;
+}
+
+//layout
+
+.modal-main{
+  width:auto;
+  min-height:100vh;
+  margin:0;
+  .screen-xs({
+	width: 90%!important;
+	margin:auto!important;
+  })
+}
+
+//divider
+
+.ui.divider{
+  font-weight:500;
+  color:@brand-success-admin;
+}
+
+//card
+
+.ui.cards.raised .card,
+.ui.cards .card.raised{
+  border-width:0;
+}
+
+//menu personnel
+
+.sidebar-menu .ui.form .field > label{
+  color:#ffffff;
+}
+.sidebar-menu .service-desk{
+  position:absolute;
+  bottom:90px;
+  width:100%;
+  .screen-sm-max({
+  	display: none;
+  })
+}
+
+// Tooltip des macro misc
+.icon-tooltip{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+// soulignement des titres des  Tabs
+.wrapper .ui.secondary.pointing.menu .active.item{
+  border-color:@brand-success-admin;
+}
+
+//multi toggle
+.container-event-check{
+  padding:15px;
+  border:1px solid #dededf;
+
+  .align-items(center);
+  .flex-display(flex);
+  .justify-content(center);
+  .check{
+	padding-left:10px;
+	cursor:pointer;
+  }
+  .uncheck{
+	padding-right:20px;
+	cursor:pointer;
+  }
+  a{
+	color:currentColor;
+
+	.align-items(center);
+	.flex-display(flex);
+	.justify-content(center);
+  }
+  .screen-sm-max({
+	padding:10px;
+  })
+}
+.bold{
+  font-weight:bold;
+  color:@brand-success-admin;
+}
+
+
+// Margin
+.margin-bottom-70{
+  margin-bottom:70px!important;
+}
+.margin-top-50{
+  margin-top:50px!important;;
+}
+
+
+// coin icone card bottom
+.ui.bottom.corner.label{
+  top:inherit;
+  bottom:0;
+}
+.ui.bottom.corner .icon{
+  top:1.942857em;
+}
+
+.ui.bottom.corner.label:after{
+  border-top:4em solid transparent;
+  border-bottom:0 solid transparent;
+  border-left:4em solid transparent;
+}
+.ui.bottom.corner.active.label{
+  border-color:@brand-success-admin;
+}
+
+
+//float icon
+.icon-float-right{
+  float:right;
+  vertical-align:middle;
+}
+
+//no border & boxshadow on de segment"S"
+.basic-segments{
+  border:none!important;
+  box-shadow:none!important;;
+}
+
+
+
+//change Z-index tootltip
+[data-tooltip]:after{
+  z-index:9;
+}
+[data-tooltip]:before{
+  z-index:10;
+}
+
+//no data on section
+.no-data{
+  display:inline-block;
+  padding:10px;
+  color:rgba(0,0,0,.4);
+}
+
+//btn groupe (OR) avec icon à droite
+.confirm-icon-button{
+  border-top-right-radius:.28571429rem!important;
+  border-bottom-right-radius:.28571429rem!important;
+}
+
+// Divider text en bleu
+.ui.divider{
+  color:@brand-success-admin;
+}
+i.icon,
+i.icons{
+  color:#ffffff;
+}
+
+// Section text
+.description{
+  margin-bottom: 0.5em;
+  p{
+	font-weight: 500;
+  }
+}
+// pagination
+.floated-pagination{
+  position: absolute;
+  right: 6.2em;
+  margin-top: 4em!important;
+  .screen-xs({
+	right: 50%;
+	margin-right: -110px!important;
+	margin-top: 4em!important;
+  })
+}
+
+// Ribbon env validation
+@-webkit-keyframes grow {
+  from {
+	width: 0;
+	padding: 6px 0;
+	color: transparent;
+  }
+}
+@-moz-keyframes grow {
+  from {
+	width: 0;
+	padding: 6px 0;
+	color: transparent;
+  }
+}
+@keyframes grow {
+  from {
+	width: 0;
+	padding: 6px 0;
+	color: transparent;
+  }
+}
+.ribbon-validation {
+  position: fixed;
+  z-index: 1001;
+  height: 102px;
+  bottom: 50px;
+  .ribbon {
+	position: relative;
+	width: 100px;
+	padding: 7px 9px;
+	background-color: red;
+	color: #fff;
+	font-size: 12px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	border-radius: 5px 0 5px 0;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+	-webkit-animation: grow 1s both cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	-moz-animation: grow 1s both cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	animation: grow 1s both cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	span {
+	  display: block;
+	  strong {
+		color: white;
+		text-transform: uppercase;
+	  }
+	}
+	&.top {
+	  z-index: 1;
+	  transform: skewY(20deg);
+	  border-radius: 0 5px 0 5px;
+	  span {
+		transform: skewY(-20deg) rotateZ(20deg);
+	  }
+	}
+	&.bottom {
+	  transform: skewY(-20deg) translateY(15px);
+	  background: linear-gradient(45deg, #ff0000, #8a0707);
+	  span {
+		transform: skewY(20deg) rotateZ(-20deg);
+	  }
+	}
+  }
+  .screen-xs({
+	bottom: -20px;
+  })
+}

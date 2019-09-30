@@ -1,0 +1,49 @@
+/* less/menu/_secondary_nav_section.less */
+
+.header-navigation{
+	margin-bottom:5px;
+
+	.flex-display(flex);
+	.justify-content(center);
+
+	.navigation-item{
+		margin-right:2.85rem;
+	  .screen-xs({
+		margin-right: 0;
+		padding: 9px 0;
+		width: 100%;
+		text-align: center;
+	  })
+	}
+	.navigation-item-link{
+		display:inline-block;
+		padding-top:20px;
+		font-size:1rem;
+		font-weight:400;
+		color:#323a44;
+		text-transform:uppercase;
+		border-top:1px solid #dedede;
+		&:hover{
+			color:black;
+		}
+		&:after{
+			content:"";
+			position:relative;
+			bottom:-20px;
+			display:block;
+			width:0;
+			height:4px;
+			background-color:@brand-success-admin;
+		}
+		&:hover:after{
+			width:100%;
+		}
+	  .screen-xs({
+		width: 100%;
+	  })
+	}
+  .screen-xs({
+	.flex-direction(column);
+  	.align-items(center);
+  })
+}

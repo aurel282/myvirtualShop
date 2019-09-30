@@ -1,0 +1,59 @@
+{% extends 'layout.template-base.twig' %}
+
+{% import 'macro.misc.twig' as misc %}
+
+{% block body %}
+
+	{# Start - Header page #}
+	<div class=" header-info ui vertical stripe quote segment">
+		<div class="ui equal width stackable internally celled grid" style="align-items: center;">
+			<div class="center aligned row">
+				<div class="column">
+					{% block head %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+	{# End - Header page #}
+
+	{# Start - Flash message #}
+	{% block flash %}
+		{{ parent() }}
+	{% endblock %}
+	{# End - Flash message #}
+
+	{# Start - Form #}
+	<div class="ui vertical stripe segment" style="margin-top: 50px;">
+		<div class="ui text container">
+			<div class="ui clearing segment">
+				<div class="ui form example">
+					<div class="inline fields">
+						<p class="ui header">
+							{% block text %}
+							{% endblock %}
+						</p>
+					</div>
+				</div>
+				{% block formAction %}
+					<div class="ui left floated tiny buttons">
+						<a class="ui left labeled icon button" href="{% block back %}{% endblock %}">
+							{{ misc.iconFA('left arrow') }}
+							{{ 'form.back'|trans }}
+						</a>
+						<div class="or"></div>
+						{% block confirm %}
+							<a class="ui negative button" href="?confirm=1">
+								{{ 'form.confirm'|trans }}
+							</a>
+						{% endblock %}
+					</div>
+				{% endblock %}
+			</div>
+			{% block messagesInfo %}
+			{% endblock %}
+		</div>
+	</div>
+	{# End - Form #}
+
+{% endblock %}

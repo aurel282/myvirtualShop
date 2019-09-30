@@ -1,0 +1,57 @@
+/* less/menu/_main_navigation.less */
+
+
+/*LEFT NAV CSS*/
+#leftNav{
+	position:fixed;
+	width:70px;
+	height:100%;
+  	z-index:999;
+	background-color:@brand-success-admin-menu;
+	box-shadow:1px 2px 14px 2px rgba(0, 0, 0, .12);
+}
+#leftNav ul li{
+	height:70px;
+	box-sizing:border-box;
+	text-align:center;
+	border:none;
+	border-top:1px solid rgba(255,255,255,.25);
+}
+.btn-nav{
+  background-color: #636363;
+}
+#leftNav ul li.icon-settings{
+	border-right:none;
+  	border-bottom: none;
+}
+
+#leftNav ul li.selected{
+	background-color:@brand-primary-hard;
+	border-left:4px solid @white-typo;
+	-webkit-transition:all ease .3s;
+	   -moz-transition:all ease .3s;
+	     -o-transition:all ease .3s;
+	        transition:all ease .3s;
+}
+#leftNav ul li:hover,
+#topNav ul li:hover{
+	background-color:@brand-primary-hard;
+	-webkit-transition:all ease .3s;
+	   -moz-transition:all ease .3s;
+	     -o-transition:all ease .3s;
+	        transition:all ease .3s;
+}
+#leftNav ul li a,
+#topNav ul li a{
+	float:left;
+	width:100%;
+	height:100%;
+}
+.title-menu{
+	display:block;
+	margin-top:43px;
+	font-family:"Yantramanav", sans-serif;
+	font-size:13px;
+	font-weight:300;
+	color:white;
+}

@@ -1,0 +1,15 @@
+/* less/form/_input_checkbox.less */
+
+.ui.toggle.checkbox .box, .ui.toggle.checkbox label {
+  color: @brand-primary;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.ui.toggle.checkbox input[type=checkbox]:checked~.box, .ui.toggle.checkbox input[type=checkbox]:checked~label, .ui.toggle.checkbox input[type=radio]:checked~.box, .ui.toggle.checkbox input[type=radio]:checked~label {
+  color: @brand-success-admin!important;
+}
+
+.ui.toggle.checkbox input[type=checkbox]:checked~.box:before, .ui.toggle.checkbox input[type=checkbox]:checked~label:before, .ui.toggle.checkbox input[type=radio]:checked~.box:before, .ui.toggle.checkbox input[type=radio]:checked~label:before {
+  background-color: @brand-success-admin!important;
+}

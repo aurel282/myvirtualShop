@@ -1,0 +1,122 @@
+// Start - All standart button
+.ui.inverted.admin-bp-btn{
+  &--primary.button{
+	box-shadow: 0 0 0 2px @brand-primary inset!important;
+	background: 0 0;
+	color: @brand-primary;
+	text-shadow: none!important;
+	&:hover{
+	  background: @brand-primary;
+	  box-shadow: 0 0 0 2px @brand-primary inset!important;
+	  color: @white-typo;
+	}
+  }
+  &--success.button{
+	box-shadow: 0 0 0 2px @brand-success-admin inset!important;
+	background: 0 0;
+	color: @brand-success-admin;
+	text-shadow: none!important;
+	&:hover{
+	  background: @brand-success-admin;
+	  box-shadow: 0 0 0 2px @brand-success-admin inset!important;
+	  color: @white-typo;
+	}
+  }
+  &--warning.button{
+	box-shadow: 0 0 0 2px @brand-warning inset!important;
+	background: 0 0;
+	color: @brand-warning;
+	text-shadow: none!important;
+	&:hover{
+	  background: @brand-warning;
+	  box-shadow: 0 0 0 2px @brand-warning inset!important;
+	  color: @white-typo;
+	}
+  }
+  &--danger.button{
+	box-shadow: 0 0 0 2px @brand-danger inset!important;
+	background: 0 0;
+	color: @brand-danger;
+	text-shadow: none!important;
+	&:hover{
+	  background: @brand-danger;
+	  box-shadow: 0 0 0 2px @brand-danger inset!important;
+	  color: @white-typo;
+	}
+  }
+  &--info.button{
+	box-shadow: 0 0 0 2px @brand-info inset!important;
+	background: 0 0;
+	color: @brand-info;
+	text-shadow: none!important;
+	&:hover{
+	  background: @brand-info;
+	  box-shadow: 0 0 0 2px @brand-info inset!important;
+	  color: @white-typo;
+	}
+  }
+}
+.ui.blue.button, .ui.blue.buttons .button {
+  background-color: @brand-primary;
+  &:hover{
+	background-color: @brand-primary-light;
+  }
+}
+.ui.teal.button, .ui.teal.buttons .button {
+  background-color: @brand-success-admin;
+  &:hover{
+	background-color: @brand-success-admin-light;
+  }
+}
+
+// End - All standart button
+// Steps
+.ui.right.labeled.icon.admin-bp-btn{
+  &--success.button{
+	background: @brand-success-admin;
+	color: @white-typo;
+	&:hover{
+	  background-color: @brand-success-admin-light;
+	  background-image: none;
+	  box-shadow: none;
+	  color: @white-typo;
+	}
+  }
+}
+
+.ui.inverted.green.button, .ui.inverted.green.buttons .button{
+  color: @brand-success-admin;
+  box-shadow: 0 0 0 2px @brand-success-admin inset!important;
+}
+.ui.inverted.green.button:hover, .ui.inverted.green.buttons .button:hover {
+  background-color: @brand-success-admin;
+}
+
+.ui.inverted.green.button:active, .ui.inverted.green.buttons .button:active {
+  background-color: @brand-success-admin;
+}
+
+.ui{
+  .inverted{
+	.admin-bp-btn{
+	  &--info{
+		.back-to-list{
+		  position: absolute;
+		  left: 0;
+		  top: 27px;
+		  .screen-xs({
+			position: relative;
+			margin: 25px 0;
+		  })
+		}
+	  }
+	}
+  }
+}
+.ui.inverted.admin-bp-btn--info.button i.icon, i.icons {
+  color: #fff;
+}
+
+.color-bg--primary:hover {
+  background-color: #1f2c43!important;
+}

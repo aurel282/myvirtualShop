@@ -1,0 +1,23 @@
+/* less/tooltips/_hoverable.less */
+
+
+.ui.popup > .ui.grid:not(.padded) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui.divided.grid:not([class*="vertically divided"]) > .column:first-child, .ui.divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
+  box-shadow: none;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 190px;
+}
+
+.ui.divided.grid:not([class*="vertically divided"]) > .column:not(.row), .ui.divided.grid:not([class*="vertically divided"]) > .row > .column {
+  box-shadow: -1px 0 0 0 rgba(39, 41, 43, .15);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 190px;
+}

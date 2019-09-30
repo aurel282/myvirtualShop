@@ -1,0 +1,35 @@
+/* less/cards/_select_choice_card.less */
+
+.ui.cards>.green.card, .ui.green.card, .ui.green.cards>.card {
+  box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 @brand-success-admin, 0 1px 3px 0 #D4D4D5;
+}
+.ui.card>.content>.header, .ui.cards>.card>.content>.header {
+  font-weight: 400;
+  font-family: @admin-font-family;
+  color: @brand-primary;
+}
+
+.ui.mini.image, .ui.mini.images .image, .ui.mini.images img, .ui.mini.images svg {
+  width: 50px;
+  height: auto;
+  font-size: .88571429rem;
+  color: @brand-primary;
+}
+
+.ui.card .meta, .ui.cards > .card .meta {
+  color: @brand-primary;
+  margin-top: 15px;
+}
+
+.ui.cards{
+  justify-content: center;
+}
+.ui.divided.grid:not([class*="vertically divided"]) > .column:first-child, .ui.divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
+  min-height: 190px!important;
+  height: initial!important;
+}
+
+.ui.divided.grid:not([class*="vertically divided"]) > .column:not(.row), .ui.divided.grid:not([class*="vertically divided"]) > .row > .column {
+  min-height: 190px!important;
+  height: initial!important;
+}

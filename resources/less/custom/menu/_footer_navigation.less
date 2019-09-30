@@ -1,0 +1,76 @@
+/* less/menu/_footer_navigation.less */
+
+.ui.inverted.menu {
+  background: @brand-success-admin-bg;
+}
+
+/* less/menu/_main_menu.less */
+.ui.menu .item {
+padding: 1.78571em .95em;
+}
+
+.ui.icon.menu, .ui.vertical.icon.menu {
+           width: 115px;
+           box-shadow: -3px -1px 14px -9px black inset;
+         }
+
+.ui.inverted.menu {
+ background: #ed712a;
+}
+
+.ui.inverted {
+            &.menu {
+              background: @white-typo;
+              .bp-team {
+                border-bottom: 1px solid #ececec;
+              }
+          .active.item {
+            background: @brand-primary;
+            &:after{
+              content: "";
+              position: absolute;
+              bottom: 40%;
+              left: 90%;
+              border-top: 10px solid rgba(232, 120, 120, 0);
+              border-right: 11px solid #f7f7f7;
+              border-left: 0px solid #f7f7f7;
+              border-bottom: 10px solid rgba(232, 120, 120, 0);
+            }
+            &:hover {
+              background: @brand-primary-light;
+              color: @white-typo;
+              .icon {
+                color: @white-typo;
+              }
+            }
+          }
+        }
+        &.icon.menu a.item {
+          color: @brand-success-admin;
+          &:hover {
+            background: @brand-primary;
+            color: @white-typo;
+            .icon {
+              color: @white-typo;
+            }
+          }
+        }
+
+        &.icon.menu {
+          .icon {
+            color: @brand-primary;
+          }
+          .item {
+            &.bp-team {
+              color: @brand-primary;
+            }
+          }
+        }
+      }
+
+.ui.menu .active.item>i.icon {
+  color: @white-typo;
+}
+.ui.visible.bottom.overlay.sidebar, .ui.visible.left.overlay.sidebar, .ui.visible.right.overlay.sidebar, .ui.visible.top.overlay.sidebar {
+ z-index: 999;
+}

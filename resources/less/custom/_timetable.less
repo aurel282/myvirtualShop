@@ -1,0 +1,156 @@
+//edit timetable
+
+.edit-timetable .ui.divided.grid:not([class*="vertically divided"]) > .column:not(.row),
+#formtimetable  .ui.divided.grid:not([class*="vertically divided"]) > .row > .column{
+  width:100%;
+  height:initial!important;
+  min-height:60px!important;
+  cursor:pointer;
+}
+#menu-auto{
+  position:absolute;
+  top:0;
+  right:0;
+  float:right;
+
+  .flex-direction(column);
+  .flex-display(flex);
+  .flex-wrap(wrap);
+  .justify-content(flex-end);
+  .bottom-select{
+    border-top:1px solid #c2c2c2;
+  }
+}
+
+.table-time{
+  width:100%;
+
+  .align-content(flex-start);
+  .align-items(flex-start);
+  .flex-direction(row);
+  .flex-display(flex);
+  .flex-wrap(wrap);
+  .justify-content(flex-start);
+  .table-row{
+    z-index:0;
+    width:100%;
+    border-top:0;
+
+    .flex-display(flex);
+    .flex-wrap(wrap);
+    input:checked + label{
+      background:@brand-success-admin;
+    }
+    label{
+      z-index:999;
+      display:inline-table;
+      width:107%;
+      height:16px;
+      cursor:pointer;
+      background:grey;
+    }
+    .justify-content(flex-start);
+    &:first-child{
+      margin-bottom:10px;
+    }
+    .table-column{
+      width:1vw;
+
+      .align-items(flex-start);
+      .flex-direction(column);
+      .flex-display(flex);
+      .justify-content(flex-start);
+      &:first-child{
+        width:150px;
+      }
+      &:last-of-type{
+        border-right:0;
+      }
+      &:nth-child(2n-2):not(.column-reserv){
+        z-index:999;
+        height:32px;
+        border-left:1px solid #d4d4d5;
+      }
+      .table-cell{
+        width:100%;
+        margin-left:-2px;
+        border-bottom:1px solid black;
+
+        .align-items(flex-start);
+        .flex-display(flex);
+        .justify-content(flex-start);
+        &:last-of-type{
+          text-align:left;
+          border-bottom:0;
+        }
+      }
+    }
+  }
+}
+.table-row:last-child .table-column{
+  height:14px!important;
+  border-left:none!important;;
+}
+.edit-timetable{
+  .selectable-hours{
+    display:inline-table;
+    width:150px;
+    text-align:center;
+  }
+  input[type=checkbox],
+  input[type=radio]{
+    position:absolute;
+    z-index:9999;
+    top:0;
+    left:0;
+    width:17px;
+    height:17px;
+    cursor:pointer;
+    outline:0;
+    opacity:0!important;
+  }
+  .table-column.toggle-type-of-use:hover label{
+    background:#404040;
+  }
+  .menu-auto-info{
+    position:absolute;
+    z-index:0;
+    right:182px;
+    bottom:-45px;
+    width:calc(~'100% - 182px');
+
+    .flex-display(flex);
+    .justify-content(flex-end);
+    .column{
+      cursor:help!important;
+    }
+  }
+  .popup{
+    width:100%;
+  }
+}
+
+.table-time .table-row input:disabled + label,
+.table-time .table-row input:disabled{
+  cursor:default;
+  background:darkred;
+}
+
+/* Description */
+
+.edit-description{
+  .description-item,
+  .description-radio{
+    display:none;
+  }
+  .lang-selector{
+    .align-items(center);
+    .flex-display(flex)!important;
+    .lang-text{
+      .flex(1);
+    }
+    .lang-icon{
+      .flex(0);
+    }
+  }
+}
