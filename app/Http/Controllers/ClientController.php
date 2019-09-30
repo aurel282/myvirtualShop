@@ -12,7 +12,7 @@ class ClientController extends Controller
         );
     }
 
-    public function list()
+    public function show()
     {
         return view(
             'client.list',
