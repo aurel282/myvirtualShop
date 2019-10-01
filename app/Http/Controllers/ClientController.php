@@ -15,7 +15,7 @@ class ClientController extends Controller
     public function show()
     {
         return view(
-            'client.list',
+            'client.show',
             []
         );
     }
