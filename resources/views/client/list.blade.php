@@ -43,7 +43,7 @@
     <thead class="full-width">
     <tr style="background: #f9fafb;" class="no-sort">
         <th colspan="7" style="background: #f9fafb!important;" class="no-sort">
-            <a href="{{ route('admin.organisation_creation_steps.step_01_organisation') }}" class="ui right floated small primary labeled icon button mobile-reset-float">
+            <a href="{{ route('dashboard') }}" class="ui right floated small primary labeled icon button mobile-reset-float">
                 <i class="add icon" style="color:white;"></i>
                 @lang('client.list.create_new')
             </a>

@@ -22,7 +22,7 @@ class ClientController extends Controller
         );
     }
 
-    public function show()
+    public function show(Request $request)
     {
         return view(
             'client.show',
