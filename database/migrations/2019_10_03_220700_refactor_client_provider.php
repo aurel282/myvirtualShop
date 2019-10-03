@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFirstTables extends Migration
+class RefactoClientAndProviderOne extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,17 @@ class CreateFirstTables extends Migration
      */
     public function up()
     {
-        Schema::rename('client', 'clients');
-        Schema::rename('bill', 'bills');
-        Schema::rename('address', 'addresses');
-        Schema::rename('provider', 'providers');
-        Schema::rename('purchase', 'purchases');
-        Schema::rename('product', 'products');
+        Schema::table('clients', function($table) {
+            $table->dropColumn('type');
+            $table->dropColumn('description');
+            $table->string('phone');
+        });
+
+        Schema::table('providers', function($table) {
+            $table->dropColumn('type');
+            $table->dropColumn('description');
+            $table->string('phone');
+        });
     }
 
     /**
@@ -28,11 +33,16 @@ class CreateFirstTables extends Migration
      */
     public function down()
     {
-        Schema::rename('clients', 'client');
-        Schema::rename('bills', 'bill');
-        Schema::rename('addresses', 'address');
-        Schema::rename('providers', 'provider');
-        Schema::rename('purchases', 'purchase');
-        Schema::rename('products', 'product');
+        Schema::table('clients', function($table) {
+            $table->text('type');
+            $table->longText('description');
+            $table->dropColumn('phone');
+        });
+
+        Schema::table('providers', function($table) {
+            $table->text('type');
+            $table->longText('description');
+            $table->dropColumn('phone');
+        });
     }
 }
