@@ -54,14 +54,14 @@ class MenuMiddleware
 				'style' => 'height:59px'
 			],
 			[
-				'key' => 'organisation',
+				'key' => 'client',
 				'attributes' => [
 					'class' => 'icon-orga btn-nav'
 				],
 				'links' => [
 					[
-						'key' => 'organisation.list',
-						'route' => 'dashboard',
+						'key' => 'client.list',
+						'route' => 'client.list',
 					],
 				],
 			],

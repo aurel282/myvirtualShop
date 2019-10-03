@@ -1,9 +1,9 @@
 @extends('layout.template-list')
 
 @section('adminHeader')
-    <h2 class="ui dividing header">@lang('organisation.list.title')
+    <h2 class="ui dividing header">@lang('client.list.title')
         <span style="font-size: 14px;">
-         - @lang('organisation.list.sub_title')
+         - @lang('client.list.sub_title')
     </span>
     </h2>
 @endsection
@@ -15,13 +15,13 @@
                 <div class="five fields">
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder={{trans('organisation.list.search.by_id')}} name="organisation_id" type="text" value="">
+                            <input placeholder={{trans('client.list.search.by_id')}} name="organisation_id" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder={{trans('organisation.list.search.by_name')}} name="organisation_name" type="text" value="">
+                            <input placeholder={{trans('client.list.search.by_name')}} name="organisation_name" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                     <div class="two wide field">
                         <button class="ui primary labeled icon button">
                             <i title="" class="search icon"></i>
-                            @lang('organisation.list.search.search')
+                            @lang('client.list.search.search')
                         </button>
                     </div>
                 </div>
@@ -45,25 +45,25 @@
         <th colspan="7" style="background: #f9fafb!important;" class="no-sort">
             <a href="{{ route('admin.organisation_creation_steps.step_01_organisation') }}" class="ui right floated small primary labeled icon button mobile-reset-float">
                 <i class="add icon" style="color:white;"></i>
-                @lang('organisation.list.create_new')
+                @lang('client.list.create_new')
             </a>
         </th>
     </tr>
     <tr class="main-head">
         <th style="width: 1px;">#</th>
-        <th>@lang('organisation.list.name')</th>
-        <th>@lang('organisation.list.nb_parking')</th>
-        <th>@lang('organisation.list.nb_fleet')</th>
-        <th>@lang('organisation.list.users')</th>
-        <th>@lang('organisation.list.logo')</th>
+        <th>@lang('client.list.name')</th>
+        <th>@lang('client.list.firstname')</th>
+        <th>@lang('client.list.email')</th>
+        <th>@lang('client.list.phone')</th>
+        <th>@lang('client.list.address')</th>
         <th style="width: 1px;">@lang('organisation.list.action')</th>
     </tr>
     </thead>
     <tbody>
-    @foreach($organisations as $organisation)
+    @foreach($clients as $client)
         <tr>
             <td>
-                <a href="{{ route('admin.organisation.show', $organisation->id) }}" >
+                <a href="{{ route('client.show', $client->id) }}" >
                     # {{ $organisation->id }}
                 </a>
             </td>
@@ -74,7 +74,7 @@
                         @endforeach
                 "
             >
-                <b style="color:#ed712a;">{{count($organisation->tenants)}} </b>@lang('organisation.list.parkings')
+                <b style="color:#ed712a;">{{count($client->tenants)}} </b>@lang('client.list.parkings')
             </td>
             <td data-tooltip="
                     @foreach($organisation->fleet_managers as $fleet_manager)
@@ -85,20 +85,20 @@
                 <b style="color:#ed712a;">{{count($organisation->fleet_managers)}} </b>@lang('organisation.list.fleet_manager')FleetManager(s)
             </td>
             <td>
-                <a href="{{ route('admin.profile.list', ['organisation' => $organisation->id ]) }}" >
-                    {{$organisation->number_of_users}} @lang('organisation.list.users')
+                <a href="{{ route('admin.profile.list', ['organisation' => $client->id ]) }}" >
+                    {{$client->number_of_users}} @lang('client.list.users')
                 </a>
             </td>
             <td>
                 @if($organisation->logo_url)
-                    <img width="50px" src="{{ $organisation->logo_url }}" alt="logo_{{ $organisation->name }}">
+                    <img width="50px" src="{{ $organisation->logo_url }}" alt="logo_{{ $client->name }}">
                 @else
                     -
                 @endif
             </td>
             <td>
                 <a href="{{ route('client.show', $organisation->id) }}" class="ui inverted admin-bp-btn--success button small">
-                    @lang('organisation.list.show')
+                    @lang('client.list.show')
                 </a>
             </td>
         </tr>

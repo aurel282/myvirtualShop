@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Repository\Parking;
+namespace App\Repository;
 
 use App\Models\Database\Client;
-use App\Repository\AbstractRepository;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 
 class ClientRepository extends AbstractRepository
@@ -17,8 +17,8 @@ class ClientRepository extends AbstractRepository
     }
 
 
-    public function  getAllClient(): Collection
+    public function  getClientList(): Builder
     {
-        return Client::query()->get();
+        return Client::query();
     }
 }

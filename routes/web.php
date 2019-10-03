@@ -24,5 +24,8 @@ Route::group(
 
         Route::get('/', 'DashboardController@getDashboard')
              ->name('dashboard');
+
+        Route::get('/client/list', 'ClientController@getList')
+             ->name('client.list');
     }
 );
