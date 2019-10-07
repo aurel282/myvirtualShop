@@ -64,40 +64,24 @@
         <tr>
             <td>
                 <a href="{{ route('client.show', $client->id) }}" >
-                    # {{ $organisation->id }}
+                    # {{ $client->id }}
                 </a>
             </td>
-            <td>{{ $organisation->name }}</td>
-            <td data-tooltip="
-                        @foreach($organisation->tenants as $tenant)
-            {{$tenant->parking->getName('en')}} •
-                        @endforeach
-                "
+            <td>{{ $client->name }}</td>
+            <td data-tooltip="">
+                <b style="color:#ed712a;">{{count($clients)}} </b>@lang('client.list.parkings')
+            </td>
+            <td data-tooltip=""
             >
-                <b style="color:#ed712a;">{{count($client->tenants)}} </b>@lang('client.list.parkings')
-            </td>
-            <td data-tooltip="
-                    @foreach($organisation->fleet_managers as $fleet_manager)
-            {{$fleet_manager->user->lastname}} •
-                    @endforeach
-                "
-            >
-                <b style="color:#ed712a;">{{count($organisation->fleet_managers)}} </b>@lang('organisation.list.fleet_manager')FleetManager(s)
+                <b style="color:#ed712a;">{{count($clients)}} </b>@lang('organisation.list.fleet_manager')FleetManager(s)
             </td>
             <td>
-                <a href="{{ route('admin.profile.list', ['organisation' => $client->id ]) }}" >
-                    {{$client->number_of_users}} @lang('client.list.users')
-                </a>
+               
             </td>
             <td>
-                @if($organisation->logo_url)
-                    <img width="50px" src="{{ $organisation->logo_url }}" alt="logo_{{ $client->name }}">
-                @else
-                    -
-                @endif
             </td>
             <td>
-                <a href="{{ route('client.show', $organisation->id) }}" class="ui inverted admin-bp-btn--success button small">
+                <a href="{{ route('client.show', $client->id) }}" class="ui inverted admin-bp-btn--success button small">
                     @lang('client.list.show')
                 </a>
             </td>
@@ -114,7 +98,7 @@
         </th>
         <th colspan="10">
             <div class="ui right floated pagination menu floated-pagination">
-                {{ $organisations->links('vendor.pagination.semantic-ui') }}
+                {{ $clients->links('vendor.pagination.semantic-ui') }}
             </div>
         </th>
     </tr>

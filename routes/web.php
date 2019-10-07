@@ -27,5 +27,8 @@ Route::group(
 
         Route::get('/client/list', 'ClientController@getList')
              ->name('client.list');
+
+        Route::get('/client/{client}/show', 'ClientController@show')
+             ->name('client.show');
     }
 );

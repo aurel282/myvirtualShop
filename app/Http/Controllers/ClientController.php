@@ -13,7 +13,8 @@ class ClientController extends Controller
         ClientService $clientService
     )
     {
-        $clients = $clientService->getList()->get();
+        $clients = $clientService->getList()
+                ->paginate(15);
 
         return view(
             'client.list',
