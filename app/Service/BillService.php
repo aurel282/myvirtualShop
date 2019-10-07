@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-class ClientService extends AbstractService
+class BillService extends AbstractService
 {
     public function __construct()
     {

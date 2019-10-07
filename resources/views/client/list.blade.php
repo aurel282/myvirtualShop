@@ -15,13 +15,13 @@
                 <div class="five fields">
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder={{trans('client.list.search.by_id')}} name="organisation_id" type="text" value="">
+                            <input placeholder={{trans('client.list.search.by_id')}} name="client_id" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder={{trans('client.list.search.by_name')}} name="organisation_name" type="text" value="">
+                            <input placeholder={{trans('client.list.search.by_name')}} name="client_name" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
         <th>@lang('client.list.email')</th>
         <th>@lang('client.list.phone')</th>
         <th>@lang('client.list.address')</th>
-        <th style="width: 1px;">@lang('organisation.list.action')</th>
+        <th style="width: 1px;">@lang('client.list.action')</th>
     </tr>
     </thead>
     <tbody>
@@ -68,17 +68,17 @@
                 </a>
             </td>
             <td>{{ $client->name }}</td>
-            <td data-tooltip="">
-                <b style="color:#ed712a;">{{count($clients)}} </b>@lang('client.list.parkings')
-            </td>
-            <td data-tooltip=""
-            >
-                <b style="color:#ed712a;">{{count($clients)}} </b>@lang('organisation.list.fleet_manager')FleetManager(s)
+            <td>
+                {{ $client->firstname }}
             </td>
             <td>
-               
+                {{ $client->email }}
             </td>
             <td>
+                {{ $client->phone }}
+            </td>
+            <td>
+                {{ $client->address ? $client->address->getFullyReadableAttribute() : 'No address' }}
             </td>
             <td>
                 <a href="{{ route('client.show', $client->id) }}" class="ui inverted admin-bp-btn--success button small">

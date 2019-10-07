@@ -5,57 +5,47 @@ namespace App\Models\Database;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
 /**
- * App\Models\Database\Address
+ * Class Client
  *
- * @property int $id
- * @property string|null $street
- * @property string|null $number
- * @property string|null $zip_code
- * @property string|null $city
- * @property string|null $country
- * @property-read mixed $fully_readable
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereCity($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereCountry($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereNumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereStreet($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereZipCode($value)
+ *  @property int $address_id
+ *
+ * @property-read Address|null $address
+ * @package App\Models\Database
  */
-
 class Client extends Eloquent
 {
-	const MAIN_COUNTRIES_KEY = [
-		'FR' => 'FR',
-		'BE' => 'BE',
-		'NL' => 'NL',
-		'LU' => 'LU',
-		'ES' => 'ES',
-		'DE' => 'DE',
-		'IT' => 'IT',
-		'GB' => 'GB',
-	];
 
 	public $timestamps = false;
 
+    protected $casts = [
+        'address_id' => 'int'
+    ];
+
+
 	protected $fillable = [
-		'street',
-		'number',
-		'zip',
-		'city',
-		'country'
+		'name',
+		'firstname',
+		'phone',
+		'email',
+        'address_id'
 	];
 
-	/*
-	public function contacts()
+
+	public function address()
 	{
-		return $this->hasMany(Contact::class);
+		return $this->belongsTo(Address::class);
 	}
 
-	public function corporates()
-	{
-		return $this->hasMany(Corporate::class);
-	}
-	*/
+    public function bills()
+    {
+        return $this->hasMany(Bill::class);
+    }
+    /*
+        public function corporates()
+        {
+            return $this->hasMany(Corporate::class);
+        }
+        */
 
 	public function getFullyReadableAttribute(): string
 	{
