@@ -13,3 +13,9 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+//semantic css
+mix.styles([
+    'resources/less/package_css/main.css',
+    'resources/less/package_css/daterangepicker.css'
+], 'public/css/main.css');
