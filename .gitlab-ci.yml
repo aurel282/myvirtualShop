@@ -13,7 +13,7 @@ building:
     - php artisan cache:clear
     - php artisan config:clear
     - php artisan storage:link
-    - sudo chown -R deployer:www-data /var/www/html/myvirtualshop/
+    - sudo chown -R ubuntu /var/www/html/myvirtualshop/
     - find /var/www/html/myvirtualshop -type f -exec chmod 664 {} \;
     - find /var/www/html/myvirtualshop -type d -exec chmod 775 {} \;
     - chgrp -R www-data storage bootstrap/cache
