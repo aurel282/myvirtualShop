@@ -98,7 +98,61 @@
                     </div>
                 </div>
                 <div class="column">
-
+                    <div class="ui segments">
+                        <div class="ui segment">
+                            <a href="TODO"
+                               class="ui small basic right floated icon button"
+                               data-tooltip="@lang('client.show.edit')"
+                            >
+                                <i class="edit icon" style="color:var(--main-color--light);"></i>
+                            </a>
+                            <h2 class="ui header" style="margin: 0;">
+                                <i class="user icon" style="color:var(--main-color--light);"></i>
+                                <div class="content">
+                                    @lang('client.show.information.title')
+                                    <div class="sub header">@lang('client.show.information.subtitle')</div>
+                                </div>
+                            </h2>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui basic segment">
+                                <div class="content">
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('client.show.information.firstname'):</b>
+                                            <b class="color-text--success">{{ $client->firstname }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('client.show.information.firstname'):</b>
+                                            <b class="color-text--success">{{ $client->lastname }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('client.show.information.firstname'):</b>
+                                            <b class="color-text--success">{{ $client->email }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('client.show.information.firstname'):</b>
+                                            <b class="color-text--success">{{ $client->label }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('client.show.information.firstname'):</b>
+                                            <b class="color-text--success">
+                                                {{ $client->label }}
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 @endsection
