@@ -1,8 +1,8 @@
 before_script:
   - echo "Before script"
   - echo "Test echo"
-  - ls
-  - cd /var/www/html/myvirtualshop #your project path
+#  - ls
+#- cd /var/www/html/myvirtualshop #your project path
 building:
   stage: build
   script:
