@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Database\Client;
 use App\Service\ClientService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ClientController extends Controller
 {
@@ -32,5 +33,21 @@ class ClientController extends Controller
                 'client' => $client,
             ]
         );
+    }
+
+    public function getCreate(Request $request)
+    {
+        return view(
+            'client.create'
+        );
+    }
+
+    public function postCreate(
+        Request $request,
+        ClientService $clientService
+    )
+    {
+        $clientService->createClient($request);
+
     }
 }

@@ -30,5 +30,10 @@ Route::group(
 
         Route::get('/client/{client}/show', 'ClientController@show')
              ->name('client.show');
+
+        Route::get('/client/create', 'ClientController@getCreate')
+             ->name('client.create');
+        Route::post('/client/create', 'ClientController@postCreate')
+             ->name('client.create');
     }
 );
