@@ -196,9 +196,7 @@
 </div>
 	{{--Start - Javascript layout content --}}
 	@section('javascript_layout')
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script src="jquery-3.4.1.min.js"></script>
 		<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 		@include('layout.components.errors')
 		<script type="text/javascript" src="{{ asset('js/global.js') }}"></script>
