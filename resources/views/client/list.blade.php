@@ -47,6 +47,10 @@
                 <i class="add icon" style="color:white;"></i>
                 @lang('client.list.create_new')
             </a>
+            <a href="{{ route('client.create') }}" class="ui right floated small primary labeled icon button mobile-reset-float">
+                <i class="add icon" style="color:white;"></i>
+                @lang('client.list.create_new')
+            </a>
         </th>
     </tr>
     <tr class="main-head">

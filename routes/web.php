@@ -35,5 +35,10 @@ Route::group(
              ->name('client.create');
         Route::post('/client/create', 'ClientController@postCreate')
              ->name('client.create');
+
+        Route::get('/client/{client}/edit', 'ClientController@getEdit')
+             ->name('client.edit');
+        Route::post('/client/{client}/edit', 'ClientController@postEdit')
+             ->name('client.edit');
     }
 );
