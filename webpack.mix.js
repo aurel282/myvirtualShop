@@ -19,3 +19,17 @@ mix.styles([
     'resources/less/package_css/main.css',
     'resources/less/package_css/daterangepicker.css'
 ], 'public/css/main.css');
+
+//specific
+mix.scripts([
+    // 'resources/js/scripts/daterangepicker.min.js',
+    'resources/js/scripts/setDates.js',
+    'resources/js/scripts/daterange.js',
+], 'public/js/allDates.js');
+
+//global
+mix.scripts([
+    'resources/js/scripts/sortable_list.js',
+    'resources/js/scripts/main-menu.js',
+    'resources/js/scripts/timetableEdit.js',
+], 'public/js/global.js');
