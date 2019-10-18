@@ -7,7 +7,7 @@ window._ = require('lodash');
  */
 
 try {
-    window.$ = window.jQuery = require('jquery');
+    global.$ = global.jQuery = require('jquery');
     window.semantic = require('fomantic-ui');
     window.moment = require('moment');
 
