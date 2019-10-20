@@ -47,19 +47,19 @@
                 <div class="column">
                     <div class="ui segments">
                         <div class="ui segment">
-                            <a href="{{ route('provider.edit', $provider) }}"
+                            <a href="{{ route('product.create', $provider) }}"
                                class="ui small basic right floated icon button"
                                data-tooltip="@lang('provider.product.add')"
                             >
                                 <i class="add icon" style="color:var(--main-color--light);"></i>
                             </a>
-                            <a href="{{ route('provider.edit', $provider) }}"
+                            <a href="{{ route('product.import', $provider) }}"
                                class="ui small basic right floated icon button"
                                data-tooltip="@lang('provider.product.import')"
                             >
                                 <i class="download icon" style="color:var(--main-color--light);"></i>
                             </a>
-                            <a href="{{ route('provider.edit', $provider) }}"
+                            <a href="{{ route('product.bulk_delete', $provider) }}"
                                class="ui small basic right floated icon button"
                                data-tooltip="@lang('provider.product.delete_all')"
                             >
@@ -85,8 +85,9 @@
                                         <thead class="full-width">
                                             <tr class="main-head">
                                                 <th>@lang('provider.show.product.id') </th>
-                                                <th>@lang('provider.show.product.date')</th>
-                                                <th>@lang('provider.show.product.total')</th>
+                                                <th>@lang('provider.show.product.name')</th>
+                                                <th>@lang('provider.show.product.quantity')</th>
+                                                <th>@lang('provider.show.product.price_per_unity')</th>
                                                 <th style="width: 1px;">@lang('provider.show.product.action')</th>
                                             </tr>
                                         </thead>
@@ -104,6 +105,14 @@
                                                 </td>
                                                 <td>
                                                     {{ $product->price_per_unity }}€
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('provider.show', $provider->id) }}" class="ui inverted admin-bp-btn--success button small">
+                                                        @lang('provider.show.product.edit')
+                                                    </a>
+                                                    <a href="{{ route('provider.show', $provider->id) }}" class="ui inverted admin-bp-btn--success button small">
+                                                        @lang('provider.show.product.delete')
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach

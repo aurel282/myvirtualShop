@@ -68,5 +68,17 @@ Route::group(
              ->name('provider.import');
         Route::post('/provider/import', 'ProviderController@postImport')
              ->name('provider.import');
+
+
+        Route::get('/{provider}/product/import', 'ProductController@getImport')
+             ->name('product.import');
+        Route::post('/{provider}/product/import', 'ProductController@postImport')
+             ->name('product.import');
+        Route::get('/{provider}/product/create', 'ProductController@getCreate')
+             ->name('product.create');
+        Route::post('/{provider}/product/create', 'ProductController@postCreate')
+             ->name('product.create');
+        Route::get('/{provider}/product/delete_all', 'ProductController@bulkDeleteFromProvider')
+             ->name('product.bulk_delete');
     }
 );

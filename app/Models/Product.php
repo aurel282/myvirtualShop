@@ -10,15 +10,20 @@ class Product extends Eloquent
 	public $timestamps = false;
 
 	protected $fillable = [
-		'date',
-		'client_id',
-		'isPaid',
+		'name',
+		'description',
+        'provider_id',
+        'quantity',
+        'price_per_unity',
+        'color',
+        'brand',
+        'material'
 	];
 
 
-	public function client()
+	public function provider()
 	{
-		return $this->hasOne(Client::class);
+		return $this->hasOne(Provider::class);
 	}
 
 }

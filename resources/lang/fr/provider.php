@@ -14,8 +14,8 @@ return [
     */
 
     'create' => [
-        'title' => 'Création d\'un client',
-        'subtitle' => 'Page de création d\'un client',
+        'title' => 'Création d\'un fournisseur',
+        'subtitle' => 'Page de création d\'un fournisseur',
         'help' => 'Veuillez compléter tous les champs',
         'name_label' => 'Nom',
         'name' => 'Dupont',
@@ -42,8 +42,8 @@ return [
         ]
     ],
     'edit' => [
-        'title' => 'Edition d\'un client',
-        'subtitle' => 'Page d\'édition d\'un client',
+        'title' => 'Edition d\'un fournisseur',
+        'subtitle' => 'Page d\'édition d\'un fournisseur',
         'help' => 'Veuillez compléter tous les champs',
         'name_label' => 'Nom',
         'name' => 'Dupont',
@@ -70,8 +70,8 @@ return [
         ]
     ],
     'list' => [
-        'title' => 'Listes des clients',
-        'subtitle' => 'Liste des clients existants',
+        'title' => 'Listes des fournisseurs',
+        'subtitle' => 'Liste des fournisseurs existants',
         'import_csv' => 'Importer via CSV',
         'create_new' => 'Créer nouveau client',
         'search' => [

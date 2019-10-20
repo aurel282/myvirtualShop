@@ -3,7 +3,7 @@
 @section('adminHeader')
     <h2 class="ui dividing header">@lang('provider.list.title')
         <span style="font-size: 14px;">
-         - @lang('provider.list.sub_title')
+         - @lang('provider.list.subtitle')
     </span>
     </h2>
 @endsection
@@ -15,13 +15,13 @@
                 <div class="five fields">
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder={{trans('provider.list.search.by_id')}} name="provider_id" type="text" value="">
+                            <input placeholder="{{trans('provider.list.search.by_id')}}" name="provider_id" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder={{trans('provider.list.search.by_name')}} name="provider_name" type="text" value="">
+                            <input placeholder="{{trans('provider.list.search.by_name')}}" name="provider_name" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>

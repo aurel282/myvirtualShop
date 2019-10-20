@@ -89,6 +89,18 @@ class MenuMiddleware
                     ],
                 ],
             ],
+            [
+                'key' => 'purchase',
+                'attributes' => [
+                    'class' => 'icon-parking btn-nav'
+                ],
+                'links' => [
+                    [
+                        'key' => 'purchase.list',
+                        'route' => 'dashboard',
+                    ],
+                ],
+            ],
 		];
 
 		return $configArray;

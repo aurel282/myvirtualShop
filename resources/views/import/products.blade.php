@@ -27,7 +27,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="{{ route('client.import') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" method="POST" action="{{ route('product.import', $provider) }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <input type='file' name='file'   class="ui left labeled icon button inverted admin-bp-btn--info button back-to-list">
                             <input type='submit' name='submit' value='Import'  class="ui left labeled icon button inverted admin-bp-btn--info button back-to-list">

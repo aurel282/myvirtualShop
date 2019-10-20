@@ -39,7 +39,6 @@ class ClientRepository extends AbstractRepository
     /**
      * @param Client              $client
      * @param array $request
-     * @param int                 $addressId
      *
      * @return bool
      */

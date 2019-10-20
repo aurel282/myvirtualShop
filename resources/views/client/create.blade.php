@@ -58,28 +58,28 @@
     <div class="two fields">
         <div class="field required">
             {{ Form::label('address[street]', trans('client.create.address.street_label')) }}
-            {{ Form::text('address[street]', '',  ['class'=>'', 'placeholder' => trans('client.create.address_placeholder')]) }}
+            {{ Form::text('address[street]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.street')]) }}
         </div>
         <div class="field required">
             {{ Form::label('address[number]', trans('client.create.address.number_label')) }}
-            {{ Form::text('address[number]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.placeholder_two')]) }}
+            {{ Form::text('address[number]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.number')]) }}
         </div>
     </div>
     <div class="three fields ">
         <div class="field required">
             {{ Form::label('address[city]', trans('client.create.address.city_label')) }}
-            {{ Form::text('address[city]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.city_placeholder')]) }}
+            {{ Form::text('address[city]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.city')]) }}
         </div>
         <div class="field required">
             {{ Form::label('address[zip_code]', trans('client.create.address.zip_code_label')) }}
-            {{ Form::text('address[zip_code]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.zip_code_placeholder')]) }}
+            {{ Form::text('address[zip_code]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.zip_code')]) }}
         </div>
         <div class="field required">
-            <label>@lang('client.create.country.label')</label>
+            <label>@lang('client.create.address.country_label')</label>
             <div class="ui fluid search selection dropdown">
                 <input type="hidden" name="address[country]">
                 <i class="dropdown icon"></i>
-                <div class="default text">@lang('client.create.address.country.default_select')</div>
+                <div class="default text">@lang('client.create.address.country')</div>
                 <div class="menu">
                     <div class="item" data-value="be"><i class="be flag"></i>Belgium</div>
                     <div class="item" data-value="fr"><i class="fr flag"></i>France</div>
