@@ -1,0 +1,50 @@
+@extends('layout.template-form')
+
+@section('adminHeader')
+    <h2 class="ui dividing header">@lang('product.create.title')
+        <span style="font-size: 14px;">
+         - @lang('product.create.subtitle')
+        </span>
+    </h2>
+@endsection
+
+@section('containerContent')
+    <h2 class="ui header dividing" style="background: #e8ecf1; padding: 10px;">
+        <div class="content">
+            <div class="sub header">@lang('product.create.help')</div>
+        </div>
+    </h2>
+    <br />
+    {{ Form::open(['class' => 'ui form']) }}
+
+    <div class="two fields">
+        <div class="field required">
+            {{ Form::label('name', trans('product.create.name_label')) }}
+            {{ Form::text('name', null, ['placeholder' => trans('product.create.name')]) }}
+        </div>
+        <div class="field required">
+            {{ Form::label('description', trans('product.create.description_label')) }}
+            {{ Form::text('description', null, ['placeholder' => trans('product.create.description')]) }}
+        </div>
+    </div>
+    <br />
+    <div class="two fields">
+        <div class="ten wide field required">
+            {{ Form::label('quantity', trans('product.create.quantity_label')) }}
+            {{ Form::text('quantity', 1, ['placeholder' => trans('product.create.quantity')]) }}
+        </div>
+        <div class="twelve wide field required">
+            {{ Form::label('price_per_unity', trans('product.create.price_per_unity_label')) }}
+            {{ Form::text('price_per_unity', null, ['placeholder' => trans('product.create.price_per_unity_number')]) }}
+        </div>
+    </div>
+
+    @parent
+
+    {{ Form::close() }}
+
+@endsection
+
+@section('javascript_layout')
+    @parent
+@endsection

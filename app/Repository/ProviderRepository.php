@@ -53,7 +53,7 @@ class ProviderRepository extends AbstractRepository
     public function  edit(Provider $provider, array $request): bool
     {
         return $provider->update([
-            'name' => $request['name'],
+            'name' => $request['lastname'],
             'firstname' => $request['firstname'],
             'email' => $request['email'],
             'phone' => $request['phone_number'],

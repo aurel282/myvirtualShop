@@ -46,7 +46,7 @@ class ClientRepository extends AbstractRepository
     public function  edit(Client $client, array $request): bool
     {
         return $client->update([
-            'name' => $request['name'],
+            'name' => $request['lastname'],
             'firstname' => $request['firstname'],
             'email' => $request['email'],
             'phone' => $request['phone_number'],

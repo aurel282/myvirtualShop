@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Client\CreateProviderRequest;
-use App\Http\Requests\Client\UpdateClientRequest;
-use App\Http\Requests\Client\UpdateProviderRequest;
+use App\Http\Requests\Provider\CreateProviderRequest;
+use App\Http\Requests\Provider\UpdateProviderRequest;
 use App\Models\Database\Provider;
 use App\Service\AddressService;
 use App\Service\ProviderService;
 use App\ValueObjects\AddressValueObject;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class ProviderController extends Controller
 {
     public function getList(
         Request $request,

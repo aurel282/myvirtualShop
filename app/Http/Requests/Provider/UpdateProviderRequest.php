@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Client;
+namespace App\Http\Requests\Provider;
 
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -14,7 +14,7 @@ class UpdateProviderRequest extends FormRequest
             'firstname' => 'required|string|max:50',
             'lastname' => 'required|string|max:50',
             'email' => 'required|string|max:75',
-            'language' => 'required|string|max:5',
+            'language_code' => 'required|string|max:5',
             'phone_number' => 'string|max:15',
             'mobile_number' => 'string|max:15',
             'address.street' => 'required|string|max:150',

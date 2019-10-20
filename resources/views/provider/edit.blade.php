@@ -68,7 +68,7 @@
     <div class="three fields ">
         <div class="field required">
             {{ Form::label('address[city]', trans('provider.edit.address.city_label')) }}
-            {{ Form::text('address[city]', $client->address->city ,  ['class'=>'', 'placeholder' => trans('provider.edit.address.city_placeholder')]) }}
+            {{ Form::text('address[city]', $provider->address->city ,  ['class'=>'', 'placeholder' => trans('provider.edit.address.city_placeholder')]) }}
         </div>
         <div class="field required">
             {{ Form::label('address[zip_code]', trans('provider.edit.address.zip_code_label')) }}

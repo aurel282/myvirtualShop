@@ -8,14 +8,14 @@
 
                     <a href="{{ url()->previous() }}" class="ui left labeled icon button inverted admin-bp-btn--info button back-to-list" style="position: absolute; left: 0; top: 27px;">
                         <i style="color:#545454!important;" class="color-bg--success left arrow icon color" ></i>
-                        @lang('client.show.back')
+                        @lang('provider.show.back')
                     </a>
 
                     <h3>
                         {{$provider->name}} {{$provider->firstname}}
                     </h3>
                     <p>
-                        @lang('client.show.title'){{$provider->id}}
+                        @lang('provider.show.title'){{$provider->id}}
                     </p>
                 </div>
             </div>
@@ -26,12 +26,12 @@
             <li class="navigation-item">
                 <a href=# class="navigation-item-link">
                     <i title="" class="  list layout   icon" style="color:var(--main-color);"></i>
-                    @lang('client.show.clear_bills')
+                    @lang('provider.show.clear_bills')
                 </a>
             <li class="navigation-item">
                 <a href=# class="navigation-item-link">
                     <i title="" class="  sign layout   icon" style="color:var(--main-color);"></i>
-                    @lang('client.show.delete')
+                    @lang('provider.show.delete')
                 </a>
             </li>
 
@@ -47,15 +47,32 @@
                 <div class="column">
                     <div class="ui segments">
                         <div class="ui segment">
+                            <a href="{{ route('provider.edit', $provider) }}"
+                               class="ui small basic right floated icon button"
+                               data-tooltip="@lang('provider.product.add')"
+                            >
+                                <i class="add icon" style="color:var(--main-color--light);"></i>
+                            </a>
+                            <a href="{{ route('provider.edit', $provider) }}"
+                               class="ui small basic right floated icon button"
+                               data-tooltip="@lang('provider.product.import')"
+                            >
+                                <i class="download icon" style="color:var(--main-color--light);"></i>
+                            </a>
+                            <a href="{{ route('provider.edit', $provider) }}"
+                               class="ui small basic right floated icon button"
+                               data-tooltip="@lang('provider.product.delete_all')"
+                            >
+                                <i class="trash icon" style="color:var(--main-color--light);"></i>
+                            </a>
                             <h2 class="ui header" style="margin: 0;">
-
                                 <i class="star icon" style="color:var(--main-color--light);">
                                 </i>
 
                                 <div class="content">
-                                    @lang('client.show.bills.title')
+                                    @lang('provider.show.product.title')
                                     <div class="sub header">
-                                        @lang('client.show.bills.subtitle')
+                                        @lang('provider.show.product.subtitle')
                                     </div>
                                 </div>
                             </h2>
@@ -67,10 +84,10 @@
                                     <table class="ui celled table">
                                         <thead class="full-width">
                                             <tr class="main-head">
-                                                <th>@lang('provider.show.bills.id') </th>
-                                                <th>@lang('provider.show.bills.date')</th>
-                                                <th>@lang('provider.show.bills.total')</th>
-                                                <th style="width: 1px;">@lang('provider.show.bills.action')</th>
+                                                <th>@lang('provider.show.product.id') </th>
+                                                <th>@lang('provider.show.product.date')</th>
+                                                <th>@lang('provider.show.product.total')</th>
+                                                <th style="width: 1px;">@lang('provider.show.product.action')</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -102,7 +119,7 @@
                         <div class="ui segment">
                             <a href="{{ route('provider.edit', $provider) }}"
                                class="ui small basic right floated icon button"
-                               data-tooltip="@lang('client.show.edit')"
+                               data-tooltip="@lang('provider.show.edit')"
                             >
                                 <i class="edit icon" style="color:var(--main-color--light);"></i>
                             </a>

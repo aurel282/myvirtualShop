@@ -48,7 +48,7 @@ class MenuMiddleware
 				'key' => 'home',
 				'class' => 'home-item',
 				'title' => '
-				<h5 for="personal_menu_chevron marginLeft-xl" style="font-size: 1.5rem; "><img src="https://admin.business.bepark.eu/img/logo_bepark/logo.png" width="77" class="image" alt="BePark"/> Business Admin</h5>
+				<h5 for="personal_menu_chevron marginLeft-xl" style="font-size: 1.5rem; "> Bourse Admin</h5>
 				<input type="checkbox" id="personal_menu_chevron" style="display: none"/>
 				',
 				'style' => 'height:59px'
@@ -66,25 +66,25 @@ class MenuMiddleware
 				],
 			],
 			[
-				'key' => 'Profile',
+				'key' => 'provider',
 				'attributes' => [
 					'class' => 'icon-orga btn-nav'
 				],
 				'links' => [
 					[
-						'key' => 'profile.list',
-						'route' => 'dashboard',
+						'key' => 'provider.list',
+						'route' => 'provider.list',
 					],
 				],
 			],
             [
-                'key' => 'parking',
+                'key' => 'product',
                 'attributes' => [
                     'class' => 'icon-parking btn-nav'
                 ],
                 'links' => [
                     [
-                        'key' => 'parking.list',
+                        'key' => 'product.list',
                         'route' => 'dashboard',
                     ],
                 ],
