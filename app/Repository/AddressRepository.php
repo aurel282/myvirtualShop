@@ -3,10 +3,7 @@
 namespace App\Repository;
 
 use App\Models\Database\Address;
-use App\Models\Database\Client;
-use App\Repository\AbstractRepository;
 use App\ValueObjects\AddressValueObject;
-use Illuminate\Support\Collection;
 
 class AddressRepository extends AbstractRepository
 {

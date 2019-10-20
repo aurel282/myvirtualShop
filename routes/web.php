@@ -25,6 +25,7 @@ Route::group(
         Route::get('/', 'DashboardController@getDashboard')
              ->name('dashboard');
 
+        // Client
         Route::get('/client/list', 'ClientController@getList')
              ->name('client.list');
 
@@ -45,5 +46,27 @@ Route::group(
              ->name('client.import');
         Route::post('/client/import', 'ClientController@postImport')
              ->name('client.import');
+
+        // Provider
+        Route::get('/provider/list', 'ProviderController@getList')
+             ->name('provider.list');
+
+        Route::get('/provider/{provider}/show', 'ProviderController@show')
+             ->name('provider.show');
+
+        Route::get('/provider/create', 'ProviderController@getCreate')
+             ->name('provider.create');
+        Route::post('/provider/create', 'ProviderController@postCreate')
+             ->name('provider.create');
+
+        Route::get('/provider/{provider}/edit', 'ProviderController@getEdit')
+             ->name('provider.edit');
+        Route::post('/provider/{provider}/edit', 'ProviderController@postEdit')
+             ->name('provider.edit');
+
+        Route::get('/provider/import', 'ProviderController@getImport')
+             ->name('provider.import');
+        Route::post('/provider/import', 'ProviderController@postImport')
+             ->name('provider.import');
     }
 );
