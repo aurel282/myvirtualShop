@@ -44,26 +44,12 @@
     </div>
     <br />
     <div class="two fields">
-        <div class="four wide field required">
-            {{ Form::label('phone_prefix', trans('client.create.phone_prefix_label')) }}
-            {{ Form::select('phone_prefix', [
-                    '+32' => 'Belgium (+32)',
-					'+33' => 'France (+33)'
-            ], null, ['class' => 'ui fluid normal dropdown']) }}
-        </div>
         <div class="twelve wide field required">
             {{ Form::label('phone_number', trans('client.create.phone_number_label')) }}
             {{ Form::text('phone_number', null, ['placeholder' => trans('client.create.phone_number')]) }}
         </div>
     </div>
     <div class="two fields">
-        <div class="four wide field required">
-            {{ Form::label('mobile_prefix', trans('client.create.mobile_prefix_label')) }}
-            {{ Form::select('mobile_prefix', [
-                    '+32' => 'Belgium (+32)',
-					'+33' => 'France (+33)',
-            ], null, ['class' => 'ui fluid normal dropdown']) }}
-        </div>
         <div class="twelve wide field required">
             {{ Form::label('mobile_number', trans('client.create.mobile_number_label')) }}
             {{ Form::text('mobile_number', null, ['placeholder' => trans('client.create.mobile_number')]) }}
@@ -81,16 +67,12 @@
     </div>
     <div class="three fields ">
         <div class="field required">
-            <div class="field">
-                {{ Form::label('address[city]', trans('client.create.address.city_label')) }}
-                {{ Form::text('address[city]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.city_placeholder')]) }}
-            </div>
+            {{ Form::label('address[city]', trans('client.create.address.city_label')) }}
+            {{ Form::text('address[city]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.city_placeholder')]) }}
         </div>
         <div class="field required">
-            <div class="field">
-                {{ Form::label('address[zip_code]', trans('client.create.address.zip_code_label')) }}
-                {{ Form::text('address[zip_code]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.zip_code_placeholder')]) }}
-            </div>
+            {{ Form::label('address[zip_code]', trans('client.create.address.zip_code_label')) }}
+            {{ Form::text('address[zip_code]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.zip_code_placeholder')]) }}
         </div>
         <div class="field required">
             <label>@lang('client.create.country.label')</label>

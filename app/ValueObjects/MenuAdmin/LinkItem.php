@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ValueObject\MenuAdmin;
+namespace App\ValueObjects\MenuAdmin;
 
 class LinkItem extends ItemAbstract
 {

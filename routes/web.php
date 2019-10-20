@@ -40,5 +40,10 @@ Route::group(
              ->name('client.edit');
         Route::post('/client/{client}/edit', 'ClientController@postEdit')
              ->name('client.edit');
+
+        Route::get('/client/import', 'ClientController@getImport')
+             ->name('client.import');
+        Route::post('/client/import', 'ClientController@postImport')
+             ->name('client.import');
     }
 );

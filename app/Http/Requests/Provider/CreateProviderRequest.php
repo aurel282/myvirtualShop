@@ -5,9 +5,8 @@ namespace App\Http\Requests\Client;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateClientRequest extends FormRequest
+class CreateProviderRequest extends FormRequest
 {
-
 	public function rules()
 	{
         return [

@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-use App\ValueObject\MenuAdmin\{LinkItem, Menu, SectionItem};
+use App\ValueObjects\MenuAdmin\{LinkItem, Menu, SectionItem};
 
 class MenuServices
 {

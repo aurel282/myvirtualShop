@@ -5,10 +5,11 @@ namespace App\Repository;
 use App\Http\Requests\Client\CreateClientRequest;
 use App\Http\Requests\Client\UpdateClientRequest;
 use App\Models\Database\Client;
+use App\Models\Database\Provider;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 
-class ClientRepository extends AbstractRepository
+class ProviderRepository extends AbstractRepository
 {
     /**
      * ClientRepository constructor.
@@ -19,14 +20,20 @@ class ClientRepository extends AbstractRepository
     }
 
 
-    public function  getClientList(): Builder
+    public function  getProviderList(): Builder
     {
-        return Client::query();
+        return Provider::query();
     }
 
-    public function create(array $request, int $addressId): Client
+    /**
+     * @param array $request
+     * @param int   $addressId
+     *
+     * @return Provider
+     */
+    public function create(array $request, int $addressId): Provider
     {
-        return Client::create([
+        return Provider::create([
             'name' => $request['lastname'],
             'firstname' => $request['firstname'],
             'email' => $request['email'],
@@ -37,15 +44,15 @@ class ClientRepository extends AbstractRepository
     }
 
     /**
-     * @param Client              $client
+     * @param Provider              $provider
      * @param array $request
      * @param int                 $addressId
      *
      * @return bool
      */
-    public function  edit(Client $client, array $request): bool
+    public function  edit(Provider $provider, array $request): bool
     {
-        return $client->update([
+        return $provider->update([
             'name' => $request['name'],
             'firstname' => $request['firstname'],
             'email' => $request['email'],
@@ -55,13 +62,13 @@ class ClientRepository extends AbstractRepository
     }
 
     /**
-     * @param Client              $client
+     * @param Provider              $provider
      *
      * @return bool
      * @throws \Exception
      */
-    public function  delete(Client $client): bool
+    public function  delete(Provider $provider): bool
     {
-        return $client->delete();
+        return $provider->delete();
     }
 }

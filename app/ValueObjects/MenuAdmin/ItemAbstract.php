@@ -1,8 +1,8 @@
 <?php
 
-namespace App\ValueObject\MenuAdmin;
+namespace App\ValueObjects\MenuAdmin;
 
-use App\ValueObject\AbstractObject;
+use App\ValueObjects\AbstractObject;
 
 abstract class ItemAbstract extends AbstractObject
 {

@@ -26,6 +26,7 @@ class Client extends Eloquent
 		'name',
 		'firstname',
 		'phone',
+        'mobile',
 		'email',
         'address_id'
 	];
@@ -47,14 +48,5 @@ class Client extends Eloquent
         }
         */
 
-	public function getFullyReadableAttribute(): string
-	{
-		$address = [
-			$this->number . ', ' . $this->street,
-			$this->zip_code . ' ' . $this->city,
-			$this->country
-		];
-		return implode(PHP_EOL, $address);
-	}
 
 }

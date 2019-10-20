@@ -12,10 +12,10 @@
                     </a>
 
                     <h3>
-                        {{$client->name}} {{$client->firstname}}
+                        {{$provider->name}} {{$provider->firstname}}
                     </h3>
                     <p>
-                        @lang('client.show.title'){{$client->id}}
+                        @lang('client.show.title'){{$provider->id}}
                     </p>
                 </div>
             </div>
@@ -67,26 +67,26 @@
                                     <table class="ui celled table">
                                         <thead class="full-width">
                                             <tr class="main-head">
-                                                <th>@lang('client.show.bills.id') </th>
-                                                <th>@lang('client.show.bills.date')</th>
-                                                <th>@lang('client.show.bills.total')</th>
-                                                <th style="width: 1px;">@lang('client.show.bills.action')</th>
+                                                <th>@lang('provider.show.bills.id') </th>
+                                                <th>@lang('provider.show.bills.date')</th>
+                                                <th>@lang('provider.show.bills.total')</th>
+                                                <th style="width: 1px;">@lang('provider.show.bills.action')</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($client->bills as $bill)
+                                        @foreach($provider->products as $product)
                                             <tr>
                                                 <td>
-                                                    # {{ $bill->id }}
+                                                    # {{ $product->id }}
                                                 </td>
                                                 <td>
-                                                    {{ $bill->date }}
+                                                    {{ $product->name }}
                                                 </td>
                                                 <td>
-
+                                                    {{ $product->quantity }}
                                                 </td>
                                                 <td>
-
+                                                    {{ $product->price_per_unity }}€
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -100,7 +100,7 @@
                 <div class="column">
                     <div class="ui segments">
                         <div class="ui segment">
-                            <a href="{{ route('client.edit', $client) }}"
+                            <a href="{{ route('provider.edit', $provider) }}"
                                class="ui small basic right floated icon button"
                                data-tooltip="@lang('client.show.edit')"
                             >
@@ -109,8 +109,8 @@
                             <h2 class="ui header" style="margin: 0;">
                                 <i class="user icon" style="color:var(--main-color--light);"></i>
                                 <div class="content">
-                                    @lang('client.show.information.title')
-                                    <div class="sub header">@lang('client.show.information.subtitle')</div>
+                                    @lang('provider.show.information.title')
+                                    <div class="sub header">@lang('provider.show.information.subtitle')</div>
                                 </div>
                             </h2>
                         </div>
@@ -119,41 +119,41 @@
                                 <div class="content">
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.firstname'):</b>
-                                            <b class="color-text--success">{{ $client->firstname }}</b>
+                                            <b>@lang('provider.show.information.firstname'):</b>
+                                            <b class="color-text--success">{{ $provider->firstname }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.lastname'):</b>
-                                            <b class="color-text--success">{{ $client->name }}</b>
+                                            <b>@lang('provider.show.information.lastname'):</b>
+                                            <b class="color-text--success">{{ $provider->name }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.email'):</b>
-                                            <b class="color-text--success">{{ $client->email }}</b>
+                                            <b>@lang('provider.show.information.email'):</b>
+                                            <b class="color-text--success">{{ $provider->email }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.address'):</b>
-                                            <b class="color-text--success">{{ $client->address->getFullyReadableAttribute() }}</b>
+                                            <b>@lang('provider.show.information.address'):</b>
+                                            <b class="color-text--success">{{ $provider->address->getFullyReadableAttribute() }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.phone'):</b>
+                                            <b>@lang('provider.show.information.phone'):</b>
                                             <b class="color-text--success">
-                                                {{ $client->phone }}
+                                                {{ $provider->phone }}
                                             </b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.mobile'):</b>
+                                            <b>@lang('provider.show.information.mobile'):</b>
                                             <b class="color-text--success">
-                                                {{ $client->mobile }}
+                                                {{ $provider->mobile }}
                                             </b>
                                         </p>
                                     </div>

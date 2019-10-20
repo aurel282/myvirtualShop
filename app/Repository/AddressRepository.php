@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Repository\Parking;
+namespace App\Repository;
 
+use App\Models\Database\Address;
 use App\Models\Database\Client;
 use App\Repository\AbstractRepository;
+use App\ValueObjects\AddressValueObject;
 use Illuminate\Support\Collection;
 
 class AddressRepository extends AbstractRepository
@@ -14,5 +16,49 @@ class AddressRepository extends AbstractRepository
     public function __construct()
     {
         parent::__construct();
+    }
+
+    /**
+     * @param AddressValueObject $request
+     *
+     * @return Address
+     */
+    public function  create(AddressValueObject $request): Address
+    {
+        return Address::create([
+            'street' => $request->getStreet(),
+            'number' => $request->getNumber(),
+            'city' => $request->getCity(),
+            'zip' => $request->getZipCode(),
+            'country' => $request->getCountry(),
+        ]);
+    }
+
+    /**
+     * @param Address              $address
+     * @param AddressValueObject $request
+     *
+     * @return bool
+     */
+    public function  edit(Address $address, AddressValueObject $request): bool
+    {
+        return $address->update([
+            'street' => $request->getStreet(),
+            'number' => $request->getNumber(),
+            'city' => $request->getCity(),
+            'zip' => $request->getZipCode(),
+            'country' => $request->getCountry(),
+        ]);
+    }
+
+    /**
+     * @param Address              $address
+     *
+     * @return bool
+     * @throws \Exception
+     */
+    public function delete(Address $address): bool
+    {
+        return $address->delete();
     }
 }
