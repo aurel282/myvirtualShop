@@ -70,10 +70,10 @@ return [
         ]
     ],
     'list' => [
-        'title' => 'Listes des fournisseurs',
-        'subtitle' => 'Liste des fournisseurs existants',
+        'title' => 'Listes des vendeurs',
+        'subtitle' => 'Liste des vendeurs existants',
         'import_csv' => 'Importer via CSV',
-        'create_new' => 'Créer nouveau client',
+        'create_new' => 'Créer nouveau vendeur',
         'search' => [
             'search' => 'Rechercher',
             'by_name' => 'Recherche par nom',
@@ -90,11 +90,10 @@ return [
 
     'show' => [
         'back' => 'Retour',
-        'title' => 'Fournisseur Id#',
+        'title' => 'Vendeur Id#',
         'import_csv' => 'Importer via CSV',
-        'create_new' => 'Créer nouveau fournisseur',
         'product' => [
-            'title' => 'Produits Appartenant à ce fournisseur',
+            'title' => 'Produits Appartenant à ce vendeur',
             'subtitle' => '',
             'id' => 'ID du produit',
             'name' => 'Nom du produit',
@@ -109,7 +108,7 @@ return [
             'action' => 'Actions',
         ],
         'information' => [
-            'title' => 'Informations du fournisseur',
+            'title' => 'Informations du vendeur',
             'subtitle' => '',
             'lastname' => 'Nom',
             'firstname' => 'Prenom',
