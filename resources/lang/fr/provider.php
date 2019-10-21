@@ -88,4 +88,37 @@ return [
         'show' => 'Montrer',
     ],
 
+    'show' => [
+        'back' => 'Retour',
+        'title' => 'Fournisseur Id#',
+        'import_csv' => 'Importer via CSV',
+        'create_new' => 'Créer nouveau fournisseur',
+        'product' => [
+            'title' => 'Produits Appartenant à ce fournisseur',
+            'subtitle' => '',
+            'id' => 'ID du produit',
+            'name' => 'Nom du produit',
+            'quantity' => 'Quantity',
+            'price_per_unity' => 'Prix',
+            'edit' => 'Edition',
+            'delete' => 'Suppression',
+            'export_all' => 'Exporter tous les produits',
+            'delete_all' => 'Supprimer tous les produits',
+            'add' => 'Ajouter un produit',
+            'import' => 'Importer les produits',
+            'action' => 'Actions',
+        ],
+        'information' => [
+            'title' => 'Informations du fournisseur',
+            'subtitle' => '',
+            'lastname' => 'Nom',
+            'firstname' => 'Prenom',
+            'email' => 'Email',
+            'phone' => 'Téléphone',
+            'address' => 'Adresse',
+            'edit' => 'Editer',
+            'mobile' => 'GSM',
+        ]
+    ],
+
 ];

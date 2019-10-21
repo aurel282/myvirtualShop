@@ -65,6 +65,12 @@
                             >
                                 <i class="trash icon" style="color:var(--main-color--light);"></i>
                             </a>
+                            <a href="{{ route('product.export_all', $provider) }}"
+                               class="ui small basic right floated icon button"
+                               data-tooltip="@lang('provider.product.export_all')"
+                            >
+                                <i class="barcode icon" style="color:var(--main-color--light);"></i>
+                            </a>
                             <h2 class="ui header" style="margin: 0;">
                                 <i class="star icon" style="color:var(--main-color--light);">
                                 </i>

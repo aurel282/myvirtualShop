@@ -80,5 +80,7 @@ Route::group(
              ->name('product.create');
         Route::get('/{provider}/product/delete_all', 'ProductController@bulkDeleteFromProvider')
              ->name('product.bulk_delete');
+        Route::get('/{provider}/product/export_all', 'ProductController@exportAllProductFromProvider')
+             ->name('product.export_all');
     }
 );

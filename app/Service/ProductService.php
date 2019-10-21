@@ -156,6 +156,33 @@ class ProductService extends AbstractService
     }
 
     /**
+     * @param Provider $provider
+     */
+    public function exportAllFromProvider(Provider $provider)
+    {
+        $allProductsFromProvider = $provider->products()->get();
+
+        $f = fopen('php://memory', 'w');
+        // loop over the input array
+        foreach ($allProductsFromProvider as $line) {
+            $data =  [
+                $line->name,
+                $line->code,
+            ];
+            // generate csv lines from the inner arrays
+            fputcsv($f, $data, ',');
+        }
+        // reset the file pointer to the start of the file
+        fseek($f, 0);
+        // tell the browser it's going to be a csv file
+        header('Content-Type: application/csv');
+        // tell the browser we want to save it instead of displaying it
+        header('Content-Disposition: attachment; filename="'. 'test.csv' .'";');
+        // make php send the generated csv lines to the browser
+        fpassthru($f);
+    }
+
+    /**
      * @param Product $product
      *
      * @return string
