@@ -58,11 +58,11 @@
     <div class="two fields">
         <div class="field required">
             {{ Form::label('address[street]', trans('provider.edit.address.street_label')) }}
-            {{ Form::text('address[street]', $provider->address->street,  ['class'=>'', 'placeholder' => trans('provider.edit.address_placeholder')]) }}
+            {{ Form::text('address[street]', $provider->address->street,  ['class'=>'', 'placeholder' => trans('provider.edit.street')]) }}
         </div>
         <div class="field required">
             {{ Form::label('address[number]', trans('provider.edit.address.number_label')) }}
-            {{ Form::text('address[number]', $provider->address->number,  ['class'=>'', 'placeholder' => trans('provider.edit.address.placeholder_two')]) }}
+            {{ Form::text('address[number]', $provider->address->number,  ['class'=>'', 'placeholder' => trans('provider.edit.address.number')]) }}
         </div>
     </div>
     <div class="three fields ">
@@ -72,10 +72,10 @@
         </div>
         <div class="field required">
             {{ Form::label('address[zip_code]', trans('provider.edit.address.zip_code_label')) }}
-            {{ Form::text('address[zip_code]', $provider->address->zip ,  ['class'=>'', 'placeholder' => trans('provider.edit.address.zip_code_placeholder')]) }}
+            {{ Form::text('address[zip_code]', $provider->address->zip ,  ['class'=>'', 'placeholder' => trans('provider.edit.address.zip_code')]) }}
         </div>
         <div class="field required">
-            <label>@lang('provider.edit.country.label')</label>
+            <label>@lang('provider.edit.address.country_label')</label>
             <div class="ui fluid search selection dropdown">
                 <input type="hidden" name="address[country]">
                 <i class="dropdown icon"></i>
