@@ -5,7 +5,7 @@ namespace App\Http\Requests\Provider;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateProviderRequest extends FormRequest
+class UpdateProductRequest extends FormRequest
 {
 
 	public function rules()
