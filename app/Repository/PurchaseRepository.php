@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 
+use App\Models\Database\Product;
 use App\Models\Database\Purchase;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -20,5 +21,6 @@ class PurchaseRepository extends AbstractRepository
     {
         return Purchase::query();
     }
+
 
 }

@@ -11,7 +11,7 @@
 @section('searchBar')
     <div class="ui fluid form">
         <form method="GET" accept-charset="UTF-8" _lpchecked="1">
-            <div class="ui form">
+            <div class="ui form">0
                 <div class="five fields">
                     <div class="field">
                         <div class="ui left icon input">

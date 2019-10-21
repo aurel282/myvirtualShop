@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RefactoProducts3 extends Migration
+class RefactoProducts4 extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class RefactoProducts3 extends Migration
     public function up()
     {
         Schema::table('products', function($table) {
-            $table->dropColumn('typeId');
+            $table->string('code', 12)->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class RefactoProducts3 extends Migration
     public function down()
     {
         Schema::table('products', function($table) {
-            $table->integer('typeId');
+            $table->dropColumn('code');
         });
     }
 }

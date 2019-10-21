@@ -17,7 +17,8 @@ class Product extends Eloquent
         'price_per_unity',
         'color',
         'brand',
-        'material'
+        'material',
+        'code'
 	];
 
 

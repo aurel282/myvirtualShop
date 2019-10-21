@@ -71,4 +71,13 @@ class ProductRepository extends AbstractRepository
         return $product->delete();
     }
 
+    public function updateCode(Product $product, string $code): bool
+    {
+        return $product->update(
+            [
+                'code' => $code
+            ]
+        );
+    }
+
 }

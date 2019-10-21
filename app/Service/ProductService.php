@@ -46,7 +46,10 @@ class ProductService extends AbstractService
      */
     public function createProduct(array $data, int $providerId): Product
     {
-        return $this->_productRepository->create($data, $providerId);
+        $product = $this->_productRepository->create($data, $providerId);
+        $code = $this->generateCode($product);
+        $this->_productRepository->updateCode($product, $code);
+        return $product;
     }
 
     /**
@@ -150,5 +153,62 @@ class ProductService extends AbstractService
         {
             $this->_productRepository->delete($product);
         }
+    }
+
+    /**
+     * @param Product $product
+     *
+     * @return string
+     */
+    public function generateCode(Product $product): string
+    {
+        $price = (string)preg_replace( '/[^0-9]/', '', $product->price_per_unity );
+        $product_id = (string)$product->id;
+        $provider_id = (string)$product->provider_id;
+
+         if (strlen($price) === 5){}
+         elseif (strlen($price) === 4)
+         {
+             $price = '0' . $price;
+         }
+         elseif (strlen($price) === 3)
+         {
+             $price = '00' . $price;
+         }
+         elseif (strlen($price) === 2)
+         {
+             $price = '000' . $price;
+         }
+         elseif (strlen($price) === 1)
+         {
+             $price = '00000' . $price;
+         }
+
+       if (strlen($product_id) === 4){}
+       elseif (strlen($product_id) === 3)
+       {
+           $product_id = '0' . $product_id;
+       }
+       elseif (strlen($product_id) === 2)
+       {
+           $product_id = '00' . $product_id;
+       }
+       elseif (strlen($product_id) === 1)
+       {
+           $product_id = '000' . $product_id;
+       }
+
+        if (strlen($provider_id) === 3){}
+        elseif (strlen($provider_id) === 2)
+        {
+            $provider_id = '0' . $provider_id;
+        }
+        elseif (strlen($provider_id) === 1)
+        {
+            $provider_id = '00' . $provider_id;
+        }
+
+        return $provider_id . $product_id . $price;
+
     }
 }
