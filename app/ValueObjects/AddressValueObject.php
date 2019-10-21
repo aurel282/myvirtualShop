@@ -6,27 +6,27 @@ namespace App\ValueObjects;
 class AddressValueObject extends AbstractObject
 {
     /**
-     * @var string
+     * @var ?string
      */
     protected $_street;
 
     /**
-     * @var int
+     * @var ?int
      */
     protected $_number;
 
     /**
-     * @var int
+     * @var ?int
      */
     protected $_zip_code;
 
     /**
-     * @var string
+     * @var ?string
      */
     protected $_country;
 
     /**
-     * @var string
+     * @var ?string
      */
     protected $_city;
 
@@ -39,27 +39,27 @@ class AddressValueObject extends AbstractObject
      */
     public function __construct(array $data)
     {
-        $this->_street = $data['street'];
-        $this->_number = $data['number'];
-        $this->_zip_code = $data['zip_code'];
-        $this->_country = $data['country'];
-        $this->_city = $data['city'];
+        $this->_street = isset($data['street']) ? $data['street'] : null;
+        $this->_number = isset($data['number']) ? $data['number'] : null;
+        $this->_zip_code = isset($data['zip_code']) ? $data['zip_code'] : null;
+        $this->_country = isset($data['country']) ? $data['country'] : null;
+        $this->_city = isset($data['city']) ? $data['city'] : null;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStreet(): string
+    public function getStreet() : ?string
     {
         return $this->_street;
     }
 
     /**
-     * @param string $street
+     * @param ?string  $street
      *
      * @return AddressValueObject
      */
-    public function setStreet(string $street): AddressValueObject
+    public function setStreet($street)
     {
         $this->_street = $street;
 
@@ -67,19 +67,19 @@ class AddressValueObject extends AbstractObject
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getNumber(): int
+    public function getNumber(): ?int
     {
         return $this->_number;
     }
 
     /**
-     * @param int $number
+     * @param ?int  $number
      *
      * @return AddressValueObject
      */
-    public function setNumber(int $number): AddressValueObject
+    public function setNumber($number)
     {
         $this->_number = $number;
 
@@ -87,19 +87,19 @@ class AddressValueObject extends AbstractObject
     }
 
     /**
-     * @return int
+     * @return string|null
      */
-    public function getZipCode(): int
+    public function getZipCode(): ?string
     {
         return $this->_zip_code;
     }
 
     /**
-     * @param int $zip_code
+     * @param mixed $zip_code
      *
      * @return AddressValueObject
      */
-    public function setZipCode(int $zip_code): AddressValueObject
+    public function setZipCode($zip_code)
     {
         $this->_zip_code = $zip_code;
 
@@ -107,19 +107,19 @@ class AddressValueObject extends AbstractObject
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCountry(): string
+    public function getCountry(): ?string
     {
         return $this->_country;
     }
 
     /**
-     * @param string $country
+     * @param mixed $country
      *
      * @return AddressValueObject
      */
-    public function setCountry(string $country): AddressValueObject
+    public function setCountry($country)
     {
         $this->_country = $country;
 
@@ -127,24 +127,26 @@ class AddressValueObject extends AbstractObject
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getCity(): string
+    public function getCity()
     {
         return $this->_city;
     }
 
     /**
-     * @param string $city
+     * @param mixed $city
      *
      * @return AddressValueObject
      */
-    public function setCity(string $city): AddressValueObject
+    public function setCity($city)
     {
         $this->_city = $city;
 
         return $this;
     }
+
+
 
 
 }

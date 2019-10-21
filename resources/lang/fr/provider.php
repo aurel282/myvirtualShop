@@ -87,6 +87,12 @@ return [
         'action' => 'Action',
         'show' => 'Montrer',
     ],
+    'product' => [
+        'export_all' => 'Exporter tous les produits',
+        'delete_all' => 'Supprimer tous les produits',
+        'add' => 'Ajouter un produit',
+        'import' => 'Importer les produits',
+        ],
 
     'show' => [
         'back' => 'Retour',

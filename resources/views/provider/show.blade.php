@@ -5,7 +5,6 @@
         <div class="ui equal width stackable internally celled grid">
             <div class="center aligned row">
                 <div class="column">
-
                     <a href="{{ url()->previous() }}" class="ui left labeled icon button inverted admin-bp-btn--info button back-to-list" style="position: absolute; left: 0; top: 27px;">
                         <i style="color:#545454!important;" class="color-bg--success left arrow icon color" ></i>
                         @lang('provider.show.back')

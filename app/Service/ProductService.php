@@ -70,7 +70,6 @@ class ProductService extends AbstractService
         $importData_arr = array();
 
         // File Details
-        $filename = $file->getClientOriginalName();
         $extension = $file->getClientOriginalExtension();
         $fileSize = $file->getSize();
 
@@ -86,19 +85,8 @@ class ProductService extends AbstractService
             // Check file size
             if($fileSize <= $maxFileSize){
 
-                // File upload location
-                $location = public_path().'/storage/uploads';
-
-                // Upload file
-                $file->move($location,$filename);
-
-                // Import CSV to Database
-                $filepath = $location."/".$filename;//public_path($location."/".$filename);
-
-                //dd($filepath);
-
                 // Reading file
-                $file = fopen($filepath,"r");
+                $file = fopen($file,"r");
 
                 // To no get the title row
                 fgetcsv($file, 1000, ",");
@@ -118,7 +106,6 @@ class ProductService extends AbstractService
                 }
 
                 fclose($file);
-                unlink($filepath);
             }
         }
         return $importData_arr;
