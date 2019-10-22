@@ -101,6 +101,30 @@ class MenuMiddleware
                     ],
                 ],
             ],
+            [
+                'key' => 'bill',
+                'attributes' => [
+                    'class' => 'icon-parking btn-nav'
+                ],
+                'links' => [
+                    [
+                        'key' => 'bill.list',
+                        'route' => 'purchase.list',
+                    ],
+                ],
+            ],
+            [
+                'key' => 'settings',
+                'attributes' => [
+                    'class' => 'icon-parking btn-nav'
+                ],
+                'links' => [
+                    [
+                        'key' => 'settings.management',
+                        'route' => 'purchase.list',
+                    ],
+                ],
+            ],
 		];
 
 		return $configArray;

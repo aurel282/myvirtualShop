@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Product\CreateProductRequest;
 use App\Http\Requests\Provider\UpdateProviderRequest;
+use App\Models\Database\Client;
 use App\Models\Database\Product;
 use App\Models\Database\Provider;
+use App\Models\Database\Purchase;
 use App\Service\AddressService;
 use App\Service\ProductService;
 use App\Service\ProviderService;
+use App\Service\PurchaseService;
 use App\ValueObjects\AddressValueObject;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -17,36 +20,36 @@ class PurchaseController extends Controller
 {
     public function getList(
         Request $request,
-         $productService
+         PurchaseService $purchaseService
     )
     {
-        $products = $productService->getList()
+        $purchases = $purchaseService->getList()
                                  ->paginate(15);
 
         return view(
-            'product.list',
+            'purchase.list',
             [
-                'products' => $products,
+                'purchases' => $purchases,
             ]
         );
     }
 
-    public function show(Product $product)
+    public function show(Purchase $purchase)
     {
         return view(
-            'product.show',
+            'purchase.show',
             [
-                'product' => $product,
+                'purchase' => $purchase,
             ]
         );
     }
 
-    public function getCreate(Provider $provider)
+    public function getCreate(Client $client)
     {
         return view(
             'product.create',
             [
-                'provider' => $provider
+                'client' => $client
             ]
         );
     }

@@ -18,6 +18,8 @@ return [
        'provider' => 'Vendeurs',
        'product' => 'Produits',
        'purchase' => 'Achats',
+       'bill' => 'Tickets',
+       'settings' => 'Paramètres',
    ],
     'sub_menu' => [
         'client' => [
@@ -31,6 +33,12 @@ return [
         ],
         'purchase' => [
             'list' => 'Liste des achats'
+        ],
+        'bill' => [
+            'list' => 'Liste des Tickets'
+        ],
+        'settings' => [
+            'management' => 'Gestion des paramètres'
         ],
     ]
 

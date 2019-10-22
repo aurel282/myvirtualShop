@@ -70,6 +70,7 @@ Route::group(
              ->name('provider.import');
 
 
+        // Product
         Route::get('/product/list', 'ProductController@getList')
              ->name('product.list');
         Route::get('/{product}/product/show', 'ProductController@show')
@@ -100,7 +101,10 @@ Route::group(
              ->name('product.export_all');
 
 
+        // Purchase
         Route::get('/purchase/list', 'PurchaseController@getList')
              ->name('purchase.list');
+
+        // Bill
     }
 );
