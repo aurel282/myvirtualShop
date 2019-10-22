@@ -70,6 +70,10 @@ Route::group(
              ->name('provider.import');
 
 
+        Route::get('/product/list', 'ProductController@getList')
+             ->name('product.list');
+        Route::get('/{product}/product/show', 'ProductController@show')
+             ->name('product.show');
         Route::get('/{provider}/product/import', 'ProductController@getImport')
              ->name('product.import');
         Route::post('/{provider}/product/import', 'ProductController@postImport')
@@ -78,9 +82,21 @@ Route::group(
              ->name('product.create');
         Route::post('/{provider}/product/create', 'ProductController@postCreate')
              ->name('product.create');
+        Route::get('/{provider}/product/edit', 'ProductController@getEdit')
+             ->name('product.edit');
+        Route::post('/{provider}/product/edit', 'ProductController@postEdit')
+             ->name('product.edit');
+        Route::post('/{provider}/product/{product}/delete', 'ProductController@postDeleteFromProvider')
+             ->name('product.delete');
+        Route::post('/product/{product}/delete', 'ProductController@postDelete')
+             ->name('product.delete');
         Route::get('/{provider}/product/delete_all', 'ProductController@bulkDeleteFromProvider')
              ->name('product.bulk_delete');
         Route::get('/{provider}/product/export_all', 'ProductController@exportAllProductFromProvider')
              ->name('product.export_all');
+
+
+        Route::get('/purchase/list', 'PurchaseController@getList')
+             ->name('purchase.list');
     }
 );

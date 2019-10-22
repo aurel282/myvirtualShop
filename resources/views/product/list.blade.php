@@ -42,20 +42,22 @@
 @section('containerContent')
     <thead class="full-width">
     <tr style="background: #f9fafb;" class="no-sort">
+        <!--
         <th colspan="7" style="background: #f9fafb!important;" class="no-sort">
-            <a href="{{ route('product.create') }}" class="ui right floated small primary labeled icon button mobile-reset-float">
+            <a href="{{-- route('product.create') --}}" class="ui right floated small primary labeled icon button mobile-reset-float">
                 <i class="add icon" style="color:white;"></i>
                 @lang('client.list.create_new')
             </a>
         </th>
+        -->
     </tr>
     <tr class="main-head">
         <th style="width: 1px;">#</th>
         <th>@lang('product.list.name')</th>
-        <th>@lang('product.list.firstname')</th>
-        <th>@lang('product.list.email')</th>
-        <th>@lang('product.list.phone')</th>
-        <th>@lang('product.list.address')</th>
+        <th>@lang('product.list.description')</th>
+        <th>@lang('product.list.code')</th>
+        <th>@lang('product.list.quantity')</th>
+        <th>@lang('product.list.price_per_unity')</th>
         <th style="width: 1px;">@lang('product.list.action')</th>
     </tr>
     </thead>
@@ -67,22 +69,30 @@
                     # {{ $product->id }}
                 </a>
             </td>
-            <td>{{ $product->name }}</td>
             <td>
-                {{ $product->firstname }}
+                {{ $product->name }}
             </td>
             <td>
-                {{ $product->email }}
+                {{ $product->description }}
             </td>
             <td>
-                {{ $product->phone }}
+                {{ $product->code }}
             </td>
             <td>
-                {{ $product->address ? $product->address->getFullyReadableAttribute() : 'No address' }}
+                {{ $product->quantity }}
+            </td>
+            <td>
+                {{ $product->price_per_unity }}
             </td>
             <td>
                 <a href="{{ route('product.show', $product->id) }}" class="ui inverted admin-bp-btn--success button small">
                     @lang('product.list.show')
+                </a>
+                <a href="{{ route('product.edit', $product->id) }}" class="ui inverted admin-bp-btn--success button small">
+                    @lang('product.list.edit')
+                </a>
+                <a href="{{ route('product.delete', $product->id) }}" class="ui inverted admin-bp-btn--success button small">
+                    @lang('product.list.delete')
                 </a>
             </td>
         </tr>

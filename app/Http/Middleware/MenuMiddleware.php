@@ -85,7 +85,7 @@ class MenuMiddleware
                 'links' => [
                     [
                         'key' => 'product.list',
-                        'route' => 'dashboard',
+                        'route' => 'product.list',
                     ],
                 ],
             ],
@@ -97,7 +97,7 @@ class MenuMiddleware
                 'links' => [
                     [
                         'key' => 'purchase.list',
-                        'route' => 'dashboard',
+                        'route' => 'purchase.list',
                     ],
                 ],
             ],
