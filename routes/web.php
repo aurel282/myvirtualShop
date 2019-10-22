@@ -82,13 +82,17 @@ Route::group(
              ->name('product.create');
         Route::post('/{provider}/product/create', 'ProductController@postCreate')
              ->name('product.create');
-        Route::get('/{provider}/product/edit', 'ProductController@getEdit')
+        Route::get('/{product}/product/edit', 'ProductController@getEdit')
              ->name('product.edit');
-        Route::post('/{provider}/product/edit', 'ProductController@postEdit')
+        Route::post('/{product}/product/edit', 'ProductController@postEdit')
              ->name('product.edit');
-        Route::post('/{provider}/product/{product}/delete', 'ProductController@postDeleteFromProvider')
+        Route::get('/{provider}/product/{product}/edit', 'ProductController@getEditFromProvider')
+             ->name('product.provider.edit');
+        Route::post('/{provider}/product/{product}/edit', 'ProductController@postEditFromProvider')
+             ->name('product.provider.edit');
+        Route::get('/{provider}/product/{product}/delete', 'ProductController@postDeleteFromProvider')
              ->name('product.delete');
-        Route::post('/product/{product}/delete', 'ProductController@postDelete')
+        Route::get('/product/{product}/delete', 'ProductController@postDelete')
              ->name('product.delete');
         Route::get('/{provider}/product/delete_all', 'ProductController@bulkDeleteFromProvider')
              ->name('product.bulk_delete');

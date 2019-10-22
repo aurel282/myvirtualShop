@@ -8,14 +8,14 @@
 
                     <a href="{{ url()->previous() }}" class="ui left labeled icon button inverted admin-bp-btn--info button back-to-list" style="position: absolute; left: 0; top: 27px;">
                         <i style="color:#545454!important;" class="color-bg--success left arrow icon color" ></i>
-                        @lang('client.show.back')
+                        @lang('product.show.back')
                     </a>
 
                     <h3>
-                        {{$client->name}} {{$client->firstname}}
+                        {{$product->name}}
                     </h3>
                     <p>
-                        @lang('client.show.title'){{$client->id}}
+                        @lang('product.show.title') #{{$product->id}}
                     </p>
                 </div>
             </div>
@@ -26,12 +26,12 @@
             <li class="navigation-item">
                 <a href=# class="navigation-item-link">
                     <i title="" class="  list layout   icon" style="color:var(--main-color);"></i>
-                    @lang('client.show.clear_bills')
+                    @lang('product.show.clear_bills')
                 </a>
             <li class="navigation-item">
                 <a href=# class="navigation-item-link">
                     <i title="" class="  sign layout   icon" style="color:var(--main-color);"></i>
-                    @lang('client.show.delete')
+                    @lang('product.show.delete')
                 </a>
             </li>
 
@@ -47,70 +47,17 @@
                 <div class="column">
                     <div class="ui segments">
                         <div class="ui segment">
-                            <h2 class="ui header" style="margin: 0;">
-
-                                <i class="star icon" style="color:var(--main-color--light);">
-                                </i>
-
-                                <div class="content">
-                                    @lang('client.show.bills.title')
-                                    <div class="sub header">
-                                        @lang('client.show.bills.subtitle')
-                                    </div>
-                                </div>
-                            </h2>
-                        </div>
-
-                        <div class="ui segment">
-                            <div class="ui basic segment">
-                                <div class="content">
-                                    <table class="ui celled table">
-                                        <thead class="full-width">
-                                            <tr class="main-head">
-                                                <th>@lang('client.show.bills.id') </th>
-                                                <th>@lang('client.show.bills.date')</th>
-                                                <th>@lang('client.show.bills.total')</th>
-                                                <th style="width: 1px;">@lang('client.show.bills.action')</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($client->bills as $bill)
-                                            <tr>
-                                                <td>
-                                                    # {{ $bill->id }}
-                                                </td>
-                                                <td>
-                                                    {{ $bill->date }}
-                                                </td>
-                                                <td>
-
-                                                </td>
-                                                <td>
-
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui segments">
-                        <div class="ui segment">
-                            <a href="{{ route('client.edit', $client) }}"
+                            <a href="{{ route('product.edit', $product) }}"
                                class="ui small basic right floated icon button"
-                               data-tooltip="@lang('client.show.edit')"
+                               data-tooltip="@lang('product.show.edit')"
                             >
                                 <i class="edit icon" style="color:var(--main-color--light);"></i>
                             </a>
                             <h2 class="ui header" style="margin: 0;">
                                 <i class="user icon" style="color:var(--main-color--light);"></i>
                                 <div class="content">
-                                    @lang('client.show.information.title')
-                                    <div class="sub header">@lang('client.show.information.subtitle')</div>
+                                    @lang('product.show.information.title')
+                                    <div class="sub header">@lang('product.show.information.subtitle')</div>
                                 </div>
                             </h2>
                         </div>
@@ -119,41 +66,49 @@
                                 <div class="content">
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.firstname'):</b>
-                                            <b class="color-text--success">{{ $client->firstname }}</b>
+                                            <b>@lang('product.show.information.name'):</b>
+                                            <b class="color-text--success">{{ $product->name }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.lastname'):</b>
-                                            <b class="color-text--success">{{ $client->name }}</b>
+                                            <b>@lang('product.show.information.description'):</b>
+                                            <b class="color-text--success">{{ $product->description }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.email'):</b>
-                                            <b class="color-text--success">{{ $client->email }}</b>
+                                            <b>@lang('product.show.information.price_per_unity'):</b>
+                                            <b class="color-text--success">{{ $product->price_per_unity }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.address'):</b>
-                                            <b class="color-text--success">{{ $client->address->getFullyReadableAttribute() }}</b>
+                                            <b>@lang('product.show.information.quantity'):</b>
+                                            <b class="color-text--success">{{ $product->quantity }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.phone'):</b>
+                                            <b>@lang('product.show.information.color'):</b>
                                             <b class="color-text--success">
-                                                {{ $client->phone }}
+                                                {{ $product->color }}
                                             </b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('client.show.information.mobile'):</b>
+                                            <b>@lang('product.show.information.brand'):</b>
                                             <b class="color-text--success">
-                                                {{ $client->mobile }}
+                                                {{ $product->brand }}
+                                            </b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('product.show.information.material'):</b>
+                                            <b class="color-text--success">
+                                                {{ $product->material }}
                                             </b>
                                         </p>
                                     </div>

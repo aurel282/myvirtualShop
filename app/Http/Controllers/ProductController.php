@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Product\CreateProductRequest;
-use App\Http\Requests\Provider\UpdateProviderRequest;
+use App\Http\Requests\Product\UpdateProductRequest;
 use App\Models\Database\Product;
 use App\Models\Database\Provider;
-use App\Service\AddressService;
 use App\Service\ProductService;
-use App\Service\ProviderService;
-use App\ValueObjects\AddressValueObject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 
 class ProductController extends Controller
@@ -27,6 +25,40 @@ class ProductController extends Controller
             'product.list',
             [
                 'products' => $products,
+            ]
+        );
+    }
+
+    public function postDelete(
+        Product $product,
+        ProductService $productService
+    )
+    {
+        $products = $productService->getList()
+                                   ->paginate(15);
+        
+        $productService->deleteProduct($product);
+
+        return view(
+            'product.list',
+            [
+                'products' => $products,
+            ]
+        );
+    }
+
+    public function postDeleteFromProvider(
+        Provider $provider,
+        Product $product,
+        ProductService $productService
+    )
+    {
+        $productService->deleteProduct($product);
+
+        return view(
+            'provider.show',
+            [
+                'provider' => $provider,
             ]
         );
     }
@@ -65,42 +97,70 @@ class ProductController extends Controller
                                  ->paginate(15);
 
         return view(
-            'provider.list',
+            'product.list',
             [
-                'providers' => $providers,
+                'product' => $providers,
             ]
         );
     }
 
-    public function getEdit(Provider $provider)
+    public function getEditFromProvider(
+        Product $product,
+        Provider $provider
+    )
     {
         return view(
-            'provider.edit',
+            'product.edit',
             [
-                'provider' => $provider
+                'product' => $product
+            ]
+        );
+    }
+
+    public function postEditFromProvider(
+        UpdateProductRequest $request,
+        Product $product,
+        Provider $provider,
+        ProductService $productService
+    )
+    {
+
+        $productService->editProduct($product, $request->all());
+
+        return view(
+            'provider.show',
+            [
+                'provider' => $provider,
+            ]
+        );
+    }
+
+    public function getEdit(Product $product)
+    {
+        return view(
+            'product.edit',
+            [
+                'product' => $product
             ]
         );
     }
 
     public function postEdit(
-        UpdateProviderRequest $request,
-        Provider $provider,
-        ProviderService $providerService,
-        AddressService $addressService
+        UpdateProductRequest $request,
+        Product $product,
+        ProductService $productService
     )
     {
-        $addressValueObject = new AddressValueObject($request->all()['address']);
-        $addressService->editAddress($provider->address, $addressValueObject);
 
-        $providerService->editProvider($provider, $request->all());
+        $productService->editProduct($product, $request->all());
 
-        $providers = $providerService->getList()
-                                 ->paginate(15);
+        $products = $productService->getList()
+                                   ->paginate(15);
 
         return view(
-            'provider.list',
+            'product.list',
             [
-                'providers' => $providers,
+                'products' => $products,
             ]
         );
     }

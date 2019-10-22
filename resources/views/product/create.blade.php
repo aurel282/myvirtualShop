@@ -38,6 +38,19 @@
             {{ Form::text('price_per_unity', null, ['placeholder' => trans('product.create.price_per_unity_number')]) }}
         </div>
     </div>
+    <div class="three fields">
+        <div class="ten wide field required">
+            {{ Form::label('color', trans('product.create.color_label')) }}
+            {{ Form::text('color', null, ['placeholder' => trans('product.create.color')]) }}
+        </div>
+        <div class="twelve wide field required">
+            {{ Form::label('brand', trans('product.create.brand_label')) }}
+            {{ Form::text('brand', null, ['placeholder' => trans('product.create.brand_number')]) }}
+        </div>
+        <div class="twelve wide field required">
+            {{ Form::label('material', trans('product.create.material_label')) }}
+            {{ Form::text('material', null, ['placeholder' => trans('product.create.material_number')]) }}
+        </div>
 
     @parent
 
