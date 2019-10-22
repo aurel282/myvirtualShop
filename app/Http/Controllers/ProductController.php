@@ -101,13 +101,14 @@ class ProductController extends Controller
     }
 
     public function getEditFromProvider(
-        Product $product,
-        Provider $provider
+        Provider $provider,
+        Product $product
     )
     {
         return view(
             'product.edit',
             [
+                'provider' =>$provider,
                 'product' => $product
             ]
         );
@@ -115,8 +116,8 @@ class ProductController extends Controller
 
     public function postEditFromProvider(
         UpdateProductRequest $request,
-        Product $product,
         Provider $provider,
+        Product $product,
         ProductService $productService
     )
     {
