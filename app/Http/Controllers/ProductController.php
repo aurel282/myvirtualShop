@@ -36,7 +36,7 @@ class ProductController extends Controller
     {
         $products = $productService->getList()
                                    ->paginate(15);
-        
+
         $productService->deleteProduct($product);
 
         return view(
@@ -92,14 +92,10 @@ class ProductController extends Controller
 
         $productService->createProduct($request->all(), $provider->id);
 
-
-        $providers = $productService->getList()
-                                 ->paginate(15);
-
         return view(
-            'product.list',
+            'provider.show',
             [
-                'product' => $providers,
+                'provider' => $provider,
             ]
         );
     }

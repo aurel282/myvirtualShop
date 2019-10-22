@@ -91,7 +91,7 @@ Route::group(
         Route::post('/{provider}/product/{product}/edit', 'ProductController@postEditFromProvider')
              ->name('product.provider.edit');
         Route::get('/{provider}/product/{product}/delete', 'ProductController@postDeleteFromProvider')
-             ->name('product.delete');
+             ->name('product.provider.delete');
         Route::get('/product/{product}/delete', 'ProductController@postDelete')
              ->name('product.delete');
         Route::get('/{provider}/product/delete_all', 'ProductController@bulkDeleteFromProvider')

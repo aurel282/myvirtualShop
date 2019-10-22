@@ -112,11 +112,17 @@
                                                     {{ $product->price_per_unity }}€
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('provider.show', $provider->id) }}" class="ui inverted admin-bp-btn--success button small">
+                                                    <a href="{{ route('product.provider.edit', [$provider->id, $product->id]) }}" class="ui inverted admin-bp-btn--success button
+                                                    small">
                                                         @lang('provider.show.product.edit')
                                                     </a>
-                                                    <a href="{{ route('provider.show', $provider->id) }}" class="ui inverted admin-bp-btn--success button small">
+                                                    <a href="{{ route('product.provider.delete', [$provider->id, $product->id]) }}" class="ui inverted admin-bp-btn--success button
+                                                    small">
                                                         @lang('provider.show.product.delete')
+                                                    </a>
+                                                    <a href="{{ route('product.provider.delete', [$provider->id, $product->id]) }}" class="ui inverted admin-bp-btn--success button
+                                                    small">
+                                                        <i class="barcode icon" style="color:var(--main-color--light);"></i>
                                                     </a>
                                                 </td>
                                             </tr>
