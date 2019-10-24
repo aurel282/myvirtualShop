@@ -73,12 +73,11 @@
                                     <table class="ui celled table">
                                         <thead class="full-width">
                                             <tr class="main-head">
-                                                <th>@lang('bill.show.purchases.id') </th>
-                                                <th>@lang('bill.show.purchases.date')</th>
-                                                <th>@lang('bill.show.purchases.total')</th>
-                                                <th>@lang('bill.show.purchases.id') </th>
-                                                <th>@lang('bill.show.purchases.date')</th>
-                                                <th>@lang('bill.show.purchases.total')</th>
+                                                <th>@lang('bill.show.purchases.code') </th>
+                                                <th>@lang('bill.show.purchases.name')</th>
+                                                <th>@lang('bill.show.purchases.description')</th>
+                                                <th>@lang('bill.show.purchases.price') </th>
+                                                <th>@lang('bill.show.purchases.quantity')</th>
                                                 <th style="width: 1px;">@lang('bill.show.purchases.action')</th>
                                             </tr>
                                         </thead>
@@ -89,12 +88,21 @@
                                                     # {{ $purchase->product->code }}
                                                 </td>
                                                 <td>
-
+                                                    {{ $purchase->product->name }}
+                                                </td>
+                                                <td>
+                                                    {{ $purchase->product->description }}
+                                                </td>
+                                                <td>
+                                                    {{ $purchase->product->price_per_unity }}
+                                                </td>
+                                                <td>
+                                                    {{ $purchase->quantity }}
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('bill.purchase.delete', [$bill, $purchase]) }}" class="ui inverted admin-bp-btn--success button
                                                     small">
-                                                        <i class="barcode icon" style="color:var(--main-color--light);"></i>
+                                                        <i class="delete icon" style="color:var(--main-color--light);"></i>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -122,23 +130,33 @@
                                 <div class="content">
                                     <div class="description">
                                         <p>
-                                            <b>@lang('bill.show.information.firstname'):</b>
-                                            <b class="color-text--success">{{ $bill }}</b>
-                                        </p>
-                                    </div>
-                                    <div class="description">
-                                        <p>
-                                            <b>@lang('bill.show.information.phone'):</b>
+                                            <b>@lang('bill.show.information.client_firstname'):</b>
                                             <b class="color-text--success">
-                                                {{ $bill->phone }}
+                                                {{ $bill->client->firstname }}
                                             </b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('bill.show.information.mobile'):</b>
+                                            <b>@lang('bill.show.information.client_lastname'):</b>
                                             <b class="color-text--success">
-                                                {{ $bill->mobile }}
+                                                {{ $bill->client->name }}
+                                            </b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('bill.show.information.total_price'):</b>
+                                            <b class="color-text--success">
+                                                {{ $bill->total_price() }}
+                                            </b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('bill.show.information.number_product'):</b>
+                                            <b class="color-text--success">
+                                                {{ $bill->number_product() }}
                                             </b>
                                         </p>
                                     </div>
