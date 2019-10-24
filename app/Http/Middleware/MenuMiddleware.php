@@ -109,7 +109,7 @@ class MenuMiddleware
                 'links' => [
                     [
                         'key' => 'bill.list',
-                        'route' => 'purchase.list',
+                        'route' => 'bill.list',
                     ],
                 ],
             ],

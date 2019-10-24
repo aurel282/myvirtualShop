@@ -18,13 +18,13 @@ class Purchase extends Eloquent
 
 	public function product()
 	{
-		return $this->hasOne(Product::class);
+		return $this->belongsTo(Product::class);
 	}
 
 
     public function bill()
     {
-        return $this->hasOne(Bill::class);
+        return $this->belongsTo(Bill::class);
     }
 
 }

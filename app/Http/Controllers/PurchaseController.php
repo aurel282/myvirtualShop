@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Product\CreateProductRequest;
 use App\Http\Requests\Provider\UpdateProviderRequest;
+use App\Http\Requests\Purchase\CreatePurchaseRequest;
+use App\Models\Database\Bill;
 use App\Models\Database\Client;
 use App\Models\Database\Product;
 use App\Models\Database\Provider;
@@ -44,111 +46,48 @@ class PurchaseController extends Controller
         );
     }
 
-    public function getCreate(Client $client)
+    public function getAdd(Bill $bill)
     {
         return view(
-            'product.create',
+            'purchase.create',
             [
-                'client' => $client
+                'bill' => $bill
             ]
         );
     }
 
-    public function postCreate(
-        CreateProductRequest $request,
-        ProductService $productService,
-        Provider $provider
+    public function postAdd(
+        CreatePurchaseRequest $request,
+        PurchaseService $purchaseService,
+        Bill $bill
     )
     {
 
-        $productService->createProduct($request->all(), $provider->id);
+        $purchaseService->createPurchase($bill, $request->all());
 
 
-        $providers = $productService->getList()
-                                 ->paginate(15);
 
         return view(
-            'provider.list',
+            'bill.show',
             [
-                'providers' => $providers,
+                'bill' => $bill,
             ]
         );
     }
 
-    public function getEdit(Provider $provider)
-    {
-        return view(
-            'provider.edit',
-            [
-                'provider' => $provider
-            ]
-        );
-    }
 
-    public function postEdit(
-        UpdateProviderRequest $request,
-        Provider $provider,
-        ProviderService $providerService,
-        AddressService $addressService
-    )
-    {
-        $addressValueObject = new AddressValueObject($request->all()['address']);
-        $addressService->editAddress($provider->address, $addressValueObject);
-
-        $providerService->editProvider($provider, $request->all());
-
-        $providers = $providerService->getList()
-                                 ->paginate(15);
-
-        return view(
-            'provider.list',
-            [
-                'providers' => $providers,
-            ]
-        );
-    }
-
-    public function getImport(Provider $provider)
-    {
-        return view(
-            'import.products',
-            [
-                'provider' => $provider
-            ]
-        );
-    }
-
-    public function postImport(
-        Request $request,
-        Provider $provider,
-        ProductService $productService
-    )  : View
-    {
-        if ($request->input('submit')){
-
-            $datas = $productService->importFile($request);
-            $productService->bulkCreateProduct($datas, $provider);
-        }
-
-        return view(
-            'provider.show',
-            [
-                'provider' => $provider,
-            ]
-        );
-    }
-
-    public function bulkDeleteFromProvider(
-        Provider $provider,
-        ProductService $productService
+    public function getDeleteFromBill(
+        Bill $bill,
+        Purchase $purchase,
+        PurchaseService $purchaseService
     ) : View
     {
-        $productService->bulkDeleteFromProvider($provider);
+        //$purchaseService->($purchase);
 
         return view(
-            'provider.show',
+            'bill.show',
             [
-                'provider' => $provider,
+                'bill' => $bill,
             ]
         );
     }

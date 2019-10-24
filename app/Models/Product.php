@@ -27,4 +27,9 @@ class Product extends Eloquent
 		return $this->hasOne(Provider::class);
 	}
 
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
+
 }

@@ -22,6 +22,17 @@ class ProductRepository extends AbstractRepository
     }
 
     /**
+     * @param string $code
+     *
+     * @return Builder
+     */
+    public function  getProductFromCode(string $code) : Builder
+    {
+        return Product::query()
+            ->where('code' , $code);
+    }
+
+    /**
      * @param array $data
      * @param int   $providerId
      *

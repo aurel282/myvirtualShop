@@ -5,6 +5,7 @@ namespace App\Repository;
 
 use App\Models\Database\Bill;
 use App\Models\Database\Client;
+use Illuminate\Database\Eloquent\Builder;
 
 class BillRepository extends AbstractRepository
 {
@@ -31,5 +32,11 @@ class BillRepository extends AbstractRepository
             'isPaid' => $isPaid,
         ]);
     }
+
+    public function  getList(): Builder
+    {
+        return Bill::query();
+    }
+
 
 }

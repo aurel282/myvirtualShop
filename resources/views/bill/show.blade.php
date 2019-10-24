@@ -47,6 +47,12 @@
                 <div class="column">
                     <div class="ui segments">
                         <div class="ui segment">
+                            <a href="{{ route('bill.purchase.add', $bill) }}"
+                               class="ui small basic right floated icon button"
+                               data-tooltip="@lang('bill.show.purchases.add')"
+                            >
+                                <i class="add icon" style="color:var(--main-color--light);"></i>
+                            </a>
                             <h2 class="ui header" style="margin: 0;">
 
                                 <i class="star icon" style="color:var(--main-color--light);">
@@ -70,6 +76,9 @@
                                                 <th>@lang('bill.show.purchases.id') </th>
                                                 <th>@lang('bill.show.purchases.date')</th>
                                                 <th>@lang('bill.show.purchases.total')</th>
+                                                <th>@lang('bill.show.purchases.id') </th>
+                                                <th>@lang('bill.show.purchases.date')</th>
+                                                <th>@lang('bill.show.purchases.total')</th>
                                                 <th style="width: 1px;">@lang('bill.show.purchases.action')</th>
                                             </tr>
                                         </thead>
@@ -80,10 +89,10 @@
                                                     # {{ $purchase->product->code }}
                                                 </td>
                                                 <td>
-                                                    {{ $purchase->product->price_per_unity }}
+
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('bill.purchase.delete', [$purchase]) }}" class="ui inverted admin-bp-btn--success button
+                                                    <a href="{{ route('bill.purchase.delete', [$bill, $purchase]) }}" class="ui inverted admin-bp-btn--success button
                                                     small">
                                                         <i class="barcode icon" style="color:var(--main-color--light);"></i>
                                                     </a>

@@ -9,6 +9,24 @@ use App\Service\BillService;
 
 class BillController extends Controller
 {
+
+    public function getList(
+        BillService $billService
+    )
+    {
+        $bills = $billService->getList()
+            ->paginate(15);;
+
+
+        return view(
+            'bill.list',
+            [
+                'bills' => $bills,
+            ]
+        );
+    }
+
+
     public function show(
         Bill $bill
     )

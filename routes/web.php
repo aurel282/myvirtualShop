@@ -104,8 +104,16 @@ Route::group(
         // Purchase
         Route::get('/purchase/list', 'PurchaseController@getList')
              ->name('purchase.list');
+        Route::get('{bill}/purchase/add', 'PurchaseController@getAdd')
+             ->name('bill.purchase.add');
+        Route::post('{bill}/purchase/add', 'PurchaseController@postAdd')
+             ->name('bill.purchase.add');
+        Route::get('/{bill}/{purchase}/purchase/delete', 'PurchaseController@deleteFromBill')
+             ->name('bill.purchase.delete');
 
         // Bill
+        Route::get('/bill/list', 'BillController@getList')
+             ->name('bill.list');
         Route::get('/{client}/bill/create', 'BillController@postCreateFromClient')
              ->name('bill.create');
         Route::get('/{bill}/bill/show', 'BillController@show')
