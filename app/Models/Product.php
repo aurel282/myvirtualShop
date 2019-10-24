@@ -24,7 +24,7 @@ class Product extends Eloquent
 
 	public function provider()
 	{
-		return $this->hasOne(Provider::class);
+		return $this->belongsTo(Provider::class);
 	}
 
     public function purchases()

@@ -120,7 +120,7 @@
                                                     small">
                                                         @lang('provider.show.product.delete')
                                                     </a>
-                                                    <a href="{{ route('product.provider.delete', [$provider->id, $product->id]) }}" class="ui inverted admin-bp-btn--success button
+                                                    <a href="{{ route('product.export_one', [$product->id]) }}" class="ui inverted admin-bp-btn--success button
                                                     small">
                                                         <i class="barcode icon" style="color:var(--main-color--light);"></i>
                                                     </a>

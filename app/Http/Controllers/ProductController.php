@@ -210,17 +210,16 @@ class ProductController extends Controller
     public function exportAllProductFromProvider(
         Provider $provider,
         ProductService $productService
-    ) : View
+    )
     {
         $productService->exportAllFromProvider($provider);
+    }
 
-
-
-        return view(
-            'provider.show',
-            [
-                'provider' => $provider,
-            ]
-        );
+    public function exportOneProduct(
+        Product $product,
+        ProductService $productService
+    )
+    {
+        $productService->exportOneProduct($product);
     }
 }

@@ -172,10 +172,8 @@ class ProductService extends AbstractService
     /**
      * @param Product $product
      */
-    public function exportOne(Product $product)
+    public function exportOneProduct(Product $product)
     {
-        $allProductsFromProvider = $provider->products()->get();
-
         $f = fopen('php://memory', 'w');
         // loop over the input array
         $data =  [
@@ -190,7 +188,7 @@ class ProductService extends AbstractService
         // tell the browser it's going to be a csv file
         header('Content-Type: application/csv');
         // tell the browser we want to save it instead of displaying it
-        header('Content-Disposition: attachment; filename="'. $provider->id .'";');
+        header('Content-Disposition: attachment; filename="'. $product->provider->id .'";');
         // make php send the generated csv lines to the browser
         fpassthru($f);
     }

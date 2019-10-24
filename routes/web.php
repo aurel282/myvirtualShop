@@ -99,6 +99,8 @@ Route::group(
              ->name('product.bulk_delete');
         Route::get('/{provider}/product/export_all', 'ProductController@exportAllProductFromProvider')
              ->name('product.export_all');
+        Route::get('/{product}/product/export_one', 'ProductController@exportOneProduct')
+             ->name('product.export_one');
 
 
         // Purchase
