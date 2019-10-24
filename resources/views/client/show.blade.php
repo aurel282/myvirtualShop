@@ -90,10 +90,10 @@
                                                     {{ $bill->date }}
                                                 </td>
                                                 <td>
-                                                    {{ $bill->total_price }}
+                                                    {{ $bill->total_price() }}
                                                 </td>
                                                 <td>
-                                                    {{ $bill->number_product }}
+                                                    {{ $bill->number_product() }}
                                                 </td>
                                                 <td>
                                                     {{ $bill->isPaid }}

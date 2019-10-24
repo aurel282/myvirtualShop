@@ -28,6 +28,21 @@ class Bill extends Eloquent
         return $this->hasMany(Purchase::class);
     }
 
+    public function total_price() : float
+    {
+        $purchases = $this->purchases()->get();
+        /** var int */
+        $total = 0;
+        foreach ($purchases as $purchase)
+        {
+            $total += $purchase->product->price_per_unity * $purchase->quantity;
+        }
+        return $total;
+    }
 
+    public function number_product()
+    {
+        return count($this->hasMany(Purchase::class)->get());
 
+    }
 }
