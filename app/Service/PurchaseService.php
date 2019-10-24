@@ -40,6 +40,11 @@ class PurchaseService extends AbstractService
         return new Purchase();
     }
 
+    public function canBepurchased(string $code, int $quantity) : bool
+    {
+        $product = $this->_productRepository->getProductFromCode($code)->first();
+        return $product->quantity >= $quantity;
+    }
     /**
      * @param Bill  $bill
      * @param array $request

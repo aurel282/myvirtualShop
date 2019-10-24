@@ -10,6 +10,7 @@ use App\Models\Database\Client;
 use App\Models\Database\Product;
 use App\Models\Database\Provider;
 use App\Models\Database\Purchase;
+use App\Repository\ProductRepository;
 use App\Service\AddressService;
 use App\Service\ProductService;
 use App\Service\ProviderService;
@@ -59,13 +60,17 @@ class PurchaseController extends Controller
     public function postAdd(
         CreatePurchaseRequest $request,
         PurchaseService $purchaseService,
+        ProductRepository $productRepository,
         Bill $bill
     )
     {
-
-        $purchaseService->createPurchase($bill, $request->all());
-
-
+        if($purchaseService->canBepurchased($request['code'], $request['quantity']))
+        {
+            if ($purchaseService->createPurchase($bill, $request->all()))
+            {
+                $productRepository->editQuantity($request['code'], $request['quantity']);
+            }
+        }
 
         return view(
             'bill.show',
