@@ -20,7 +20,7 @@
     <div class="two fields">
         <div class="field required">
             {{ Form::label('code', trans('purchase.create.code_label')) }}
-            {{ Form::text('code', null, ['placeholder' => trans('purchase.create.code')]) }}
+            {{ Form::text('code', null, ['placeholder' => trans('purchase.create.code'), 'autofocus'=>'autofocus', 'autocomplete' => 'off']) }}
         </div>
         <div class="field required">
             {{ Form::label('quantity', trans('purchase.create.quantity_label')) }}
