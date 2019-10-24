@@ -106,5 +106,11 @@ Route::group(
              ->name('purchase.list');
 
         // Bill
+        Route::get('/{client}/bill/create', 'BillController@postCreateFromClient')
+             ->name('bill.create');
+        Route::get('/{bill}/bill/show', 'BillController@show')
+             ->name('bill.show');
+        Route::get('/{client}/{bill}/bill/delete', 'BillController@deleteFromClient')
+             ->name('client.bill.delete');
     }
 );

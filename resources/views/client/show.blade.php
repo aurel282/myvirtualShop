@@ -47,8 +47,13 @@
                 <div class="column">
                     <div class="ui segments">
                         <div class="ui segment">
+                            <a href="{{ route('bill.create', $client) }}"
+                               class="ui small basic right floated icon button"
+                               data-tooltip="@lang('client.show.bills.add')"
+                            >
+                                <i class="add icon" style="color:var(--main-color--light);"></i>
+                            </a>
                             <h2 class="ui header" style="margin: 0;">
-
                                 <i class="star icon" style="color:var(--main-color--light);">
                                 </i>
 
@@ -70,6 +75,8 @@
                                                 <th>@lang('client.show.bills.id') </th>
                                                 <th>@lang('client.show.bills.date')</th>
                                                 <th>@lang('client.show.bills.total')</th>
+                                                <th>@lang('client.show.bills.quantity')</th>
+                                                <th>@lang('client.show.bills.is_paid')</th>
                                                 <th style="width: 1px;">@lang('client.show.bills.action')</th>
                                             </tr>
                                         </thead>
@@ -83,10 +90,23 @@
                                                     {{ $bill->date }}
                                                 </td>
                                                 <td>
-
+                                                    {{ $bill->total_price }}
                                                 </td>
                                                 <td>
-
+                                                    {{ $bill->number_product }}
+                                                </td>
+                                                <td>
+                                                    {{ $bill->isPaid }}
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('bill.show', [$bill->id]) }}" class="ui inverted admin-bp-btn--success button
+                                                    small">
+                                                        @lang('client.show.bills.show')
+                                                    </a>
+                                                    <a href="{{ route('client.bill.delete', [$client, $bill]) }}" class="ui inverted admin-bp-btn--success button
+                                                    small">
+                                                        @lang('client.show.bills.delete')
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach

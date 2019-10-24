@@ -88,4 +88,34 @@ return [
         'show' => 'Montrer',
     ],
 
+    'show' => [
+        'back' => 'Retour',
+        'title' => 'Vendeur Id#',
+        'import_csv' => 'Importer via CSV',
+        'bills' => [
+            'title' => 'Listes des additions',
+            'subtitle' => '',
+            'id' => 'ID l\'addition',
+            'quantity' => 'Nombre de jouets',
+            'total' => 'Prix total',
+            'date' => 'Date de l\'achat',
+            'is_paid' => 'Payé',
+            'action' => 'Actions',
+            'show' => 'Details',
+            'delete' => 'Supprimer',
+            'add' => 'Nouvelle addition',
+        ],
+        'information' => [
+            'title' => 'Informations du vendeur',
+            'subtitle' => '',
+            'lastname' => 'Nom',
+            'firstname' => 'Prenom',
+            'email' => 'Email',
+            'phone' => 'Téléphone',
+            'address' => 'Adresse',
+            'edit' => 'Editer',
+            'mobile' => 'GSM',
+        ]
+    ],
+
 ];

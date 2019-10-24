@@ -23,6 +23,11 @@ class Bill extends Eloquent
 		return $this->hasOne(Client::class);
 	}
 
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
+
 
 
 }
