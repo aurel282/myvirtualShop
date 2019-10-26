@@ -24,7 +24,7 @@
         </div>
         <div class="field">
             {{ Form::label('description', trans('product.create.description_label')) }}
-            {{ Form::text('description', null, ['placeholder' => trans('product.create.description')]) }}
+            {{ Form::text('description', '', ['placeholder' => trans('product.create.description')]) }}
         </div>
     </div>
     <br />
@@ -41,15 +41,15 @@
     <div class="three fields">
         <div class="ten wide field">
             {{ Form::label('color', trans('product.create.color_label')) }}
-            {{ Form::text('color', null, ['placeholder' => trans('product.create.color')]) }}
+            {{ Form::text('color', '', ['placeholder' => trans('product.create.color')]) }}
         </div>
         <div class="twelve wide field">
             {{ Form::label('brand', trans('product.create.brand_label')) }}
-            {{ Form::text('brand', null, ['placeholder' => trans('product.create.brand_number')]) }}
+            {{ Form::text('brand', '', ['placeholder' => trans('product.create.brand')]) }}
         </div>
         <div class="twelve wide field">
             {{ Form::label('material', trans('product.create.material_label')) }}
-            {{ Form::text('material', null, ['placeholder' => trans('product.create.material_number')]) }}
+            {{ Form::text('material', '', ['placeholder' => trans('product.create.material')]) }}
         </div>
 
     @parent

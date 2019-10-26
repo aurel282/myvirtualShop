@@ -55,6 +55,7 @@
         <th style="width: 1px;">#</th>
         <th>@lang('product.list.name')</th>
         <th>@lang('product.list.description')</th>
+        <th>@lang('product.list.provider_name')</th>
         <th>@lang('product.list.code')</th>
         <th>@lang('product.list.quantity')</th>
         <th>@lang('product.list.price_per_unity')</th>
@@ -74,6 +75,11 @@
             </td>
             <td>
                 {{ $product->description }}
+            </td>
+            <td>
+                <a href="{{ route('provider.show', $product->provider->id) }}" >
+                    {{ $product->provider->name }}
+                </a>
             </td>
             <td>
                 {{ $product->code }}

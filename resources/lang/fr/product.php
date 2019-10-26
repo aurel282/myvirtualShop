@@ -59,6 +59,7 @@ return [
         'name' => 'Nom',
         'description' => 'Description',
         'code' => 'Code',
+        'provider_name' => 'Nom du vendeur',
         'quantity' => 'Quantité',
         'price_per_unity' => 'Prix',
         'action' => 'Action',
@@ -86,6 +87,7 @@ return [
             'color' => 'Couleur',
             'brand' => 'Marque',
             'material' => 'Matière',
+            'provider_name' => 'Nom du vendeur',
         ],
     ],
 ];
