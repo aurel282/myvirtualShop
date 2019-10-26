@@ -26,6 +26,16 @@ class PurchaseRepository extends AbstractRepository
         return Purchase::query();
     }
 
+
+    /**
+     * @return Builder
+     */
+    public function getAllPurchase(): Builder
+    {
+        return Purchase::query();
+    }
+
+
     /**
      * @param Bill    $bill
      * @param Product $product
@@ -52,6 +62,7 @@ class PurchaseRepository extends AbstractRepository
     {
         return $purchase->delete();
     }
+
 
 
 }

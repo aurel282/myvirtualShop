@@ -87,7 +87,7 @@ class PurchaseController extends Controller
         PurchaseService $purchaseService
     ) : View
     {
-        //$purchaseService->($purchase);
+        $purchaseService->deletePurchase($bill, $purchase);
 
         return view(
             'bill.show',

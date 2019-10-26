@@ -45,6 +45,7 @@ class PurchaseService extends AbstractService
         $product = $this->_productRepository->getProductFromCode($code)->first();
         return $product->quantity >= $quantity;
     }
+
     /**
      * @param Bill  $bill
      * @param array $request
@@ -61,6 +62,36 @@ class PurchaseService extends AbstractService
         else
         {
             return null;
+        }
+    }
+
+    /**
+     * @param Bill     $bill
+     * @param Purchase $purchase
+     *
+     * @return bool
+     * @throws \Exception
+     */
+    public function deletePurchase(Bill $bill, Purchase $purchase): bool
+    {
+        $product = $purchase->product()->get();
+        $quantity = $purchase->quatity;
+        if($this->_purchaseRepository->delete($purchase))
+        {
+            return $this->_productRepository->editQuantity($product->code,  $quantity * (-1));
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public function deleteAllPurchase()
+    {
+        $purchases = $this->_purchaseRepository->getAllPurchase()->get();
+        foreach ($purchases as $purchase)
+        {
+            $this->_purchaseRepository->delete($purchase);
         }
     }
 
