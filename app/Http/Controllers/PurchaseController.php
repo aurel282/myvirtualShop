@@ -37,16 +37,6 @@ class PurchaseController extends Controller
         );
     }
 
-    public function show(Purchase $purchase)
-    {
-        return view(
-            'purchase.show',
-            [
-                'purchase' => $purchase,
-            ]
-        );
-    }
-
     public function getAdd(Bill $bill)
     {
         return view(
@@ -79,7 +69,6 @@ class PurchaseController extends Controller
             ]
         );
     }
-
 
     public function getDeleteFromBill(
         Bill $bill,

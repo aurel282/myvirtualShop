@@ -72,9 +72,7 @@
             <td>
             </td>
             <td>
-                <a href="{{ route('purchase.show', $purchase->id) }}" class="ui inverted admin-bp-btn--success button small">
-                    @lang('purchase.list.show')
-                </a>
+
             </td>
         </tr>
     @endforeach
