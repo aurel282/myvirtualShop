@@ -13,11 +13,11 @@ class UpdateProductRequest extends FormRequest
         return [
             'name' => 'required|string|max:150',
             'quantity' => 'required|numeric',
-            'description' => 'string|max:250',
+            'description' => 'nullable|string|max:250',
             'price_per_unity' => 'required|numeric',
-            'color' => 'string|max:150',
-            'brand' => 'string|max:150',
-            'material' => 'string|max:150',
+            'color' => 'nullable|string|max:150',
+            'brand' => 'nullable|string|max:150',
+            'material' => 'nullable|string|max:150',
         ];
     }
 
