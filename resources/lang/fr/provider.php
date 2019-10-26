@@ -85,6 +85,7 @@ return [
         'email' => 'Email',
         'phone' => 'Téléphone',
         'address' => 'Adresse',
+        'number_products' => 'Nombre de jouets',
         'action' => 'Action',
         'show' => 'Montrer',
     ],
@@ -124,6 +125,7 @@ return [
             'address' => 'Adresse',
             'edit' => 'Editer',
             'mobile' => 'GSM',
+            'number_products' => 'Nombre de jouets',
         ]
     ],
 

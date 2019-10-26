@@ -43,6 +43,5 @@ class Bill extends Eloquent
     public function number_product()
     {
         return count($this->purchases()->get());
-
     }
 }

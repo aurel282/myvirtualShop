@@ -194,6 +194,14 @@
                                             </b>
                                         </p>
                                     </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('provider.show.information.number_products'):</b>
+                                            <b class="color-text--success">
+                                                {{ $provider->number_products() }}
+                                            </b>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

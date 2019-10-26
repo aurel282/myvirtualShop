@@ -64,6 +64,7 @@
         <th>@lang('provider.list.email')</th>
         <th>@lang('provider.list.phone')</th>
         <th>@lang('provider.list.address')</th>
+        <th>@lang('provider.list.number_products')</th>
         <th style="width: 1px;">@lang('provider.list.action')</th>
     </tr>
     </thead>
@@ -87,6 +88,9 @@
             </td>
             <td>
                 {{ $provider->address ? $provider->address->getFullyReadableAttribute() : 'No address' }}
+            </td>
+            <td>
+                {{ $provider->number_products() }}
             </td>
             <td>
                 <a href="{{ route('provider.show', $provider->id) }}" class="ui inverted admin-bp-btn--success button small">

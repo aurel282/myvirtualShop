@@ -31,7 +31,6 @@ class Provider extends Eloquent
         'address_id'
     ];
 
-
     public function address()
     {
         return $this->belongsTo(Address::class);
@@ -40,6 +39,11 @@ class Provider extends Eloquent
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+
+    public function number_products()
+    {
+        return count($this->products()->get());
     }
     /*
         public function corporates()

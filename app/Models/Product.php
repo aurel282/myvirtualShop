@@ -31,4 +31,5 @@ class Product extends Eloquent
         return $this->hasMany(Purchase::class);
     }
 
+
 }
