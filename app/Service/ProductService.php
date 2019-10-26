@@ -23,9 +23,9 @@ class ProductService extends AbstractService
         $this->_productRepository = $productRepository;
     }
 
-    public function getList(): Builder
+    public function getList(array $searchInfos): Builder
     {
-        return $this->_productRepository->getProductList();
+        return $this->_productRepository->getProductList($searchInfos);
     }
 
     public function getProduct(int $id) : Product

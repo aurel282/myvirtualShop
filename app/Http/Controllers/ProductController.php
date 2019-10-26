@@ -18,7 +18,7 @@ class ProductController extends Controller
         ProductService $productService
     )
     {
-        $products = $productService->getList()
+        $products = $productService->getList($request->all())
                                  ->paginate(15);
 
         return view(
@@ -34,7 +34,7 @@ class ProductController extends Controller
         ProductService $productService
     )
     {
-        $products = $productService->getList()
+        $products = $productService->getList([])
                                    ->paginate(15);
 
         $productService->deleteProduct($product);
@@ -151,7 +151,7 @@ class ProductController extends Controller
 
         $productService->editProduct($product, $request->all());
 
-        $products = $productService->getList()
+        $products = $productService->getList([])
                                    ->paginate(15);
 
         return view(

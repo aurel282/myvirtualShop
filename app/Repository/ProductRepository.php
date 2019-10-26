@@ -16,9 +16,21 @@ class ProductRepository extends AbstractRepository
         parent::__construct();
     }
 
-    public function  getProductList(): Builder
+    public function  getProductList(array $searchInfos): Builder
     {
-        return Product::query();
+        $query  = Product::query();
+
+        if (isset($searchInfos['product_name']))
+        {
+            $query->where('name', 'like', '%' . $searchInfos['product_name'] . '%' );
+        }
+
+        if (isset($searchInfos['product_code']))
+        {
+            $query->where('code', 'like', '%' . $searchInfos['product_code'] . '%' );
+        }
+
+        return $query;
     }
 
     /**
