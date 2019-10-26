@@ -19,9 +19,20 @@ class ClientRepository extends AbstractRepository
     }
 
 
-    public function  getClientList(): Builder
+    public function  getClientList(array $searchInfo): Builder
     {
-        return Client::query();
+        $query = Client::query();
+        if (isset($searchInfo['client_name']))
+        {
+            $query->where('name', 'like', '%' . $searchInfo['client_name'] . '%' );
+        }
+
+        if (isset($searchInfo['client_id']))
+        {
+            $query->where('id', $searchInfo['client_id'] );
+        }
+
+        return $query;
     }
 
     public function create(array $request, int $addressId): Client

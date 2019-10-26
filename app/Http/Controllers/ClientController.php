@@ -17,7 +17,7 @@ class ClientController extends Controller
         ClientService $clientService
     )
     {
-        $clients = $clientService->getList()
+        $clients = $clientService->getList($request->all())
                 ->paginate(15);
 
         return view(
@@ -57,7 +57,7 @@ class ClientController extends Controller
         $clientService->createClient($request->all(), $address->id);
 
 
-        $clients = $clientService->getList()
+        $clients = $clientService->getList([])
                                  ->paginate(15);
 
         return view(
@@ -90,7 +90,7 @@ class ClientController extends Controller
 
         $clientService->editClient($client, $request->all());
 
-        $clients = $clientService->getList()
+        $clients = $clientService->getList([])
                                  ->paginate(15);
 
         return view(
@@ -121,9 +121,7 @@ class ClientController extends Controller
             // File Details
             $filename = $file->getClientOriginalName();
             $extension = $file->getClientOriginalExtension();
-            $tempPath = $file->getRealPath();
             $fileSize = $file->getSize();
-            $mimeType = $file->getMimeType();
 
             // Valid File Extensions
             $valid_extension = array("csv");
@@ -210,7 +208,7 @@ class ClientController extends Controller
         }
 
 
-        $clients = $clientService->getList()
+        $clients = $clientService->getList([])
                                  ->paginate(15);
 
         return view(

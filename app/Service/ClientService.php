@@ -31,9 +31,9 @@ class ClientService extends AbstractService
         $this->_addressRepository = $addressRepository;
     }
 
-    public function getList(): Builder
+    public function getList(array $searchInfos): Builder
     {
-        return $this->_clientRepository->getClientList();
+        return $this->_clientRepository->getClientList($searchInfos);
     }
 
     public function getClient(int $id) : Client
