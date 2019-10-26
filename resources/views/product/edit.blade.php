@@ -46,11 +46,11 @@
         </div>
         <div class="twelve wide field">
             {{ Form::label('brand', trans('product.edit.brand_label')) }}
-            {{ Form::text('brand', $product->brand, ['placeholder' => trans('product.edit.brand_number')]) }}
+            {{ Form::text('brand', $product->brand, ['placeholder' => trans('product.edit.brand')]) }}
         </div>
         <div class="twelve wide field">
             {{ Form::label('material', trans('product.edit.material_label')) }}
-            {{ Form::text('material', $product->material, ['placeholder' => trans('product.edit.material_number')]) }}
+            {{ Form::text('material', $product->material, ['placeholder' => trans('product.edit.material')]) }}
         </div>
     </div>
 

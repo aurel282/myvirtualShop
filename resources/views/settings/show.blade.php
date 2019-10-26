@@ -8,10 +8,10 @@
 
                     <a href="{{ url()->previous() }}" class="ui left labeled icon button inverted admin-bp-btn--info button back-to-list" style="position: absolute; left: 0; top: 27px;">
                         <i style="color:#545454!important;" class="color-bg--success left arrow icon color" ></i>
-                        @lang('product.show.back')
+                        @lang('settings.show.back')
                     </a>
                     <p>
-                        @lang('product.show.title')
+                        @lang('settings.show.title')
                     </p>
                 </div>
             </div>

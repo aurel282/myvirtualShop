@@ -20,11 +20,11 @@
     <div class="two fields">
         <div class="field required">
             {{ Form::label('fixed_fee', trans('settings.edit.fixed_fee_label')) }}
-            {{ Form::text('fixed_fee', $setting->name, ['placeholder' => trans('settings.edit.fixed_fee')]) }}
+            {{ Form::text('fixed_fee', $settings->fixed_fee, ['placeholder' => trans('settings.edit.fixed_fee')]) }}
         </div>
         <div class="field">
             {{ Form::label('variable_fee', trans('settings.edit.variable_fee_label')) }}
-            {{ Form::text('variable_fee', $setting->description, ['placeholder' => trans('settings.edit.variable_fee')]) }}
+            {{ Form::text('variable_fee', $settings->variable_fee, ['placeholder' => trans('settings.edit.variable_fee')]) }}
         </div>
     </div>
 

@@ -131,7 +131,7 @@ Route::group(
              ->name('settings.show');
         Route::get('/settings/edit', 'SettingsController@getEdit')
              ->name('settings.edit');
-        Route::get('/settings/edit', 'SettingsController@postEdit')
+        Route::post('/settings/edit', 'SettingsController@postEdit')
              ->name('settings.edit');
     }
 );
