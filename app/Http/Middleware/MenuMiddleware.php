@@ -125,6 +125,18 @@ class MenuMiddleware
                     ],
                 ],
             ],
+            [
+                'key' => 'statistics',
+                'attributes' => [
+                    'class' => 'icon-parking btn-nav'
+                ],
+                'links' => [
+                    [
+                        'key' => 'statistics.show',
+                        'route' => 'settings.show',
+                    ],
+                ],
+            ],
 		];
 
 		return $configArray;

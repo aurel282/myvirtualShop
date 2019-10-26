@@ -20,6 +20,7 @@ return [
        'purchase' => 'Achats',
        'bill' => 'Tickets',
        'settings' => 'Paramètres',
+       'statistics' => 'Statistiques',
    ],
     'sub_menu' => [
         'client' => [
@@ -39,6 +40,9 @@ return [
         ],
         'settings' => [
             'management' => 'Gestion des paramètres'
+        ],
+        'statistics' => [
+            'show' => 'Montrer les statistiques'
         ],
     ]
 
