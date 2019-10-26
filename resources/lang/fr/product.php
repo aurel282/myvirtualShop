@@ -55,7 +55,7 @@ return [
 
     'list' => [
         'title' => 'Liste des produits',
-        'subtitle' => 'Tous les produits existant',
+        'subtitle' => 'Tous les produits existants',
         'name' => 'Nom',
         'description' => 'Description',
         'code' => 'Code',

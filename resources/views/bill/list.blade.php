@@ -48,11 +48,10 @@
     </tr>
     <tr class="main-head">
         <th style="width: 1px;">#</th>
-        <th>@lang('bill.list.name')</th>
-        <th>@lang('bill.list.firstname')</th>
-        <th>@lang('bill.list.email')</th>
-        <th>@lang('bill.list.phone')</th>
-        <th>@lang('bill.list.address')</th>
+        <th>@lang('bill.list.number_product')</th>
+        <th>@lang('bill.list.total_price')</th>
+        <th>@lang('bill.list.client_name')</th>
+        <th>@lang('bill.list.isPaid')</th>
         <th style="width: 1px;">@lang('bill.list.action')</th>
     </tr>
     </thead>
@@ -64,9 +63,17 @@
                     # {{ $bill->id }}
                 </a>
             </td>
-            <td>{{ $bill->name }}</td>
             <td>
-                {{ $bill->firstname }}
+                {{ $bill->number_product() }}
+            </td>
+            <td>
+                {{ $bill->total_price() }}
+            </td>
+            <td>
+                {{ $bill->client->name }}
+            </td>
+            <td>
+                {{ $bill->isPaid }}
             </td>
             <td>
                 <a href="{{ route('bill.show', $bill->id) }}" class="ui inverted admin-bp-btn--success button small">
