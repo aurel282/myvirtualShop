@@ -121,7 +121,7 @@ class MenuMiddleware
                 'links' => [
                     [
                         'key' => 'settings.management',
-                        'route' => 'purchase.list',
+                        'route' => 'settings.show',
                     ],
                 ],
             ],

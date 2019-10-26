@@ -124,5 +124,14 @@ Route::group(
              ->name('bill.show');
         Route::get('/{client}/{bill}/bill/delete', 'BillController@deleteFromClient')
              ->name('client.bill.delete');
+
+
+        // Settings
+        Route::get('/settings', 'SettingsController@show')
+             ->name('settings.show');
+        Route::get('/settings/edit', 'SettingsController@getEdit')
+             ->name('settings.edit');
+        Route::get('/settings/edit', 'SettingsController@postEdit')
+             ->name('settings.edit');
     }
 );
