@@ -1,9 +1,9 @@
 @extends('layout.template-list')
 
 @section('adminHeader')
-    <h2 class="ui dividing header">@lang('client.list.title')
+    <h2 class="ui dividing header">@lang('purchase.list.title')
         <span style="font-size: 14px;">
-         - @lang('client.list.subtitle')
+         - @lang('purchase.list.subtitle')
     </span>
     </h2>
 @endsection
@@ -15,13 +15,13 @@
                 <div class="five fields">
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder="{{trans('client.list.search.by_id')}}" name="client_id" type="text" value="">
+                            <input placeholder="{{trans('purchase.list.search.by_id')}}" name="client_id" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder="{{trans('client.list.search.by_name')}}" name="client_name" type="text" value="">
+                            <input placeholder="{{trans('purchase.list.search.by_name')}}" name="client_name" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                     <div class="two wide field">
                         <button class="ui primary labeled icon button">
                             <i title="" class="search icon"></i>
-                            @lang('client.list.search.search')
+                            @lang('purchase.list.search.search')
                         </button>
                     </div>
                 </div>
@@ -41,52 +41,39 @@
 
 @section('containerContent')
     <thead class="full-width">
-    <tr style="background: #f9fafb;" class="no-sort">
-        <th colspan="7" style="background: #f9fafb!important;" class="no-sort">
-            <a href="{{ route('client.create') }}" class="ui right floated small primary labeled icon button mobile-reset-float">
-                <i class="add icon" style="color:white;"></i>
-                @lang('client.list.create_new')
-            </a>
-            <a href="{{ route('client.import') }}" class="ui right floated small primary labeled icon button mobile-reset-float">
-                <i class="add icon" style="color:white;"></i>
-                @lang('client.list.import_csv')
-            </a>
-        </th>
-    </tr>
     <tr class="main-head">
         <th style="width: 1px;">#</th>
-        <th>@lang('client.list.name')</th>
-        <th>@lang('client.list.firstname')</th>
-        <th>@lang('client.list.email')</th>
-        <th>@lang('client.list.phone')</th>
-        <th>@lang('client.list.address')</th>
-        <th style="width: 1px;">@lang('client.list.action')</th>
+        <th>@lang('purchase.list.name')</th>
+        <th>@lang('purchase.list.firstname')</th>
+        <th>@lang('purchase.list.email')</th>
+        <th>@lang('purchase.list.phone')</th>
+        <th>@lang('purchase.list.address')</th>
+        <th style="width: 1px;">@lang('purchase.list.action')</th>
     </tr>
     </thead>
     <tbody>
-    @foreach($clients as $client)
+    @foreach($purchases as $purchase)
         <tr>
             <td>
-                <a href="{{ route('client.show', $client->id) }}" >
-                    # {{ $client->id }}
-                </a>
-            </td>
-            <td>{{ $client->name }}</td>
-            <td>
-                {{ $client->firstname }}
+                {{ $purchase->id }}
             </td>
             <td>
-                {{ $client->email }}
+                {{ $purchase->name }}
             </td>
             <td>
-                {{ $client->phone }}
+                {{ $purchase->firstname }}
             </td>
             <td>
-                {{ $client->address ? $client->address->getFullyReadableAttribute() : 'No address' }}
+                {{ $purchase->email }}
             </td>
             <td>
-                <a href="{{ route('client.show', $client->id) }}" class="ui inverted admin-bp-btn--success button small">
-                    @lang('client.list.show')
+                {{ $purchase->phone }}
+            </td>
+            <td>
+            </td>
+            <td>
+                <a href="{{ route('purchase.show', $purchase->id) }}" class="ui inverted admin-bp-btn--success button small">
+                    @lang('purchase.list.show')
                 </a>
             </td>
         </tr>
@@ -94,15 +81,9 @@
     </tbody>
     <tfoot class="full-width">
     <tr>
-        <th>
-            <div class="ui checkbox js-action-checkbox">
-                <label></label>
-                <input type="checkbox" class="select-all">
-            </div>
-        </th>
         <th colspan="10">
             <div class="ui right floated pagination menu floated-pagination">
-                {{ $clients->links('vendor.pagination.semantic-ui') }}
+                {{ $purchases->links('vendor.pagination.semantic-ui') }}
             </div>
         </th>
     </tr>

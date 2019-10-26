@@ -106,12 +106,6 @@
     </tbody>
     <tfoot class="full-width">
     <tr>
-        <th>
-            <div class="ui checkbox js-action-checkbox">
-                <label></label>
-                <input type="checkbox" class="select-all">
-            </div>
-        </th>
         <th colspan="10">
             <div class="ui right floated pagination menu floated-pagination">
                 {{ $products->links('vendor.pagination.semantic-ui') }}
