@@ -164,7 +164,7 @@ class ProductService extends AbstractService
         // tell the browser it's going to be a csv file
         header('Content-Type: application/csv');
         // tell the browser we want to save it instead of displaying it
-        header('Content-Disposition: attachment; filename="'. $provider->id .'";');
+        header('Content-Disposition: attachment; filename=Etiq_T;');
         // make php send the generated csv lines to the browser
         fpassthru($f);
     }
@@ -188,7 +188,7 @@ class ProductService extends AbstractService
         // tell the browser it's going to be a csv file
         header('Content-Type: application/csv');
         // tell the browser we want to save it instead of displaying it
-        header('Content-Disposition: attachment; filename="'. $product->provider->id .'";');
+        header('Content-Disposition: attachment; filename=Etiq_S;');
         // make php send the generated csv lines to the browser
         fpassthru($f);
     }
@@ -246,8 +246,6 @@ class ProductService extends AbstractService
         {
             $provider_id = '00' . $provider_id;
         }
-
         return $provider_id . $product_id . $price;
-
     }
 }
