@@ -68,7 +68,7 @@ class PurchaseController extends Controller
         {
             if ($purchaseService->createPurchase($bill, $request->all()))
             {
-                $productRepository->editQuantity($request['code'], $request['quantity']);
+                $productRepository->subQuantity($request['code'], $request['quantity']);
             }
         }
 

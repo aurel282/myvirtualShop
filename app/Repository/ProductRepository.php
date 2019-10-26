@@ -77,11 +77,25 @@ class ProductRepository extends AbstractRepository
      *
      * @return bool
      */
-    public function editQuantity(string $code, int $quantity): bool
+    public function subQuantity(string $code, int $quantity): bool
     {
         $product = $this->getProductFromCode($code)->first();
         return $product->update([
             'quantity' => $product->quantity - $quantity,
+        ]);
+    }
+
+    /**
+     * @param string $code
+     * @param int    $quantity
+     *
+     * @return bool
+     */
+    public function addQuantity(string $code, int $quantity): bool
+    {
+        $product = $this->getProductFromCode($code)->first();
+        return $product->update([
+            'quantity' => $product->quantity + $quantity,
         ]);
     }
 

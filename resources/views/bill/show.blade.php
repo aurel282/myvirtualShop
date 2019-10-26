@@ -100,7 +100,7 @@
                                                     {{ $purchase->quantity }}
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('bill.purchase.delete', [$bill, $purchase]) }}" class="ui inverted admin-bp-btn--success button
+                                                    <a href="{{ route('bill.purchase.delete', [$bill, $purchase] ) }}" class="ui inverted admin-bp-btn--success button
                                                     small">
                                                         <i class="delete icon" style="color:var(--main-color--light);"></i>
                                                     </a>

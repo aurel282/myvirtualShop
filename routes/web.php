@@ -110,7 +110,7 @@ Route::group(
              ->name('bill.purchase.add');
         Route::post('{bill}/purchase/add', 'PurchaseController@postAdd')
              ->name('bill.purchase.add');
-        Route::get('/{bill}/{purchase}/purchase/delete', 'PurchaseController@deleteFromBill')
+        Route::get('/{bill}/{purchase}/purchase/delete', 'PurchaseController@getDeleteFromBill')
              ->name('bill.purchase.delete');
 
         // Bill

@@ -74,11 +74,11 @@ class PurchaseService extends AbstractService
      */
     public function deletePurchase(Bill $bill, Purchase $purchase): bool
     {
-        $product = $purchase->product()->get();
-        $quantity = $purchase->quatity;
+        $product = $purchase->product()->first();
+        $quantity = $purchase->quantity;
         if($this->_purchaseRepository->delete($purchase))
         {
-            return $this->_productRepository->editQuantity($product->code,  $quantity * (-1));
+            return $this->_productRepository->addQuantity($product->code,  $quantity );
         }
         else
         {
