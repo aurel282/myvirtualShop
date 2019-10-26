@@ -100,14 +100,14 @@ class ProviderService extends AbstractService
                 while ($filedata = fgetcsv($file, 1000, ",")) {
                     array_push($importData_arr,
                         [
-                            'lastname' => $filedata[0],
-                            'firstname' => $filedata[1],
-                            'email' => $filedata[7],
+                            'lastname' => utf8_encode($filedata[0]),
+                            'firstname' => utf8_encode($filedata[1]),
+                            'email' => utf8_encode($filedata[7]),
                             'phone_number' => $filedata[2],
                             'mobile_number' => $filedata[3],
-                            'street' => $filedata[5],
+                            'street' => utf8_encode($filedata[5]),
                             'number' => $filedata[6] == ''? null : $filedata[6],
-                            'city' => $filedata[4],
+                            'city' => utf8_encode($filedata[4]),
                         ]
                     );
                 }
