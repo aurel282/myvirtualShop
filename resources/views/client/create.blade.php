@@ -29,11 +29,11 @@
     </div>
     <br />
     <div class="two fields">
-        <div class="ten wide field required">
+        <div class="ten wide field">
             {{ Form::label('email', trans('client.create.email_label')) }}
             {{ Form::text('email', null, ['placeholder' => trans('client.create.email')]) }}
         </div>
-        <div class="six wide field required">
+        <div class="six wide field">
             {{ Form::label('language_code', trans('client.create.language_label')) }}
             {{ Form::select('language_code', [
                     'FR' => 'FR',
@@ -44,37 +44,37 @@
     </div>
     <br />
     <div class="two fields">
-        <div class="twelve wide field required">
+        <div class="twelve wide field">
             {{ Form::label('phone_number', trans('client.create.phone_number_label')) }}
             {{ Form::text('phone_number', null, ['placeholder' => trans('client.create.phone_number')]) }}
         </div>
     </div>
     <div class="two fields">
-        <div class="twelve wide field required">
+        <div class="twelve wide field">
             {{ Form::label('mobile_number', trans('client.create.mobile_number_label')) }}
             {{ Form::text('mobile_number', null, ['placeholder' => trans('client.create.mobile_number')]) }}
         </div>
     </div>
     <div class="two fields">
-        <div class="field required">
+        <div class="field">
             {{ Form::label('address[street]', trans('client.create.address.street_label')) }}
             {{ Form::text('address[street]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.street')]) }}
         </div>
-        <div class="field required">
+        <div class="field">
             {{ Form::label('address[number]', trans('client.create.address.number_label')) }}
             {{ Form::text('address[number]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.number')]) }}
         </div>
     </div>
     <div class="three fields ">
-        <div class="field required">
+        <div class="field">
             {{ Form::label('address[city]', trans('client.create.address.city_label')) }}
             {{ Form::text('address[city]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.city')]) }}
         </div>
-        <div class="field required">
+        <div class="field">
             {{ Form::label('address[zip_code]', trans('client.create.address.zip_code_label')) }}
             {{ Form::text('address[zip_code]', '',  ['class'=>'', 'placeholder' => trans('client.create.address.zip_code')]) }}
         </div>
-        <div class="field required">
+        <div class="field">
             <label>@lang('client.create.address.country_label')</label>
             <div class="ui fluid search selection dropdown">
                 <input type="hidden" name="address[country]">

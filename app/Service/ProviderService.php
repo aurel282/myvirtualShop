@@ -139,8 +139,8 @@ class ProviderService extends AbstractService
         foreach ($providers as $provider) {
             $data =  [
                 $provider->id,
-                $provider->name,
-                $provider->firstname,
+                utf8_encode($provider->name),
+                utf8_encode($provider->firstname),
             ];
             // generate csv lines from the inner arrays
             fputcsv($f, $data, ',');

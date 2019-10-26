@@ -138,15 +138,5 @@ class ProviderController extends Controller
     )
     {
         $providerService->exportAllProviders();
-
-        $providers = $providerService->getList([])
-                                     ->paginate(15);
-
-        return view(
-            'provider.list',
-            [
-                'providers' => $providers,
-            ]
-        );
     }
 }

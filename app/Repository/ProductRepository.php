@@ -62,12 +62,12 @@ class ProductRepository extends AbstractRepository
     {
         return $product->update([
             'name' => $request['name'],
-            'description' => $request['description'],
+            'description' => isset($request['description']) ? $request['description'] : '' ,
             'quantity' => $request['quantity'],
             'price_per_unity' => $request['price_per_unity'],
-            'brand' => $request['brand'],
-            'color' => $request['color'],
-            'material' => $request['material'],
+            'brand' => isset($request['brand']) ? $request['brand'] : '',
+            'color' => isset($request['color']) ? $request['color'] : '',
+            'material' => isset($request['material']) ? $request['material'] : '',
         ]);
     }
 

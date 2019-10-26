@@ -13,15 +13,15 @@ class UpdateClientRequest extends FormRequest
         return [
             'firstname' => 'required|string|max:50',
             'lastname' => 'required|string|max:50',
-            'email' => 'required|string|max:75',
+            'email' => 'nullable|string|max:75',
             'language_code' => 'required|string|max:5',
             'phone_number' => 'string|max:15',
             'mobile_number' => 'string|max:15',
-            'address.street' => 'required|string|max:150',
-            'address.number' => 'required|numeric',
-            'address.city' => 'required|string|max:50',
-            'address.country' => 'required|string|max:50',
-            'address.zip_code' => 'required|string|max:10',
+            'address.street' => 'nullable|string|max:150',
+            'address.number' => 'nullable|numeric',
+            'address.city' => 'nullable|string|max:50',
+            'address.country' => 'nullable|string|max:50',
+            'address.zip_code' => 'nullable|string|max:10',
         ];
     }
 

@@ -40,9 +40,9 @@ class ClientRepository extends AbstractRepository
         return Client::create([
             'name' => $request['lastname'],
             'firstname' => $request['firstname'],
-            'email' => $request['email'],
-            'phone' => $request['phone_number'],
-            'mobile' => $request['mobile_number'],
+            'email' => isset($request['email']) ?  $request['email'] : '',
+            'phone' => isset($request['phone_number']) ? $request['phone_number'] : '',
+            'mobile' => isset($request['mobile_number']) ? $request['mobile_number'] : '',
             'address_id' => $addressId,
         ]);
     }
@@ -58,9 +58,9 @@ class ClientRepository extends AbstractRepository
         return $client->update([
             'name' => $request['lastname'],
             'firstname' => $request['firstname'],
-            'email' => $request['email'],
-            'phone' => $request['phone_number'],
-            'mobile' =>  $request['mobile_number']
+            'email' => isset($request['email']) ?  $request['email'] : '',
+            'phone' => isset($request['phone_number']) ? $request['phone_number'] : '',
+            'mobile' => isset($request['mobile_number']) ? $request['mobile_number'] : '',
         ]);
     }
 
