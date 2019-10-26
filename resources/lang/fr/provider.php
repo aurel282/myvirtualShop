@@ -73,6 +73,7 @@ return [
         'title' => 'Listes des vendeurs',
         'subtitle' => 'Liste des vendeurs existants',
         'import_csv' => 'Importer via CSV',
+        'export_csv' => 'Exporter la liste en CSV',
         'create_new' => 'Créer nouveau vendeur',
         'search' => [
             'search' => 'Rechercher',

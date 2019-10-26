@@ -131,4 +131,22 @@ class ProviderController extends Controller
             ]
         );
     }
+
+    public function getExportAll(
+        Request $request,
+        ProviderService $providerService
+    )
+    {
+        $providerService->exportAllProviders();
+
+        $providers = $providerService->getList([])
+                                     ->paginate(15);
+
+        return view(
+            'provider.list',
+            [
+                'providers' => $providers,
+            ]
+        );
+    }
 }

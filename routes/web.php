@@ -68,6 +68,8 @@ Route::group(
              ->name('provider.import');
         Route::post('/provider/import', 'ProviderController@postImport')
              ->name('provider.import');
+        Route::get('/provider/export', 'ProviderController@getExportAll')
+             ->name('provider.export');
 
 
         // Product

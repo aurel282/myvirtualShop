@@ -51,6 +51,10 @@
                 <i class="add icon" style="color:white;"></i>
                 @lang('provider.list.import_csv')
             </a>
+            <a href="{{ route('provider.export') }}" class="ui right floated small primary labeled icon button mobile-reset-float">
+                <i class="file alternate icon" style="color:white;"></i>
+                @lang('provider.list.export_csv')
+            </a>
         </th>
     </tr>
     <tr class="main-head">
