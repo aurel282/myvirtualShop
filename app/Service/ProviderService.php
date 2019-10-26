@@ -31,9 +31,9 @@ class ProviderService extends AbstractService
         $this->_addressRepository = $addressRepository;
     }
 
-    public function getList(): Builder
+    public function getList(array $searchInfo): Builder
     {
-        return $this->_providerRepository->getProviderList();
+        return $this->_providerRepository->getProviderList($searchInfo);
     }
 
     public function getProvider(int $id) : Provider

@@ -20,9 +20,21 @@ class ProviderRepository extends AbstractRepository
     }
 
 
-    public function  getProviderList(): Builder
+    public function  getProviderList(array $searchInfo): Builder
     {
-        return Provider::query();
+        $query = Provider::query();
+
+        if (isset($searchInfo['provider_name']))
+        {
+            $query->where('name', 'like', '%' . $searchInfo['provider_name'] . '%' );
+        }
+
+        if (isset($searchInfo['provider_id']))
+        {
+            $query->where('id', $searchInfo['provider_id'] );
+        }
+
+        return $query;
     }
 
     /**

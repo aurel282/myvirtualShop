@@ -17,7 +17,9 @@ class ProviderController extends Controller
         ProviderService $providerService
     )
     {
-        $providers = $providerService->getList()
+        //dd($request->all());
+
+        $providers = $providerService->getList($request->all())
                                  ->paginate(15);
 
         return view(
@@ -57,7 +59,7 @@ class ProviderController extends Controller
         $providerService->createProvider($request->all(), $address->id);
 
 
-        $providers = $providerService->getList()
+        $providers = $providerService->getList([])
                                  ->paginate(15);
 
         return view(
@@ -90,7 +92,7 @@ class ProviderController extends Controller
 
         $providerService->editProvider($provider, $request->all());
 
-        $providers = $providerService->getList()
+        $providers = $providerService->getList([])
                                  ->paginate(15);
 
         return view(
@@ -119,7 +121,7 @@ class ProviderController extends Controller
             $providerService->bulkCreateProvider($datas);
         }
 
-        $providers = $providerService->getList()
+        $providers = $providerService->getList([])
                                  ->paginate(15);
 
         return view(
