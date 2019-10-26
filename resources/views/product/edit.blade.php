@@ -22,7 +22,7 @@
             {{ Form::label('name', trans('product.edit.name_label')) }}
             {{ Form::text('name', $product->name, ['placeholder' => trans('product.edit.name')]) }}
         </div>
-        <div class="field required">
+        <div class="field">
             {{ Form::label('description', trans('product.edit.description_label')) }}
             {{ Form::text('description', $product->description, ['placeholder' => trans('product.edit.description')]) }}
         </div>
@@ -40,15 +40,15 @@
     </div>
 
     <div class="three fields">
-        <div class="ten wide field required">
+        <div class="ten wide field">
             {{ Form::label('color', trans('product.edit.color_label')) }}
             {{ Form::text('color', $product->color, ['placeholder' => trans('product.edit.color')]) }}
         </div>
-        <div class="twelve wide field required">
+        <div class="twelve wide field">
             {{ Form::label('brand', trans('product.edit.brand_label')) }}
             {{ Form::text('brand', $product->brand, ['placeholder' => trans('product.edit.brand_number')]) }}
         </div>
-        <div class="twelve wide field required">
+        <div class="twelve wide field">
             {{ Form::label('material', trans('product.edit.material_label')) }}
             {{ Form::text('material', $product->material, ['placeholder' => trans('product.edit.material_number')]) }}
         </div>
