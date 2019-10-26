@@ -72,7 +72,7 @@ class PurchaseService extends AbstractService
      * @return bool
      * @throws \Exception
      */
-    public function deletePurchase(Bill $bill, Purchase $purchase): bool
+    public function deletePurchase(Purchase $purchase): bool
     {
         $product = $purchase->product()->first();
         $quantity = $purchase->quantity;

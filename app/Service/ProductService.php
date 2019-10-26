@@ -94,13 +94,13 @@ class ProductService extends AbstractService
                 while ($filedata = fgetcsv($file, 1000, ",")) {
                     array_push($importData_arr,
                         [
-                            'name' => $filedata[0],
-                            'description' => $filedata[4],
+                            'name' => utf8_encode($filedata[0]),
+                            'description' => utf8_encode($filedata[4]),
                             'quantity' => 1,
                             'price_per_unity' => $filedata[5],
-                            'brand' => $filedata[1],
-                            'color' => $filedata[2],
-                            'material' => $filedata[3]
+                            'brand' => utf8_encode($filedata[1]),
+                            'color' => utf8_encode($filedata[2]),
+                            'material' => utf8_encode($filedata[3])
                         ]
                     );
                 }
@@ -141,6 +141,7 @@ class ProductService extends AbstractService
             $this->_productRepository->delete($product);
         }
     }
+
 
     /**
      * @param Provider $provider
@@ -220,7 +221,7 @@ class ProductService extends AbstractService
          }
          elseif (strlen($price) === 1)
          {
-             $price = '00000' . $price;
+             $price = '0000' . $price;
          }
 
        if (strlen($product_id) === 4){}
