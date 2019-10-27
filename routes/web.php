@@ -141,5 +141,10 @@ Route::group(
              ->name('settings.edit');
         Route::post('/settings/edit', 'SettingsController@postEdit')
              ->name('settings.edit');
+
+
+        // Statistics
+        Route::get('/statistics', 'StatisticsController@show')
+             ->name('statistics.show');
     }
 );
