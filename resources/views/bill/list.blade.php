@@ -70,7 +70,9 @@
                 {{ $bill->total_price() }}
             </td>
             <td>
-                {{ $bill->client->name }}
+                <a href="{{ route('client.show', $bill->client) }}" >
+                    {{ $bill->client->name }}
+                </a>
             </td>
             <td>
                 {{ $bill->isPaid }}

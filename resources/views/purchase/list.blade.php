@@ -15,13 +15,13 @@
                 <div class="five fields">
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder="{{trans('purchase.list.search.by_id')}}" name="client_id" type="text" value="">
+                            <input placeholder="{{trans('purchase.list.search.by_code')}}" name="product_code" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>
                     <div class="field">
                         <div class="ui left icon input">
-                            <input placeholder="{{trans('purchase.list.search.by_name')}}" name="client_name" type="text" value="">
+                            <input placeholder="{{trans('purchase.list.search.by_name')}}" name="product_name" type="text" value="">
                             <i title="" class="search icon" style="color:#ed712a;"></i>
                         </div>
                     </div>
@@ -43,11 +43,9 @@
     <thead class="full-width">
     <tr class="main-head">
         <th style="width: 1px;">#</th>
+        <th>@lang('purchase.list.code')</th>
         <th>@lang('purchase.list.name')</th>
-        <th>@lang('purchase.list.firstname')</th>
-        <th>@lang('purchase.list.email')</th>
-        <th>@lang('purchase.list.phone')</th>
-        <th>@lang('purchase.list.address')</th>
+        <th>@lang('purchase.list.bill')</th>
         <th style="width: 1px;">@lang('purchase.list.action')</th>
     </tr>
     </thead>
@@ -58,21 +56,22 @@
                 {{ $purchase->id }}
             </td>
             <td>
-                {{ $purchase->name }}
+                <a href="{{ route('product.show', $purchase->product) }}" >
+                    {{ $purchase->product->code }}
+                </a>
             </td>
             <td>
-                {{ $purchase->firstname }}
+                {{ $purchase->product->name }}
             </td>
             <td>
-                {{ $purchase->email }}
+                <a href="{{ route('bill.show', $purchase->bill) }}" >
+                    {{ $purchase->bill->id }}
+                </a>
             </td>
             <td>
-                {{ $purchase->phone }}
-            </td>
-            <td>
-            </td>
-            <td>
-
+                <a href="{{ route('bill.show', $purchase->bill->id) }}" class="ui inverted admin-bp-btn--success button small">
+                    @lang('purchase.list.delete')
+                </a>
             </td>
         </tr>
     @endforeach

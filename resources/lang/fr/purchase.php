@@ -24,6 +24,17 @@ return [
     ],
 
     'list' => [
-
+        'title' => 'Liste des achats',
+        'subtitle' => 'Liste de tous les achats de la bourse',
+        'search' => [
+            'by_code' => 'Par code',
+            'by_name' => 'Par nom',
+            'search' => 'Chercher',
+            ],
+        'code' => 'Code du produit',
+        'name' => 'Nom du produit',
+        'bill' => 'Ticket associé à l\'achat',
+        'delete' => 'Supprimer',
+        'action' => 'Action',
     ],
  ];
