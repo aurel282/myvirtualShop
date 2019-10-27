@@ -6,6 +6,7 @@ use App\Models\Database\Provider;
 use App\Repository\AddressRepository;
 use App\Repository\ProductRepository;
 use App\Repository\ProviderRepository;
+use App\Repository\SettingsRepository;
 use App\ValueObjects\AddressValueObject;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -16,6 +17,11 @@ class ProviderService extends AbstractService
      * @var ProviderRepository
      */
     protected $_providerRepository;
+
+    /**
+     * @var SettingsRepository
+     */
+    protected $_settingsRepository;
 
     /**
      * @var ProductRepository
@@ -30,13 +36,15 @@ class ProviderService extends AbstractService
     public function __construct(
         ProviderRepository $providerRepository,
         AddressRepository $addressRepository,
-        ProductRepository $productRepository
+        ProductRepository $productRepository,
+        SettingsRepository $settingsRepository
     )
     {
         parent::__construct();
         $this->_providerRepository = $providerRepository;
         $this->_addressRepository = $addressRepository;
-        $this->_productRepository = $productRepository;;
+        $this->_productRepository = $productRepository;
+        $this->_settingsRepository = $settingsRepository;;
     }
 
     public function getList(array $searchInfo): Builder
@@ -137,6 +145,22 @@ class ProviderService extends AbstractService
         return ($this->_providerRepository->delete($provider) && $this->_addressRepository->delete($address));
     }
 
+    /**
+     * @param Provider $provider
+     *
+     * @return float
+     */
+    public function getTotalSold(Provider $provider) : float
+    {
+        $total = 0;
+        $products_sold = $this->_productRepository->getSoldByProvider($provider)->get();
+        foreach ($products_sold as $product)
+        {
+            $total +=  $product->price_per_unity;
+        }
+        return $total;
+    }
+
 
     public function exportAllProviders()
     {
@@ -164,8 +188,12 @@ class ProviderService extends AbstractService
     }
     public function exportClotureProvider(Provider $provider)
     {
+        $settings = $this->_settingsRepository->getSettings();
+
         $products_sold = $this->_productRepository->getSoldByProvider($provider)->get();
         $products_unsold = $this->_productRepository->getUnsoldByProvider($provider)->get();
+
+        $total_sold = $this->getTotalSold($provider);
 
         $f = fopen('php://memory', 'w');
         // loop over the input array
@@ -177,7 +205,16 @@ class ProviderService extends AbstractService
         // generate csv lines from the inner arrays
         fputcsv($f, $data, ',');
         fputcsv($f, [], ',');
-        fputcsv($f, ['Vendu'], ',');
+
+        fputcsv($f, ['Total vendu'], ',');
+        fputcsv($f, [$total_sold], ',');
+        fputcsv($f, ['Part Solidalys'], ',');
+        fputcsv($f, [$total_sold * $settings->variable_fee], ',');
+        fputcsv($f, ['A rendre'], ',');
+        fputcsv($f, [$total_sold - ($total_sold * $settings->variable_fee)], ',');
+        fputcsv($f, [], ',');
+
+        fputcsv($f, ['Vendu: '. count($products_sold)], ',');
 
         foreach ($products_sold as $product_sold) {
             $data =  [
@@ -190,7 +227,7 @@ class ProviderService extends AbstractService
         }
 
         fputcsv($f, [], ',');
-        fputcsv($f, ['Invendu'], ',');
+        fputcsv($f, ['Invendu:' . count($products_unsold)], ',');
         foreach ($products_unsold as $product_unsold) {
             $data =  [
                 $product_unsold->price_per_unity,
