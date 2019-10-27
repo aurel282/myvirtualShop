@@ -102,7 +102,9 @@ return [
         'import_csv' => 'Importer via CSV',
         'export_cloture' => 'Export de cloture du vendeur',
         'delete' => 'Suppression du vendeur ( NE PAS TOUCHER )',
+        'export_all' => 'Exporter tous les produits',
         'product' => [
+            'export_all_barcode' => 'Exporter tous les code-barres',
             'title' => 'Produits Appartenant à ce vendeur',
             'subtitle' => '',
             'id' => 'ID du produit',
@@ -111,7 +113,6 @@ return [
             'price_per_unity' => 'Prix',
             'edit' => 'Edition',
             'delete' => 'Suppression',
-            'export_all' => 'Exporter tous les produits',
             'delete_all' => 'Supprimer tous les produits',
             'add' => 'Ajouter un produit',
             'import' => 'Importer les produits',

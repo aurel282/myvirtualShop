@@ -27,13 +27,19 @@
                     <i title="" class="  list layout   icon" style="color:var(--main-color);"></i>
                     @lang('provider.show.export_cloture')
                 </a>
+            </li>
+            <li class="navigation-item">
+                <a href={{ route('product.export_all', [$provider]) }} class="navigation-item-link">
+                    <i title="" class="  list layout   icon" style="color:var(--main-color);"></i>
+                    @lang('provider.show.export_all')
+                </a>
+            </li>
             <li class="navigation-item">
                 <a href=# class="navigation-item-link">
                     <i title="" class="  sign layout   icon" style="color:var(--main-color);"></i>
                     @lang('provider.show.delete')
                 </a>
             </li>
-
         </ul>
     </div>
 
@@ -64,9 +70,9 @@
                             >
                                 <i class="trash icon" style="color:var(--main-color--light);"></i>
                             </a>
-                            <a href="{{ route('product.export_all', $provider) }}"
+                            <a href="{{ route('product.export_all_barcode', $provider) }}"
                                class="ui small basic right floated icon button"
-                               data-tooltip="@lang('provider.product.export_all')"
+                               data-tooltip="@lang('provider.show.product.export_all_barcode')"
                             >
                                 <i class="barcode icon" style="color:var(--main-color--light);"></i>
                             </a>

@@ -156,6 +156,7 @@ class ProductService extends AbstractService
             $data =  [
                 $line->name,
                 '\'' . $line->code,
+                '\'' . $line->price_per_unity . '€',
             ];
             // generate csv lines from the inner arrays
             fputcsv($f, $data, ',');
