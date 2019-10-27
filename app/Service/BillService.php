@@ -38,6 +38,7 @@ class BillService extends AbstractService
 
         $purchases = $bill->purchases()->get();
         $client = $bill->client();
+        $total_sold = $bill->total_price();
 
         //$total_sold = $this->getTotalSold($provider);
 
@@ -58,11 +59,11 @@ class BillService extends AbstractService
 
         fputcsv($f, ['Articles: '. count($products_sold)], ',');
 
-        foreach ($products_sold as $product_sold) {
+        foreach ($purchases as $purchase) {
             $data =  [
-                $product_sold->price_per_unity,
-                utf8_encode($product_sold->name),
-                utf8_encode($product_sold->code),
+                utf8_encode($purchase->product->name),
+                utf8_encode($purchase->product->code),
+                utf8_encode($purchase->product->price_per_unity),
             ];
             // generate csv lines from the inner arrays
             fputcsv($f, $data, ',');

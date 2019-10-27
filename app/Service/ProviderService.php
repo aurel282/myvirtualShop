@@ -211,7 +211,7 @@ class ProviderService extends AbstractService
         fputcsv($f, ['Part Solidalys'], ',');
         fputcsv($f, [$total_sold * $settings->variable_fee], ',');
         fputcsv($f, ['A rendre'], ',');
-        fputcsv($f, [$total_sold - ($total_sold * $settings->variable_fee)], ',');
+        fputcsv($f, [$total_sold - ($total_sold * $settings->variable_fee) - $settings->fixed_fee], ',');
         fputcsv($f, [], ',');
 
         fputcsv($f, ['Vendu: '. count($products_sold)], ',');
