@@ -100,6 +100,8 @@ return [
         'back' => 'Retour',
         'title' => 'Vendeur Id#',
         'import_csv' => 'Importer via CSV',
+        'export_cloture' => 'Export de cloture du vendeur',
+        'delete' => 'Suppression du vendeur ( NE PAS TOUCHER )',
         'product' => [
             'title' => 'Produits Appartenant à ce vendeur',
             'subtitle' => '',

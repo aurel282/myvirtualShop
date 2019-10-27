@@ -139,4 +139,12 @@ class ProviderController extends Controller
     {
         $providerService->exportAllProviders();
     }
+
+    public function getExportClotureByProvider(
+        Provider $provider,
+        ProviderService $providerService
+    )
+    {
+        $providerService->exportClotureProvider($provider);
+    }
 }

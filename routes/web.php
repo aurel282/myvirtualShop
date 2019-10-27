@@ -70,6 +70,8 @@ Route::group(
              ->name('provider.import');
         Route::get('/provider/export', 'ProviderController@getExportAll')
              ->name('provider.export');
+        Route::get('/provider/{provider}/cloture', 'ProviderController@getExportClotureByProvider')
+             ->name('provider.cloture');
 
 
         // Product

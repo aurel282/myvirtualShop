@@ -4,6 +4,7 @@ namespace App\Repository;
 
 
 use App\Models\Database\Product;
+use App\Models\Database\Provider;
 use Illuminate\Database\Eloquent\Builder;
 
 class ProductRepository extends AbstractRepository
@@ -42,6 +43,30 @@ class ProductRepository extends AbstractRepository
     {
         return Product::query()
             ->where('code' , $code);
+    }
+
+    /**
+     * @param Provider $provider
+     *
+     * @return Builder
+     */
+    public function  getSoldByProvider(Provider $provider) : Builder
+    {
+        return Product::query()
+                      ->where('provider_id' , $provider->id)
+                      ->where('quantity' , 0);
+    }
+
+    /**
+     * @param Provider $provider
+     *
+     * @return Builder
+     */
+    public function  getUnsoldByProvider(Provider $provider) : Builder
+    {
+        return Product::query()
+                      ->where('provider_id' , $provider->id)
+                      ->where('quantity' , '>', 0);
     }
 
     /**

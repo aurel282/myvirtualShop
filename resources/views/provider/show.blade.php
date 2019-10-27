@@ -23,9 +23,9 @@
         <br>
         <ul class="header-navigation">
             <li class="navigation-item">
-                <a href=# class="navigation-item-link">
+                <a href={{ route('provider.cloture', [$provider]) }} class="navigation-item-link">
                     <i title="" class="  list layout   icon" style="color:var(--main-color);"></i>
-                    @lang('provider.show.clear_bills')
+                    @lang('provider.show.export_cloture')
                 </a>
             <li class="navigation-item">
                 <a href=# class="navigation-item-link">
