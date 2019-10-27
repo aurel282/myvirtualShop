@@ -146,7 +146,7 @@ class ProductService extends AbstractService
     /**
      * @param Provider $provider
      */
-    public function exportAllFromProvider(Provider $provider)
+    public function exportAllFromProvider(Provider $provider, string $filename)
     {
         $allProductsFromProvider = $provider->products()->get();
 
@@ -165,7 +165,7 @@ class ProductService extends AbstractService
         // tell the browser it's going to be a csv file
         header('Content-Type: application/csv');
         // tell the browser we want to save it instead of displaying it
-        header('Content-Disposition: attachment; filename=Etiq_T;');
+        header('Content-Disposition: attachment; filename='. $filename .';');
         // make php send the generated csv lines to the browser
         fpassthru($f);
     }

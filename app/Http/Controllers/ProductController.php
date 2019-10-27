@@ -212,7 +212,15 @@ class ProductController extends Controller
         ProductService $productService
     )
     {
-        $productService->exportAllFromProvider($provider);
+        $productService->exportAllFromProvider($provider,'Product_'. $provider->id .'.csv');
+    }
+
+    public function exportAllProductFromProviderBarCode(
+        Provider $provider,
+        ProductService $productService
+    )
+    {
+        $productService->exportAllFromProvider($provider, 'Etiq_T.csv');
     }
 
     public function exportOneProduct(
