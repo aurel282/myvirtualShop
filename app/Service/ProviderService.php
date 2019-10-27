@@ -164,7 +164,9 @@ class ProviderService extends AbstractService
     }
     public function exportClotureProvider(Provider $provider)
     {
-
+        $products_sold = $this->_productRepository->getSoldByProvider($provider)->get();
+        $products_unsold = $this->_productRepository->getUnsoldByProvider($provider)->get();
+        
         $f = fopen('php://memory', 'w');
         // loop over the input array
         $data =  [
@@ -177,10 +179,9 @@ class ProviderService extends AbstractService
         fputcsv($f, [], ',');
         fputcsv($f, ['Vendu'], ',');
 
-        $products_sold = $this->_productRepository->getSoldByProvider($provider)->get();
         foreach ($products_sold as $product_sold) {
             $data =  [
-                $product_unsold->price_per_unity,
+                $product_sold->price_per_unity,
                 utf8_encode($product_sold->name),
                 utf8_encode($product_sold->code),
             ];
@@ -188,7 +189,6 @@ class ProviderService extends AbstractService
             fputcsv($f, $data, ',');
         }
 
-        $products_unsold = $this->_productRepository->getUnsoldByProvider($provider)->get();
         fputcsv($f, [], ',');
         fputcsv($f, ['Invendu'], ',');
         foreach ($products_unsold as $product_unsold) {
