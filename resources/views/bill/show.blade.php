@@ -24,12 +24,12 @@
         <br>
         <ul class="header-navigation">
             <li class="navigation-item">
-                <a href=# class="navigation-item-link">
+                <a href={{ route('bill.export', [$bill] )}} class="navigation-item-link">
                     <i title="" class="  list layout   icon" style="color:var(--main-color);"></i>
-                    @lang('bill.show.clear_bills')
+                    @lang('bill.show.export_csv')
                 </a>
             <li class="navigation-item">
-                <a href=# class="navigation-item-link">
+                <a href={{ route('bill.delete', [$bill] ) }} class="navigation-item-link">
                     <i title="" class="  sign layout   icon" style="color:var(--main-color);"></i>
                     @lang('bill.show.delete')
                 </a>

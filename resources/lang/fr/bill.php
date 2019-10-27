@@ -31,6 +31,8 @@ return [
 
     'show' => [
         'title' => 'Description d\'un Ticket',
+        'export_csv' => 'Exporter l\'addition',
+        'delete' => 'Supprimer l\'addition ( NE PAS TOUCHER )',
         'back' => 'Retour',
         'information' => [
             'title' => 'Information du Ticket',

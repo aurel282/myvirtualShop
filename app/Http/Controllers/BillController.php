@@ -67,4 +67,12 @@ class BillController extends Controller
             ]
         );
     }
+
+    public function getCSVFromBill(
+        BillService $billService,
+        Bill $bill
+    )
+    {
+        $billService->exportBill($bill);
+    }
 }

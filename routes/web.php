@@ -126,6 +126,10 @@ Route::group(
              ->name('bill.show');
         Route::get('/{client}/{bill}/bill/delete', 'BillController@deleteFromClient')
              ->name('client.bill.delete');
+        Route::get('{bill}/bill/delete', 'BillController@delete')
+             ->name('bill.delete');
+        Route::get('/{bill}/bill/export', 'BillController@getCSVFromBill')
+             ->name('bill.export');
 
 
         // Settings
