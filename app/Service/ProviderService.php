@@ -220,7 +220,7 @@ class ProviderService extends AbstractService
             $data =  [
                 $product_sold->price_per_unity,
                 utf8_encode($product_sold->name),
-                utf8_encode($product_sold->code),
+                utf8_encode('\'' .$product_sold->code),
             ];
             // generate csv lines from the inner arrays
             fputcsv($f, $data, ',');
@@ -232,7 +232,7 @@ class ProviderService extends AbstractService
             $data =  [
                 $product_unsold->price_per_unity,
                 utf8_encode($product_unsold->name),
-                utf8_encode($product_unsold->code),
+                utf8_encode('\'' . $product_unsold->code),
             ];
             // generate csv lines from the inner arrays
             fputcsv($f, $data, ',');
