@@ -147,4 +147,23 @@ class ProviderController extends Controller
     {
         $providerService->exportClotureProvider($provider);
     }
+
+    public function deleteProvider(
+        Provider $provider,
+        ProviderService $providerService
+    )
+    {
+        $providerService->deleteProvider($provider);
+
+        $providers = $providerService->getList([])
+                                 ->paginate(15);
+
+        return view(
+            'provider.list',
+            [
+                'providers' => $providers,
+            ]
+        );
+
+    }
 }

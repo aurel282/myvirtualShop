@@ -141,6 +141,13 @@ class ProviderService extends AbstractService
      */
     public function deleteProvider(Provider $provider) : bool
     {
+        $allProductsFromProvider = $provider->products()->get();
+
+        foreach($allProductsFromProvider as $product)
+        {
+            $this->_productRepository->delete($product);
+        }
+
         $address = $provider->address;
         return ($this->_providerRepository->delete($provider) && $this->_addressRepository->delete($address));
     }

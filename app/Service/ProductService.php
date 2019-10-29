@@ -226,18 +226,22 @@ class ProductService extends AbstractService
              $price = '0000' . $price;
          }
 
-       if (strlen($product_id) === 4){}
-       elseif (strlen($product_id) === 3)
+       if (strlen($product_id) === 5){}
+       elseif (strlen($product_id) === 4)
        {
            $product_id = '0' . $product_id;
        }
-       elseif (strlen($product_id) === 2)
+       elseif (strlen($product_id) === 3)
        {
            $product_id = '00' . $product_id;
        }
-       elseif (strlen($product_id) === 1)
+       elseif (strlen($product_id) === 2)
        {
            $product_id = '000' . $product_id;
+       }
+       elseif (strlen($product_id) === 1)
+       {
+           $product_id = '0000' . $product_id;
        }
 
         if (strlen($provider_id) === 3){}
