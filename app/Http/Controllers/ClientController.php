@@ -124,4 +124,22 @@ class ClientController extends Controller
             ]
         );
     }
+
+    public function getDelete(
+        ClientService $clientService,
+        Client $client
+    )
+    {
+        $clientService->deleteClient($client);
+
+        $clients = $clientService->getList([])
+                                 ->paginate(15);
+
+        return view(
+            'client.list',
+            [
+                'clients' => $clients,
+            ]
+        );
+    }
 }

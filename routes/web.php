@@ -46,6 +46,8 @@ Route::group(
              ->name('client.import');
         Route::post('/client/import', 'ClientController@postImport')
              ->name('client.import');
+        Route::get('/client/{client}/delete', 'ClientController@getDelete')
+             ->name('client.delete');
 
         // Provider
         Route::get('/provider/list', 'ProviderController@getList')
@@ -63,6 +65,9 @@ Route::group(
              ->name('provider.edit');
         Route::post('/provider/{provider}/edit', 'ProviderController@postEdit')
              ->name('provider.edit');
+
+        Route::get('/provider/{provider}/delete', 'ProviderController@deleteProvider')
+             ->name('provider.delete');
 
         Route::get('/provider/import', 'ProviderController@getImport')
              ->name('provider.import');

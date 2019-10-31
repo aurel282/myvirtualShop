@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li class="navigation-item">
-                <a href=# class="navigation-item-link">
+                <a href={{ route('provider.delete', [$provider]) }} class="navigation-item-link">
                     <i title="" class="  sign layout   icon" style="color:var(--main-color);"></i>
                     @lang('provider.show.delete')
                 </a>

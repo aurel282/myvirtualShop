@@ -159,18 +159,7 @@
 <div class="wrapper" id="app">
 	<div class="hero-outer">
 		<div class="hero-inner">
-			@if( config('app.env') != 'production' )
-				<div class="ribbon-validation margin">
-					<div class="ribbon top">
-						<span><strong>This</strong> site is not</span>
-					</div>
-					<div class="ribbon bottom">
-						<span><strong>production</strong></span>
-					</div>
-				</div>
-			@endif
-
-
+            @include('layout.components.flash-message')
 			{{-- Start - Navigation content --}}
 			@section('navigation')
 				<nav class="besaas-menu">

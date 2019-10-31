@@ -29,7 +29,7 @@
                     @lang('client.show.clear_bills')
                 </a>
             <li class="navigation-item">
-                <a href=# class="navigation-item-link">
+                <a href={{ route('client.delete', $client) }} class="navigation-item-link">
                     <i title="" class="  sign layout   icon" style="color:var(--main-color);"></i>
                     @lang('client.show.delete')
                 </a>
