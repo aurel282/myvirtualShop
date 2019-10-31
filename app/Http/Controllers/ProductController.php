@@ -90,7 +90,12 @@ class ProductController extends Controller
     )
     {
 
-        $productService->createProduct($request->all(), $provider->id);
+        $product = $productService->createProduct($request->all(), $provider->id);
+
+        if(array_key_exists('print_code', $request->all()))
+        {
+            $productService->exportOneProduct($product);
+        }
 
         return view(
             'provider.show',

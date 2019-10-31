@@ -51,6 +51,12 @@
             {{ Form::label('material', trans('product.create.material_label')) }}
             {{ Form::text('material', '', ['placeholder' => trans('product.create.material')]) }}
         </div>
+    </div>
+    <div class="twelve wide field">
+        {{ Form::label('print_code', trans('product.create.print_code_label')) }}
+        {{ Form::checkbox('print_code', '') }}
+    </div>
+
 
     @parent
 
