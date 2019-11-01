@@ -30,8 +30,8 @@
                             <h2 class="ui header" style="margin: 0;">
                                 <i class="user icon" style="color:var(--main-color--light);"></i>
                                 <div class="content">
-                                    @lang('settings.show.information.title')
-                                    <div class="sub header">@lang('settings.show.information.subtitle')</div>
+                                    @lang('statistics.show.information.title')
+                                    <div class="sub header">@lang('statistics.show.information.subtitle')</div>
                                 </div>
                             </h2>
                         </div>
@@ -40,13 +40,55 @@
                                 <div class="content">
                                     <div class="description">
                                         <p>
-                                            <b>@lang('settings.show.information.fixed_fee'):</b>
+                                            <b>@lang('statistics.show.information.fixed_fee'):</b>
                                             <b class="color-text--success">{{ $settings->fixed_fee }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
-                                            <b>@lang('settings.show.information.variable_fee'):</b>
+                                            <b>@lang('statistics.show.information.variable_fee'):</b>
+                                            <b class="color-text--success">{{ $settings->variable_fee }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('statistics.show.information.nb_providers'):</b>
+                                            <b class="color-text--success">{{ $nb_providers }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('statistics.show.information.nb_products'):</b>
+                                            <b class="color-text--success">{{ $nb_products }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('statistics.show.information.nb_bills'):</b>
+                                            <b class="color-text--success">{{ $nb_products }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('statistics.show.information.nb_purchase'):</b>
+                                            <b class="color-text--success">{{ $settings->variable_fee }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('statistics.show.information.total_purchase'):</b>
+                                            <b class="color-text--success">{{ $settings->variable_fee }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('statistics.show.information.purchase_commission_total'):</b>
+                                            <b class="color-text--success">{{ $settings->variable_fee }}</b>
+                                        </p>
+                                    </div>
+                                    <div class="description">
+                                        <p>
+                                            <b>@lang('statistics.show.information.provider_commission_total'):</b>
                                             <b class="color-text--success">{{ $settings->variable_fee }}</b>
                                         </p>
                                     </div>

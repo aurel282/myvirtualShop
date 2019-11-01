@@ -95,5 +95,13 @@ class PurchaseService extends AbstractService
         }
     }
 
+    /**
+     * @return int
+     */
+    public function getPurchaseNumber(): int
+    {
+        return $this->_purchaseRepository->getPurchaseNumber();
+    }
+
 
 }

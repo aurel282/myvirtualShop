@@ -15,15 +15,20 @@ return [
 
 
     'show' => [
-        'title' => 'Description d\'un Ticket',
+        'title' => 'Statistiques de la vente',
         'back' => 'Retour',
         'information' => [
-            'title' => 'Information du Ticket',
-            'subtitle' => 'Toutes les informations du ticket',
-            'client_firstname' => 'Prénom du client',
-            'client_lastname' => 'Nom du client',
-            'total_price' => 'Prix total',
-            'number_product' => 'Nombre de produit(s) dans le ticket',
+            'title' => 'Ensemble des statistiques de la vente',
+            'subtitle' => 'Informations de la vente',
+            'fixed_fee' => 'Frais fixes du vendeur',
+            'variable_fee' => 'Frais variables du vendeur',
+            'nb_providers' => 'Nombre de vendeurs',
+            'nb_products' => 'Nombre de jouets',
+            'nb_bills' => 'Nombre de tickets',
+            'nb_purchase' => 'Nombre d\'achat',
+            'total_purchase' => 'Montant total des achats',
+            'purchase_commission_total' => 'Montant total de la commission sur les achats',
+            'provider_commission_total' => 'Montant total de la commission sur les vendeurs',
         ],
     ],
 ];

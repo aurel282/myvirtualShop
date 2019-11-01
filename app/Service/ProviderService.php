@@ -169,16 +169,6 @@ class ProviderService extends AbstractService
         return $total;
     }
 
-    /**
-     * @param Provider $provider
-     *
-     * @return float
-     */
-    public function getAllProvidersWithProduct() : Collection
-    {
-        $providers = $this->getList([])->get();
-    }
-
 
     public function exportAllProviders()
     {
