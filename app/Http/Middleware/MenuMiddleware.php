@@ -133,7 +133,7 @@ class MenuMiddleware
                 'links' => [
                     [
                         'key' => 'statistics.show',
-                        'route' => 'settings.show',
+                        'route' => 'statistics.show',
                     ],
                 ],
             ],

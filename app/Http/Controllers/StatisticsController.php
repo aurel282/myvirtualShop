@@ -30,11 +30,16 @@ class StatisticsController extends Controller
         ProductService $productService
     )
     {
-        $nbProvidersWithProduct = $providerService->getAllProvidersWithProduct();
         return view(
             'statistics.show',
             [
-                'settings' => $settingsService->getSettings()
+                'settings' => $settingsService->getSettings(),
+                'nb_providers' => $productService->getCountDifferentProvider(),
+                'nb_products' => $productService->getProductNumber(),
+                'nb_bills' => $productService->getProductNumber(),
+                'nb_purchases' => $productService->getProductNumber(),
+                'total_purchases' => $productService->getProductNumber(),
+                'total_commission_purchases' => $productService->getProductNumber(),
             ]
         );
     }

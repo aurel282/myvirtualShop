@@ -53,6 +53,14 @@ class PurchaseRepository extends AbstractRepository
     }
 
     /**
+     * @return int
+     */
+    public function getPurchaseNumber(): int
+    {
+        return Purchase::query()->count();
+    }
+
+    /**
      * @param Purchase $purchase
      *
      * @return bool

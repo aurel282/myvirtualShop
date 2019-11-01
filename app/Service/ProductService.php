@@ -255,4 +255,20 @@ class ProductService extends AbstractService
         }
         return $provider_id . $product_id . $price;
     }
+
+    /**
+     * @return int
+     */
+    public function getCountDifferentProvider(): int
+    {
+        return $this->_productRepository->getCountDifferentProvider();
+    }
+
+    /**
+     * @return int
+     */
+    public function getProductNumber(): int
+    {
+        return $this->_productRepository->getProductNumber();
+    }
 }

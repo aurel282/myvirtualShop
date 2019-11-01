@@ -66,6 +66,15 @@ class ProductRepository extends AbstractRepository
     }
 
     /**
+     * @return int
+     */
+    public function getProductNumber(): int
+    {
+        return Product::query()->count();
+    }
+
+
+    /**
      * @param Provider $provider
      *
      * @return Builder

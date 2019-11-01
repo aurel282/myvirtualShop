@@ -25,7 +25,7 @@ return [
             'nb_providers' => 'Nombre de vendeurs',
             'nb_products' => 'Nombre de jouets',
             'nb_bills' => 'Nombre de tickets',
-            'nb_purchase' => 'Nombre d\'achat',
+            'nb_purchase' => 'Nombre d\'achats',
             'total_purchase' => 'Montant total des achats',
             'purchase_commission_total' => 'Montant total de la commission sur les achats',
             'provider_commission_total' => 'Montant total de la commission sur les vendeurs',
