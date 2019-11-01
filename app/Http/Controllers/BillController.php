@@ -14,7 +14,7 @@ class BillController extends Controller
         BillService $billService
     )
     {
-        $bills = $billService->getList()
+        $bills = $billService->getList([])
             ->paginate(15);;
 
 

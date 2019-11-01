@@ -158,10 +158,24 @@ class ProviderService extends AbstractService
      *
      * @return float
      */
-    public function getTotalSold(Provider $provider) : float
+    public function getTotalSoldByProvider(Provider $provider) : float
     {
         $total = 0;
         $products_sold = $this->_productRepository->getSoldByProvider($provider)->get();
+        foreach ($products_sold as $product)
+        {
+            $total +=  $product->price_per_unity;
+        }
+        return $total;
+    }
+
+    /**
+     * @return float
+     */
+    public function getTotalSold() : float
+    {
+        $total = 0;
+        $products_sold = $this->_productRepository->getSold()->get();
         foreach ($products_sold as $product)
         {
             $total +=  $product->price_per_unity;
@@ -201,7 +215,7 @@ class ProviderService extends AbstractService
         $products_sold = $this->_productRepository->getSoldByProvider($provider)->get();
         $products_unsold = $this->_productRepository->getUnsoldByProvider($provider)->get();
 
-        $total_sold = $this->getTotalSold($provider);
+        $total_sold = $this->getTotalSoldByProvider($provider);
 
         $f = fopen('php://memory', 'w');
         // loop over the input array

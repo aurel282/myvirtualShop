@@ -28,7 +28,7 @@ class BillService extends AbstractService
         return $this->_billRepository->create($client);
     }
 
-    public function getList(): Builder
+    public function getList(array $request): Builder
     {
         return $this->_billRepository->getList();
     }

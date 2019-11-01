@@ -47,7 +47,7 @@
                                     <div class="description">
                                         <p>
                                             <b>@lang('statistics.show.information.variable_fee'):</b>
-                                            <b class="color-text--success">{{ $settings->variable_fee }}</b>
+                                            <b class="color-text--success">{{ $settings->variable_fee *100 }}%</b>
                                         </p>
                                     </div>
                                     <div class="description">
@@ -65,31 +65,31 @@
                                     <div class="description">
                                         <p>
                                             <b>@lang('statistics.show.information.nb_bills'):</b>
-                                            <b class="color-text--success">{{ $nb_products }}</b>
+                                            <b class="color-text--success">{{ $nb_bills }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
                                             <b>@lang('statistics.show.information.nb_purchase'):</b>
-                                            <b class="color-text--success">{{ $settings->variable_fee }}</b>
+                                            <b class="color-text--success">{{ $nb_purchases }}</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
                                             <b>@lang('statistics.show.information.total_purchase'):</b>
-                                            <b class="color-text--success">{{ $settings->variable_fee }}</b>
+                                            <b class="color-text--success">{{ $total_purchases }}€</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
                                             <b>@lang('statistics.show.information.purchase_commission_total'):</b>
-                                            <b class="color-text--success">{{ $settings->variable_fee }}</b>
+                                            <b class="color-text--success">{{ $total_commission_purchases }}€</b>
                                         </p>
                                     </div>
                                     <div class="description">
                                         <p>
                                             <b>@lang('statistics.show.information.provider_commission_total'):</b>
-                                            <b class="color-text--success">{{ $settings->variable_fee }}</b>
+                                            <b class="color-text--success">{{ $total_commission_providers }}€</b>
                                         </p>
                                     </div>
                                 </div>

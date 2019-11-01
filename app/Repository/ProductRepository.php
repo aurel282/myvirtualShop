@@ -58,6 +58,16 @@ class ProductRepository extends AbstractRepository
     }
 
     /**
+     * @return Builder
+     */
+    public function getSold(): Builder
+    {
+        return Product::query()
+                      ->where('quantity', 0);
+    }
+
+
+    /**
      * @return int
      */
     public function getCountDifferentProvider(): int
