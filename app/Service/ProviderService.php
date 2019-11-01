@@ -10,6 +10,7 @@ use App\Repository\SettingsRepository;
 use App\ValueObjects\AddressValueObject;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class ProviderService extends AbstractService
 {
@@ -166,6 +167,16 @@ class ProviderService extends AbstractService
             $total +=  $product->price_per_unity;
         }
         return $total;
+    }
+
+    /**
+     * @param Provider $provider
+     *
+     * @return float
+     */
+    public function getAllProvidersWithProduct() : Collection
+    {
+        $providers = $this->getList([])->get();
     }
 
 

@@ -17,18 +17,18 @@ class ProductRepository extends AbstractRepository
         parent::__construct();
     }
 
-    public function  getProductList(array $searchInfos): Builder
+    public function getProductList(array $searchInfos): Builder
     {
-        $query  = Product::query();
+        $query = Product::query();
 
-        if (isset($searchInfos['product_name']))
+        if (isset($searchInfos[ 'product_name' ]))
         {
-            $query->where('name', 'like', '%' . $searchInfos['product_name'] . '%' );
+            $query->where('name', 'like', '%' . $searchInfos[ 'product_name' ] . '%');
         }
 
-        if (isset($searchInfos['product_code']))
+        if (isset($searchInfos[ 'product_code' ]))
         {
-            $query->where('code', 'like', '%' . $searchInfos['product_code'] . '%' );
+            $query->where('code', 'like', '%' . $searchInfos[ 'product_code' ] . '%');
         }
 
         return $query;
@@ -39,10 +39,10 @@ class ProductRepository extends AbstractRepository
      *
      * @return Builder
      */
-    public function  getProductFromCode(string $code) : Builder
+    public function getProductFromCode(string $code): Builder
     {
         return Product::query()
-            ->where('code' , $code);
+                      ->where('code', $code);
     }
 
     /**
@@ -50,11 +50,19 @@ class ProductRepository extends AbstractRepository
      *
      * @return Builder
      */
-    public function  getSoldByProvider(Provider $provider) : Builder
+    public function getSoldByProvider(Provider $provider): Builder
     {
         return Product::query()
-                      ->where('provider_id' , $provider->id)
-                      ->where('quantity' , 0);
+                      ->where('provider_id', $provider->id)
+                      ->where('quantity', 0);
+    }
+
+    /**
+     * @return int
+     */
+    public function getCountDifferentProvider(): int
+    {
+        return Product::query()->distinct('provider_id')->count();
     }
 
     /**

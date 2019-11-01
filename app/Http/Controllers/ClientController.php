@@ -110,8 +110,7 @@ class ClientController extends Controller
 
     public function postImport(
         Request $request,
-        ClientService $clientService,
-        AddressService $addressService
+        ClientService $clientService
     )
     {
         $clients = $clientService->getList([])

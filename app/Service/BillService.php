@@ -72,7 +72,7 @@ class BillService extends AbstractService
         // tell the browser it's going to be a csv file
         header('Content-Type: application/csv');
         // tell the browser we want to save it instead of displaying it
-        header('Content-Disposition: attachment; filename=bill_'. $bill->id . 'csv;');
+        header('Content-Disposition: attachment; filename=bill.csv;');
         // make php send the generated csv lines to the browser
         fpassthru($f);
     }

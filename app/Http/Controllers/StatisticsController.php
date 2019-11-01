@@ -25,9 +25,12 @@ class StatisticsController extends Controller
 {
 
     public function show(
-        SettingsService $settingsService
+        SettingsService $settingsService,
+        ProviderService $providerService,
+        ProductService $productService
     )
     {
+        $nbProvidersWithProduct = $providerService->getAllProvidersWithProduct();
         return view(
             'statistics.show',
             [
