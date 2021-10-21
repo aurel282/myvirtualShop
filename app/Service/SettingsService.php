@@ -2,9 +2,9 @@
 
 namespace App\Service;
 
-use App\Models\Database\Bill;
-use App\Models\Database\Purchase;
-use App\Models\Database\Setting;
+use App\Models\Bill;
+use App\Models\Purchase;
+use App\Models\Setting;
 use App\Repository\ProductRepository;
 use App\Repository\PurchaseRepository;
 use App\Repository\SettingsRepository;
