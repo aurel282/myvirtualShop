@@ -3,7 +3,7 @@
 namespace App\Service;
 
 
-use App\Models\Database\Address;
+use App\Models\Address;
 use App\Repository\AddressRepository;
 use App\ValueObjects\AddressValueObject;
 
