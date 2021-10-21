@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Provider\CreateProviderRequest;
 use App\Http\Requests\Provider\UpdateProviderRequest;
-use App\Models\Database\Provider;
+use App\Models\Provider;
 use App\Service\AddressService;
 use App\Service\ProviderService;
 use App\ValueObjects\AddressValueObject;
