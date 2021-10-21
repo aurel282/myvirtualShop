@@ -2,8 +2,8 @@
 
 namespace App\Service;
 
-use App\Models\Database\Product;
-use App\Models\Database\Provider;
+use App\Models\Product;
+use App\Models\Provider;
 use App\Repository\ProductRepository;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
