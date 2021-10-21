@@ -3,10 +3,10 @@
 namespace App\Repository;
 
 
-use App\Models\Database\Bill;
-use App\Models\Database\Product;
-use App\Models\Database\Purchase;
-use App\Models\Database\Setting;
+use App\Models\Bill;
+use App\Models\Product;
+use App\Models\Purchase;
+use App\Models\Setting;
 use Illuminate\Database\Eloquent\Builder;
 
 class SettingsRepository extends AbstractRepository
