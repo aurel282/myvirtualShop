@@ -3,8 +3,8 @@
 namespace App\Repository;
 
 
-use App\Models\Database\Product;
-use App\Models\Database\Provider;
+use App\Models\Product;
+use App\Models\Provider;
 use Illuminate\Database\Eloquent\Builder;
 
 class ProductRepository extends AbstractRepository
