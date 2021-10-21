@@ -3,7 +3,7 @@
 namespace App\Service;
 
 use App\Http\Requests\Client\CreateClientRequest;
-use App\Models\Database\Client;
+use App\Models\Client;
 use App\Repository\ClientRepository;
 use App\Repository\AddressRepository;
 use Illuminate\Database\Eloquent\Builder;
