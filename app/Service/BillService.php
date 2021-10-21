@@ -2,8 +2,8 @@
 
 namespace App\Service;
 
-use App\Models\Database\Bill;
-use App\Models\Database\Client;
+use App\Models\Bill;
+use App\Models\Client;
 use App\Repository\BillRepository;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
