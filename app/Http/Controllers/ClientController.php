@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Client\CreateClientRequest;
-use App\Models\Database\Client;
+use App\Models\Client;
 use App\Service\AddressService;
 use App\Service\ClientService;
 use App\ValueObjects\AddressValueObject;
