@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Database\Bill;
-use App\Models\Database\Client;
+use App\Models\Bill;
+use App\Models\Client;
 use App\Service\BillService;
 
 class BillController extends Controller
