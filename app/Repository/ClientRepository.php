@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use App\Http\Requests\Client\CreateClientRequest;
 use App\Http\Requests\Client\UpdateClientRequest;
-use App\Models\Database\Client;
+use App\Models\Client;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 
