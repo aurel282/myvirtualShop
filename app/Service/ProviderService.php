@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-use App\Models\Database\Provider;
+use App\Models\Provider;
 use App\Repository\AddressRepository;
 use App\Repository\ProductRepository;
 use App\Repository\ProviderRepository;
