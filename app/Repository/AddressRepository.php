@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Models\Database\Address;
+use App\Models\Address;
 use App\ValueObjects\AddressValueObject;
 
 class AddressRepository extends AbstractRepository
