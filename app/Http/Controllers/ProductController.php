@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Product\CreateProductRequest;
 use App\Http\Requests\Product\UpdateProductRequest;
-use App\Models\Database\Product;
-use App\Models\Database\Provider;
+use App\Models\Product;
+use App\Models\Provider;
 use App\Service\ProductService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
