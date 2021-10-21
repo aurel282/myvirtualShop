@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Database;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
@@ -14,12 +14,12 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  * @property string|null $city
  * @property string|null $country
  * @property-read mixed $fully_readable
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereCity($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereCountry($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereNumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereStreet($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Database\Address whereZipCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Address whereCity($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Address whereCountry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Address whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Address whereNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Address whereStreet($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Address whereZipCode($value)
  */
 
 class Address extends Eloquent
