@@ -3,8 +3,8 @@
 namespace App\Repository;
 
 
-use App\Models\Database\Bill;
-use App\Models\Database\Client;
+use App\Models\Bill;
+use App\Models\Client;
 use Illuminate\Database\Eloquent\Builder;
 
 class BillRepository extends AbstractRepository
